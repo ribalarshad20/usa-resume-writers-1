@@ -3,6 +3,7 @@ import HeroSection from "../atoms/HeroSection";
 import FeatureServices from "../atoms/ServiceFeatures";
 import WhyChooseUs from "../atoms/WhyChooseUs";
 import CareerServicesSection from "../atoms/CareerServicesSection";
+import ATSResumeSection from "../atoms/ATSResumeSection";
 
 const HomePage: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage: React.FC = () => {
       <FeatureServices />
       <WhyChooseUs />
       <CareerServicesSection />
+      <ATSResumeSection />
     </div>
   );
 };
