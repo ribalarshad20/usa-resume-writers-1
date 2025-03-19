@@ -6,6 +6,16 @@ import CareerServicesSection from "../atoms/CareerServicesSection";
 import ATSResumeSection from "../atoms/ATSResumeSection";
 import { IndustrySectionExample } from "../atoms/IndustrySection";
 import HeroSectionExample from "../atoms/HeroSectionMain";
+import CareerSolutionsSection from "../atoms/CareerSolutionsSection";
+import zip from "../../assets/zip01.png";
+import glassdoor from "../../assets/glassdoor02.png";
+import indeed from "../../assets/indeed03.png";
+
+const logos = [
+  { src: zip, alt: "ZipRecruiter" },
+  { src: glassdoor, alt: "Glassdoor" },
+  { src: indeed, alt: "Indeed" },
+];
 
 const HomePage: React.FC = () => {
   return (
@@ -17,6 +27,15 @@ const HomePage: React.FC = () => {
       <ATSResumeSection />
       <IndustrySectionExample />
       <HeroSectionExample />
+
+      <CareerSolutionsSection
+        title="Ultimate Career Solutions"
+        subtitle="We Help You Ace Your Career By Registering You On The World's Most Trusted Referral Portals"
+        description="We provide more than just resume writing service! Resume Writers USA is the veritable source of getting yourself registered on various referral platforms to get recognized among employer's social networks."
+        logos={logos}
+        buttonText="Get Started Now!"
+        onButtonClick={() => console.log("Button clicked")}
+      />
     </div>
   );
 };
