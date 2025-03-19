@@ -25,13 +25,12 @@ const NavBar: React.FC<NavBarProps> = () => {
 
   return (
     <nav
-      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${
+      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 p-3 ${
         scrolled ? "bg-white" : "bg-white"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
           <div className="flex-shrink-0">
             <a href="/" className="flex items-center">
               <img
@@ -42,7 +41,6 @@ const NavBar: React.FC<NavBarProps> = () => {
             </a>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-8">
             <a
               href="/services"
@@ -82,7 +80,6 @@ const NavBar: React.FC<NavBarProps> = () => {
             </a>
           </div>
 
-          {/* Mobile Navigation Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -94,7 +91,6 @@ const NavBar: React.FC<NavBarProps> = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-white shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
