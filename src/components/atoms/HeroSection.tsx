@@ -21,22 +21,63 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     "Interview Calls Guarantee",
     "Highlights Your Strengths",
   ],
-  primaryButtonText = "Get Started",
-  secondaryButtonText = "Consult Our Experts",
 }) => {
   const images = [bannerImage1, bannerImage2, bannerImage3];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  const titles = [
+    "Professional Resume",
+    "Video Resume",
+    "Interactive Resume",
+    "Cover Letter",
+    "Web-Based Resume",
+  ];
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+
+  // Cycle through banner images
   useEffect(() => {
-    const interval = setInterval(() => {
+    const imageInterval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 3000);
-    return () => clearInterval(interval);
+    return () => clearInterval(imageInterval);
   }, [images.length]);
+
+  // Cycle through titles for animated text
+  useEffect(() => {
+    const titleInterval = setInterval(() => {
+      setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titles.length);
+    }, 3000);
+    return () => clearInterval(titleInterval);
+  }, [titles.length]);
 
   return (
     <div className="relative w-full overflow-hidden min-h-[700px]">
-      {/* Render each image as an absolutely positioned <img> */}
+      {/* Custom style for slide in/out animation */}
+      <style>{`
+        @keyframes slideInOut {
+          0% {
+            opacity: 0;
+            transform: translateY(-100%);
+          }
+          20% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          80% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          100% {
+            opacity: 0;
+            transform: translateY(100%);
+          }
+        }
+        .animate-slideInOut {
+          animation: slideInOut 3s ease-in-out;
+        }
+      `}</style>
+
+      {/* Slideshow Images */}
       {images.map((image, index) => (
         <img
           key={index}
@@ -49,38 +90,77 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         />
       ))}
 
-      {/* Content overlay */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
+      {/* Content Overlay */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="text-white">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4 leading-tight">
-              <span className="inline-block">Web-Based</span>{" "}
-              <span className="inline-block relative">
-                Resume
-                <span className="absolute bottom-1 left-0 w-full h-0.5 bg-white"></span>
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4 leading-tight mt-8">
+              <span className="relative inline-block overflow-hidden">
+                <span
+                  key={currentTitleIndex}
+                  className="block animate-slideInOut"
+                >
+                  {titles[currentTitleIndex]}
+                  {/* Underline */}
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white"></span>
+                </span>
               </span>
               <br />
               <span className="inline-block">Writing Services</span>
             </h1>
+
             <p className="text-xl mb-10">{subheading}</p>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-3 mb-10">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-center">
-                  <div className="flex-shrink-0 mr-2">
-                    <CircleCheckBig size={16} />
-                  </div>
-                  <span className="text-sm">{feature}</span>
+                <div key={index} className="flex items-center gap-2">
+                  <CircleCheckBig size={18} color="white" />
+
+                  <span className="text-white text-base font-normal">
+                    {feature}
+                  </span>
                 </div>
               ))}
             </div>
+
+            {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-green-400 hover:bg-green-500 text-black font-medium py-3 px-8 transition duration-300">
-                {primaryButtonText}
+              <button
+                className="
+                  bg-[#72ecb1]
+                  text-black
+                  text-base
+                  font-semibold
+                  py-3
+                  px-8
+                  rounded-md
+                  transition-colors
+                  duration-300
+                  hover:bg-[#63dba0]
+                "
+              >
+                Get Started
               </button>
-              <button className="bg-white hover:bg-gray-100 text-green-500 font-medium py-3 px-8 transition duration-300">
-                {secondaryButtonText}
+
+              <button
+                className="
+                  bg-white
+                  text-[#72ecb1]
+                  text-base
+                  font-semibold
+                  py-3
+                  px-8
+                  rounded-md
+                  transition-colors
+                  duration-300
+                  hover:bg-gray-100
+                "
+              >
+                Consult Our Experts
               </button>
             </div>
+
+            {/* Trusted Logos */}
             <div className="mt-12 flex flex-wrap items-center gap-6">
               <img
                 src={trusted_logos}
