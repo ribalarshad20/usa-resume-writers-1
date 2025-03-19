@@ -35,7 +35,7 @@ const NavBar: React.FC<NavBarProps> = () => {
   // Dropdown content for Services
   const servicesDropdown = (
     <div
-      className="absolute top-full left-0 w-64 bg-[#1F2937] text-white shadow-lg z-50 rounded-xl mt-2"
+      className="absolute top-full left-0 w-64 bg-[#1F2937] text-white z-50 rounded-xl mt-2"
       onMouseEnter={() => handleDropdownHover("services")}
       onMouseLeave={handleDropdownLeave}
     >
@@ -75,7 +75,7 @@ const NavBar: React.FC<NavBarProps> = () => {
   // Dropdown content for Visume
   const visumeDropdown = (
     <div
-      className="absolute top-full left-0 w-64 bg-[#1F2937] text-white shadow-lg z-50 rounded-xl mt-2"
+      className="absolute top-full left-0 w-64 bg-[#1F2937] text-white z-50 rounded-xl mt-2"
       onMouseEnter={() => handleDropdownHover("visume")}
       onMouseLeave={handleDropdownLeave}
     >
@@ -103,7 +103,7 @@ const NavBar: React.FC<NavBarProps> = () => {
   // Dropdown content for Other Services
   const otherServicesDropdown = (
     <div
-      className="absolute top-full left-0 w-64 bg-[#1F2937] text-white shadow-lg z-50 rounded-xl mt-2"
+      className="absolute top-full left-0 w-64 bg-[#1F2937] text-white z-50 rounded-xl mt-2"
       onMouseEnter={() => handleDropdownHover("otherServices")}
       onMouseLeave={handleDropdownLeave}
     >
@@ -131,7 +131,7 @@ const NavBar: React.FC<NavBarProps> = () => {
   return (
     <nav
       className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 p-3 ${
-        scrolled ? "bg-white shadow-md" : "bg-white"
+        scrolled ? "bg-white" : "bg-white"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -147,7 +147,6 @@ const NavBar: React.FC<NavBarProps> = () => {
           </div>
 
           <div className="hidden md:flex md:items-center md:space-x-3">
-            {/* Services with dropdown */}
             <div
               className="relative group"
               onMouseEnter={() => handleDropdownHover("services")}
@@ -173,7 +172,6 @@ const NavBar: React.FC<NavBarProps> = () => {
               Web-Based Resume
             </a>
 
-            {/* Visume with dropdown */}
             <div
               className="relative group"
               onMouseEnter={() => handleDropdownHover("visume")}
@@ -192,7 +190,6 @@ const NavBar: React.FC<NavBarProps> = () => {
               {activeDropdown === "visume" && visumeDropdown}
             </div>
 
-            {/* Other Services with dropdown */}
             <div
               className="relative group"
               onMouseEnter={() => handleDropdownHover("otherServices")}
@@ -236,11 +233,9 @@ const NavBar: React.FC<NavBarProps> = () => {
         </div>
       </div>
 
-      {/* Mobile menu with accordions for dropdowns */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg">
+        <div className="md:hidden bg-white">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {/* Mobile Services dropdown */}
             <div className="block">
               <button
                 onClick={() =>
@@ -307,7 +302,6 @@ const NavBar: React.FC<NavBarProps> = () => {
               Web-Based Resume
             </a>
 
-            {/* Mobile Visume dropdown */}
             <div className="block">
               <button
                 onClick={() =>
@@ -353,7 +347,6 @@ const NavBar: React.FC<NavBarProps> = () => {
               )}
             </div>
 
-            {/* Mobile Other Services dropdown */}
             <div className="block">
               <button
                 onClick={() =>
