@@ -14,7 +14,6 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({
-  subheading = "Earn more career prospects with a resume that wins the recruiter's 6-second review.",
   features = [
     "Certified Professional Writers",
     "ATS Friendly Resumes",
@@ -109,7 +108,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               <span className="inline-block">Writing Services</span>
             </h1>
 
-            <p className="text-xl mb-10">{subheading}</p>
+            {/* Blue Banner for Subheading */}
+            <div className="py-3 px-1 mb-10 -mx-1">
+              <p className="text-2xl text-white font-semibold">
+                Earn more career prospects with a resume
+              </p>
+              <p className="text-2xl text-white font-semibold">
+                that wins the recruiter's 6-second review.
+              </p>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-3 mb-10">
               {features.map((feature, index) => (
@@ -123,44 +130,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               ))}
             </div>
 
-            {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                className="
-                  bg-[#72ecb1]
-                  text-black
-                  text-base
-                  font-semibold
-                  py-3
-                  px-8
-                  rounded-md
-                  transition-colors
-                  duration-300
-                  hover:bg-[#63dba0]
-                "
-              >
+              <button className="w-52 px-6 py-3 font-semibold bg-[#67D794] border border-transparent hover:text-white hover:bg-transparent hover:border-[#67D794] text-black transition-colors duration-200">
                 Get Started
               </button>
 
-              <button
-                className="
-                  bg-white
-                  text-[#72ecb1]
-                  text-base
-                  font-semibold
-                  py-3
-                  px-8
-                  rounded-md
-                  transition-colors
-                  duration-300
-                  hover:bg-gray-100
-                "
-              >
+              <button className="w-52 px-6 py-3 font-semibold bg-white text-[#67D794] border border-transparent hover:bg-transparent hover:text-white hover:border-[#67D794] transition-colors duration-200">
                 Consult Our Experts
               </button>
             </div>
 
-            {/* Trusted Logos */}
             <div className="mt-12 flex flex-wrap items-center gap-6">
               <img
                 src={trusted_logos}
