@@ -32,10 +32,10 @@ const NavBar: React.FC<NavBarProps> = () => {
     setActiveDropdown(null);
   };
 
-  // Dropdown content for Services
+  // Dropdown content for Services with divider lines added
   const servicesDropdown = (
     <div
-      className="absolute top-full left-0 w-64 bg-[#1F2937] text-white z-50 rounded-xl mt-2"
+      className="absolute top-full left-0 w-64 bg-[#1F2937] text-white z-50 rounded-xl mt-2 divide-y divide-gray-700"
       onMouseEnter={() => handleDropdownHover("services")}
       onMouseLeave={handleDropdownLeave}
     >
@@ -72,10 +72,10 @@ const NavBar: React.FC<NavBarProps> = () => {
     </div>
   );
 
-  // Dropdown content for Visume
+  // Dropdown content for Visume with divider lines added
   const visumeDropdown = (
     <div
-      className="absolute top-full left-0 w-64 bg-[#1F2937] text-white z-50 rounded-xl mt-2"
+      className="absolute top-full left-0 w-64 bg-[#1F2937] text-white z-50 rounded-xl mt-2 divide-y divide-gray-700"
       onMouseEnter={() => handleDropdownHover("visume")}
       onMouseLeave={handleDropdownLeave}
     >
@@ -100,10 +100,10 @@ const NavBar: React.FC<NavBarProps> = () => {
     </div>
   );
 
-  // Dropdown content for Other Services
+  // Dropdown content for Other Services with divider lines added
   const otherServicesDropdown = (
     <div
-      className="absolute top-full left-0 w-64 bg-[#1F2937] text-white z-50 rounded-xl mt-2"
+      className="absolute top-full left-0 w-64 bg-[#1F2937] text-white z-50 rounded-xl mt-2 divide-y divide-gray-700"
       onMouseEnter={() => handleDropdownHover("otherServices")}
       onMouseLeave={handleDropdownLeave}
     >
@@ -154,10 +154,10 @@ const NavBar: React.FC<NavBarProps> = () => {
             >
               <a
                 href="/services"
-                className={`text-black font-semibold transition-colors duration-200 py-3 px-4 pb-12 ${
+                className={`text-black font-semibold transition-colors duration-200 py-3 px-4 pb-12 rounded-xl ${
                   activeDropdown === "services"
-                    ? "bg-[#1F2937] rounded-xl text-white"
-                    : "bg-transparent text-black"
+                    ? "bg-[#1F2937] text-white"
+                    : "bg-transparent"
                 }`}
               >
                 Services
@@ -179,10 +179,10 @@ const NavBar: React.FC<NavBarProps> = () => {
             >
               <a
                 href="/visume"
-                className={`text-black font-semibold transition-colors duration-200 py-3 px-4 pb-12 ${
+                className={`text-black font-semibold transition-colors duration-200 py-3 px-4 pb-12 rounded-xl ${
                   activeDropdown === "visume"
-                    ? "bg-[#1F2937] rounded-xl text-white"
-                    : "bg-transparent text-black"
+                    ? "bg-[#1F2937] text-white"
+                    : "bg-transparent"
                 }`}
               >
                 Visume
@@ -197,10 +197,10 @@ const NavBar: React.FC<NavBarProps> = () => {
             >
               <a
                 href="/other-services"
-                className={`text-black font-semibold transition-colors duration-200 py-3 px-4 pb-12 ${
+                className={`text-black font-semibold transition-colors duration-200 py-3 px-4 pb-12 rounded-xl ${
                   activeDropdown === "otherServices"
-                    ? "bg-[#1F2937] rounded-xl text-white"
-                    : "bg-transparent text-black"
+                    ? "bg-[#1F2937] text-white"
+                    : "bg-transparent"
                 }`}
               >
                 Other Services
@@ -260,7 +260,7 @@ const NavBar: React.FC<NavBarProps> = () => {
                 />
               </button>
               {activeDropdown === "mobileServices" && (
-                <div className="bg-[#1F2937] text-white">
+                <div className="bg-[#1F2937] text-white divide-y divide-gray-700">
                   <a
                     href="/resume-writing"
                     className="block px-6 py-3 hover:bg-[#2D3748]"
@@ -324,7 +324,7 @@ const NavBar: React.FC<NavBarProps> = () => {
                 />
               </button>
               {activeDropdown === "mobileVisume" && (
-                <div className="bg-[#1F2937] text-white">
+                <div className="bg-[#1F2937] text-white divide-y divide-gray-700">
                   <a
                     href="/visume-basic"
                     className="block px-6 py-3 hover:bg-[#2D3748]"
@@ -371,7 +371,7 @@ const NavBar: React.FC<NavBarProps> = () => {
                 />
               </button>
               {activeDropdown === "mobileOtherServices" && (
-                <div className="bg-[#1F2937] text-white">
+                <div className="bg-[#1F2937] text-white divide-y divide-gray-700">
                   <a
                     href="/interview-coaching"
                     className="block px-6 py-3 hover:bg-[#2D3748]"

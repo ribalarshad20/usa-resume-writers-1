@@ -25,20 +25,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       className="relative w-full text-white overflow-hidden bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url(${bgImage})`,
-        minHeight: "60vh", // Reduced height from 80vh to 60vh
+        minHeight: "60vh",
       }}
     >
-      <div className="relative z-10 container mx-auto py-6 md:py-6 lg:py-10 flex flex-col items-center justify-center text-center">
+      <div className="relative z-10 container mx-auto px-4 py-6 md:py-6 lg:py-10 flex flex-col items-center justify-center text-center">
         <p className="text-lg md:text-xl mb-4 italic">Contact Our Experts</p>
-
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight max-w-5xl">
-          <span className="whitespace-nowrap">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight max-w-full sm:max-w-5xl">
+          <span className="whitespace-normal sm:whitespace-nowrap">
             {title} <span className="text-green-400">{highlightedText}</span>
           </span>
           <br />
           <span>{subtitle}</span>
         </h1>
-
         <div className="flex flex-col sm:flex-row gap-4 mt-8">
           <button
             onClick={onSecondaryClick}
