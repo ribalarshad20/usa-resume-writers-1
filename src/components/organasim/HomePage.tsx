@@ -10,6 +10,7 @@ import CareerSolutionsSection from "../atoms/CareerSolutionsSection";
 import zip from "../../assets/zip01.png";
 import glassdoor from "../../assets/glassdoor02.png";
 import indeed from "../../assets/indeed03.png";
+import { ProcessSectionExample } from "../atoms/ProcessSection";
 
 const logos = [
   { src: zip, alt: "ZipRecruiter" },
@@ -36,6 +37,7 @@ const HomePage: React.FC = () => {
         buttonText="Get Started Now!"
         onButtonClick={() => console.log("Button clicked")}
       />
+      <ProcessSectionExample />
     </div>
   );
 };
