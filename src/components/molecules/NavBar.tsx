@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Menu, ChevronDown } from "lucide-react";
 import bradLogo from "../../assets/brand_logo.png";
 
@@ -8,21 +8,8 @@ interface NavBarProps {
 
 const NavBar: React.FC<NavBarProps> = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const handleDropdownHover = (dropdown: string) => {
     setActiveDropdown(dropdown);
@@ -129,11 +116,7 @@ const NavBar: React.FC<NavBarProps> = () => {
   );
 
   return (
-    <nav
-      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 p-1 ${
-        scrolled ? "bg-white" : "bg-white"
-      }`}
-    >
+    <nav className="w-full fixed top-0 left-0 z-50 transition-all duration-300 p-1 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex-shrink-0">

@@ -45,7 +45,7 @@ const Footer: React.FC<FooterProps> = ({
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#222F3E] relative z-10 w-full text-white mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
+    <footer className="bg-[#222F3E] relative z-10 w-full text-white mx-auto px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl  container mx-auto px-4 py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
