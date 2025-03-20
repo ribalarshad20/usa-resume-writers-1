@@ -1,6 +1,6 @@
 import { MoveRight } from "lucide-react";
 import React, { useRef, useState, useEffect } from "react";
-
+import ResumeForm, { FormData } from "./ResumeForm";
 // Define types for the service item
 interface ServiceItem {
   title: string;
@@ -13,6 +13,13 @@ interface CareerServicesProps {
 }
 
 const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
+  const [showResumeForm, setShowResumeForm] = useState(false);
+
+  const handleFormSubmit = (formData: FormData) => {
+    console.log("Form submitted:", formData);
+    setShowResumeForm(false);
+  };
+
   const sliderRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -155,78 +162,82 @@ const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
   }, [isDragging]);
 
   return (
-    <div className="relative z-10 w-full max-w-full md:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-8 md:pb-12">
-      <div className="mb-8 md:mb-12">
-        <p className="text-gray-800 italic font-medium mb-2 text-sm sm:text-base">
-          Our Professional Services
-        </p>
+    <>
+      <div className="relative z-10 w-full max-w-full md:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-8 md:pb-12">
+        <div className="mb-8 md:mb-12">
+          <p className="text-gray-800 italic font-medium mb-2 text-sm sm:text-base">
+            Our Professional Services
+          </p>
 
-        <div className="flex flex-col md:flex-row md:items-center justify-between">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-0 md:w-2/3 lg:w-3/5">
-            <span className="text-gray-800">One Window </span>
-            <span className="text-[#5FD797]">Career</span>
-            <br />
-            <span className="text-gray-800">Solutions To Get Dream Job</span>
-          </h1>
+          <div className="flex flex-col md:flex-row md:items-center justify-between">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-0 md:w-2/3 lg:w-3/5">
+              <span className="text-gray-800">One Window </span>
+              <span className="text-[#5FD797]">Career</span>
+              <br />
+              <span className="text-gray-800">Solutions To Get Dream Job</span>
+            </h1>
 
-          <div className="flex flex-col xs:flex-row sm:flex-row gap-3 md:gap-4 w-full md:w-auto">
-            <button className="w-full xs:w-auto sm:w-auto md:w-48 px-2 py-2 md:py-3 text-xs sm:text-sm font-semibold bg-[#22303F] border border-transparent hover:text-black hover:bg-transparent hover:border-[#22303F] text-white transition-colors duration-200">
-              Consult our Experts
-            </button>
-            <button className="w-full xs:w-auto sm:w-auto md:w-48 px-2 py-2 md:py-3 text-xs sm:text-sm font-semibold bg-[#67D794] border border-transparent hover:text-black hover:bg-transparent hover:border-[#67D794] text-black transition-colors duration-200">
-              Get Started Now!
-            </button>
+            <div className="flex flex-col xs:flex-row sm:flex-row gap-3 md:gap-4 w-full md:w-auto">
+              <button className="w-full xs:w-auto sm:w-auto md:w-48 px-2 py-2 md:py-3 text-xs sm:text-sm font-semibold bg-[#22303F] border border-transparent hover:text-black hover:bg-transparent hover:border-[#22303F] text-white transition-colors duration-200">
+                Consult our Experts
+              </button>
+              <button
+                className="w-52 px-6 py-3 font-semibold bg-[#67D794] border border-transparent hover:text-black hover:bg-transparent hover:border-[#67D794] text-white transition-colors duration-200"
+                onClick={() => setShowResumeForm(true)}
+              >
+                Get Started Now!
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="relative overflow-hidden">
-        <div
-          ref={sliderRef}
-          className="flex overflow-x-auto pb-6 scrollbar-hide cursor-grab"
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleMouseUp}
-          onScroll={handleScroll}
-          style={{
-            scrollBehavior: "smooth",
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-          }}
-        >
-          {extendedServices.map((service, index) => (
-            <div
-              key={index}
-              className="min-w-[260px] xs:min-w-[280px] sm:min-w-[320px] max-w-[260px] flex-shrink-0 bg-white p-4 sm:p-6 flex flex-col justify-between group transition-all duration-300 ease-in-out hover:bg-[#222F3E] mr-4 sm:mr-6 select-none"
-              style={{
-                width: isMobile ? "calc(100vw - 60px)" : undefined,
-              }}
-            >
-              <div>
-                <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4 group-hover:text-white transition-colors duration-300 line-clamp-2">
-                  {service.title}
-                </h3>
-                <div className="w-10 sm:w-12 h-[2px] bg-[#67D794] mb-4 sm:mb-6"></div>
-                <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 group-hover:text-white transition-colors duration-300 line-clamp-3 sm:line-clamp-4">
-                  {service.description}
-                </p>
+        <div className="relative overflow-hidden">
+          <div
+            ref={sliderRef}
+            className="flex overflow-x-auto pb-6 scrollbar-hide cursor-grab"
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleMouseUp}
+            onScroll={handleScroll}
+            style={{
+              scrollBehavior: "smooth",
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            }}
+          >
+            {extendedServices.map((service, index) => (
+              <div
+                key={index}
+                className="min-w-[260px] xs:min-w-[280px] sm:min-w-[320px] max-w-[260px] flex-shrink-0 bg-white p-4 sm:p-6 flex flex-col justify-between group transition-all duration-300 ease-in-out hover:bg-[#222F3E] mr-4 sm:mr-6 select-none"
+                style={{
+                  width: isMobile ? "calc(100vw - 60px)" : undefined,
+                }}
+              >
+                <div>
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4 group-hover:text-white transition-colors duration-300 line-clamp-2">
+                    {service.title}
+                  </h3>
+                  <div className="w-10 sm:w-12 h-[2px] bg-[#67D794] mb-4 sm:mb-6"></div>
+                  <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 group-hover:text-white transition-colors duration-300 line-clamp-3 sm:line-clamp-4">
+                    {service.description}
+                  </p>
+                </div>
+                <a href={service.link} className="inline-flex items-center">
+                  <MoveRight
+                    size={32}
+                    className="text-black group-hover:text-white transition-colors duration-300"
+                  />
+                </a>
               </div>
-              <a href={service.link} className="inline-flex items-center">
-                <MoveRight
-                  size={32}
-                  className="text-black group-hover:text-white transition-colors duration-300"
-                />
-              </a>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
 
-      <style>{`
+        <style>{`
         .scrollbar-hide::-webkit-scrollbar {
           display: none;
         }
@@ -254,7 +265,18 @@ const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
           }
         }
       `}</style>
-    </div>
+      </div>
+      {showResumeForm && (
+        <div className="fixed inset-0  bg-opacity-30 backdrop-brightness-30 flex justify-center items-center z-50">
+          <div className="bg-white rounded-lg overflow-hidden max-w-4xl w-full mx-4">
+            <ResumeForm
+              onSubmit={handleFormSubmit}
+              onClose={() => setShowResumeForm(false)}
+            />
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
