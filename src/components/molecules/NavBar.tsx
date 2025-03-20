@@ -27,31 +27,31 @@ const NavBar: React.FC<NavBarProps> = () => {
       onMouseLeave={handleDropdownLeave}
     >
       <a
-        href="/resume-writing"
+        href="/services/resume-writing/"
         className="block px-8 py-3 hover:bg-[#2D3748] transition-colors duration-200"
       >
         Resume Writing
       </a>
       <a
-        href="/cover-letter-writing"
+        href="/services/cover-letters/"
         className="block px-8 py-3 hover:bg-[#2D3748] transition-colors duration-200"
       >
         Cover Letter Writing
       </a>
       <a
-        href="/linkedin-profile-writing"
+        href="/services/linkedIn-profile/"
         className="block px-8 py-3 hover:bg-[#2D3748] transition-colors duration-200"
       >
         LinkedIn Profile Writing
       </a>
       <a
-        href="/career-switch-resume"
+        href="/services/career-switch/"
         className="block px-8 py-3 hover:bg-[#2D3748] transition-colors duration-200"
       >
         Career Switch Resume
       </a>
       <a
-        href="/entry-level-resume"
+        href="/services/entry-level/"
         className="block px-8 py-3 hover:bg-[#2D3748] transition-colors duration-200"
       >
         Entry Level Resume
@@ -136,7 +136,7 @@ const NavBar: React.FC<NavBarProps> = () => {
               onMouseLeave={handleDropdownLeave}
             >
               <a
-                href="/services"
+                href="/services/"
                 className={`text-black font-semibold transition-colors duration-200 py-3 px-4 pb-12 rounded-xl ${
                   activeDropdown === "services"
                     ? "bg-[#1F2937] text-white"
@@ -251,25 +251,25 @@ const NavBar: React.FC<NavBarProps> = () => {
                     Resume Writing
                   </a>
                   <a
-                    href="/cover-letter-writing"
+                    href="/services/cover-letters/"
                     className="block px-6 py-3 hover:bg-[#2D3748]"
                   >
                     Cover Letter Writing
                   </a>
                   <a
-                    href="/linkedin-profile-writing"
+                    href="/services/linkedIn-profile/"
                     className="block px-6 py-3 hover:bg-[#2D3748]"
                   >
                     LinkedIn Profile Writing
                   </a>
                   <a
-                    href="/career-switch-resume"
+                    href="/services/career-switch/"
                     className="block px-6 py-3 hover:bg-[#2D3748]"
                   >
                     Career Switch Resume
                   </a>
                   <a
-                    href="/entry-level-resume"
+                    href="/services/entry-level/"
                     className="block px-6 py-3 hover:bg-[#2D3748]"
                   >
                     Entry Level Resume
