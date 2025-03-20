@@ -8,6 +8,10 @@ import LinkedInProfileSection from "./components/atoms/servicePages/LinkedInProf
 import CareerSwitchSection from "./components/atoms/servicePages/CareerSwitchSection";
 import EntryLevelResumeSection from "./components/atoms/servicePages/EntryLevelResumeSection";
 import MainServicesPage from "./components/atoms/servicePages/MainServicesPage";
+import ThankYouLetter from "./components/atoms/otherServices/ThankYouLetter";
+import FollowUpLetter from "./components/atoms/otherServices/FollowUpLetter";
+import RecommendationLetter from "./components/atoms/otherServices/RecommendationLetter";
+import JobPosting from "./components/atoms/otherServices/JobPosting";
 
 function App() {
   return (
@@ -36,6 +40,22 @@ function App() {
             path="/services/entry-level/"
             element={<EntryLevelResumeSection />}
           />
+
+          <Route
+            path="/services/thank-you-letter/"
+            element={<ThankYouLetter />}
+          />
+          <Route
+            path="/services/follow-up-letter/"
+            element={<FollowUpLetter />}
+          />
+
+          <Route
+            path="/services/recommendation-letter/"
+            element={<RecommendationLetter />}
+          />
+
+          <Route path="/services/job-posting/" element={<JobPosting />} />
         </Route>
       </Routes>
     </BrowserRouter>

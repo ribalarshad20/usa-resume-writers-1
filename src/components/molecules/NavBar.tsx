@@ -95,22 +95,28 @@ const NavBar: React.FC<NavBarProps> = () => {
       onMouseLeave={handleDropdownLeave}
     >
       <a
-        href="/interview-coaching"
+        href="/services/thank-you-letter/"
         className="block px-8 py-3 hover:bg-[#2D3748] transition-colors duration-200"
       >
-        Interview Coaching
+        Thank You Letter
       </a>
       <a
-        href="/career-counseling"
+        href="/services/follow-up-letter/"
         className="block px-8 py-3 hover:bg-[#2D3748] transition-colors duration-200"
       >
-        Career Counseling
+        Follow Up Letter
       </a>
       <a
-        href="/job-search-assistance"
+        href="/services/recommendation-letter/"
         className="block px-8 py-3 hover:bg-[#2D3748] transition-colors duration-200"
       >
-        Job Search Assistance
+        Recommendation Letter
+      </a>
+      <a
+        href="/services/job-posting/"
+        className="block px-8 py-3 hover:bg-[#2D3748] transition-colors duration-200"
+      >
+        Job Posting
       </a>
     </div>
   );

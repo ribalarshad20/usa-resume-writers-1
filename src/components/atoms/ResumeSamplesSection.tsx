@@ -3,6 +3,7 @@ import bgSample from "../../assets/bg-sample.jpeg";
 import resume01 from "../../assets/resume/01.jpeg";
 import resume02 from "../../assets/resume/02.jpeg";
 import resume03 from "../../assets/resume/03.jpeg";
+import ResumeForm, { FormData } from "./ResumeForm";
 
 // Define types for our resume category
 interface ResumeCategory {
@@ -32,9 +33,16 @@ const ResumeSamplesSection: React.FC<ResumeSamplesSectionProps> = ({
   categories,
   className = "",
 }) => {
+  const [showResumeForm, setShowResumeForm] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>(
     categories?.[0]?.id ?? ""
   );
+
+  // Handler for form submission (example: log the form data and close the modal)
+  const handleFormSubmit = (formData: FormData) => {
+    console.log("Form submitted:", formData);
+    setShowResumeForm(false);
+  };
 
   if (!categories || categories.length === 0) {
     return null;
@@ -49,139 +57,153 @@ const ResumeSamplesSection: React.FC<ResumeSamplesSectionProps> = ({
   );
 
   return (
-    <section
-      className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 ${className}`}
-      aria-labelledby="resume-samples-title"
-    >
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-8 sm:mb-12">
-          <span className="text-green-400 text-lg font-medium block mb-2 sm:mb-3">
-            Work Samples
-          </span>
-          <h2
-            id="resume-samples-title"
-            className="text-gray-800 text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6"
-          >
-            Custom Written Resume
-          </h2>
-          <p className="text-gray-700 max-w-3xl mx-auto text-sm sm:text-base">
-            Our certified resume writers effortlessly build a job-worthy resume
-            that gets you hired faster and fits all the HR standards.
-          </p>
-        </div>
+    <>
+      <section
+        className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 ${className}`}
+        aria-labelledby="resume-samples-title"
+      >
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-8 sm:mb-12">
+            <span className="text-[#5FD797] italic text-lg font-medium block mb-2 sm:mb-3">
+              Work Samples
+            </span>
+            <h2
+              id="resume-samples-title"
+              className="text-gray-800 text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6"
+            >
+              Custom Written Resume
+            </h2>
+            <p className="text-gray-700 max-w-3xl mx-auto text-sm sm:text-base">
+              Our certified resume writers effortlessly build a job-worthy
+              resume that gets you hired faster and fits all the HR standards.
+            </p>
+          </div>
 
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-12">
-          {/* Resume Categories Section - takes 5 columns on large screens */}
-          <div className="lg:col-span-5 space-y-6 sm:space-y-8">
-            {categories.map((category) => (
-              <div
-                key={category.id}
-                className={`flex items-start cursor-pointer transition-all duration-300 ${
-                  selectedCategory === category.id
-                    ? "hover:translate-x-2"
-                    : "hover:translate-x-1 opacity-70"
-                }`}
-                onClick={() => handleCategorySelect(category.id)}
-              >
+          {/* Content Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-12">
+            {/* Resume Categories Section - takes 5 columns on large screens */}
+            <div className="lg:col-span-5 space-y-6 sm:space-y-8">
+              {categories.map((category) => (
                 <div
-                  className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 mt-1 ${
+                  key={category.id}
+                  className={`flex items-start cursor-pointer transition-all duration-300 ${
                     selectedCategory === category.id
-                      ? "text-green-500"
-                      : "text-gray-400"
+                      ? "hover:translate-x-2"
+                      : "hover:translate-x-1 opacity-70"
                   }`}
+                  onClick={() => handleCategorySelect(category.id)}
                 >
-                  {category.icon}
-                </div>
-                <div className="ml-3 sm:ml-4">
-                  <h3
-                    className={`text-lg sm:text-xl font-bold mb-1 sm:mb-2 ${
+                  <div
+                    className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 mt-1 ${
                       selectedCategory === category.id
-                        ? "text-gray-800"
-                        : "text-gray-600"
+                        ? "text-[#5FD797]"
+                        : "text-gray-400"
                     }`}
                   >
-                    {category.title}
-                  </h3>
-                  {selectedCategory === category.id && category.description && (
-                    <p className="text-gray-600 text-sm sm:text-base animate-fadeIn">
-                      {category.description}
-                    </p>
+                    {category.icon}
+                  </div>
+                  <div className="ml-3 sm:ml-4">
+                    <h3
+                      className={`text-lg sm:text-xl font-bold mb-1 sm:mb-2 ${
+                        selectedCategory === category.id
+                          ? "text-[#5FD797]"
+                          : "text-gray-600"
+                      }`}
+                    >
+                      {category.title}
+                    </h3>
+                    {selectedCategory === category.id &&
+                      category.description && (
+                        <p className="text-gray-600 text-sm sm:text-base animate-fadeIn">
+                          {category.description}
+                        </p>
+                      )}
+                  </div>
+                </div>
+              ))}
+
+              {/* CTA Button */}
+              <div className="mt-8 sm:mt-10">
+                <button
+                  className="w-64 px-6 py-3 font-semibold bg-[#67D794] border border-transparent hover:text-black white hover:bg-transparent hover:border-[#67D794] text-black transition-colors duration-200"
+                  aria-label="Request for more resume samples"
+                  onClick={() => setShowResumeForm(true)}
+                >
+                  Request For More Samples
+                </button>
+              </div>
+            </div>
+
+            {/* Samples Display Section - takes 7 columns on large screens */}
+            <div className="lg:col-span-7 mt-6 lg:mt-0 relative">
+              {/* Outer container with positioning context */}
+              <div className="relative h-96 lg:h-full">
+                {/* Background Image Container - covers the right portion */}
+                <div className="absolute right-0 top-0 w-3/4 h-full rounded-md overflow-hidden shadow-lg">
+                  <img
+                    src={bgSample}
+                    alt="Resume background"
+                    className="w-full h-full object-cover object-center"
+                    loading="lazy"
+                  />
+                  {/* Gradient overlay for better readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                </div>
+
+                {/* Resume Samples Overlay - positioned to span both areas */}
+                <div className="absolute inset-0 p-4 md:p-6 flex items-center justify-center">
+                  {selectedCategoryData && (
+                    <div className="animate-fadeIn w-full">
+                      {/* Category title overlay */}
+                      <h4 className="text-gray-800 text-lg sm:text-xl font-bold mb-4 text-center">
+                        {selectedCategoryData.title} Samples
+                      </h4>
+
+                      {/* Resume samples grid with custom positioning */}
+                      <div className="grid grid-cols-3 gap-4 relative">
+                        {selectedCategoryData.samples.map((sample) => {
+                          // Remove the special case for the first sample
+                          return (
+                            <div
+                              key={sample.id}
+                              className="col-span-1 bg-white rounded-md shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                            >
+                              <div className="aspect-w-3 aspect-h-4 w-full">
+                                <img
+                                  src={sample.image}
+                                  alt={`${sample.title} resume sample`}
+                                  className="w-full h-full object-cover"
+                                />
+                              </div>
+                              <div className="p-2 text-center bg-white">
+                                <p className="text-xs sm:text-sm font-medium text-gray-800 truncate">
+                                  {sample.title}
+                                </p>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
                   )}
                 </div>
               </div>
-            ))}
-
-            {/* CTA Button */}
-            <div className="mt-8 sm:mt-10">
-              <button
-                className="bg-green-400 hover:bg-green-500 text-gray-800 py-2 px-4 sm:py-3 sm:px-6 rounded transition-all duration-300 hover:shadow-md text-sm sm:text-base font-medium focus:outline-none focus:ring-2 focus:ring-green-300"
-                aria-label="Request for more resume samples"
-              >
-                Request For More Samples
-              </button>
-            </div>
-          </div>
-
-          {/* Samples Display Section - takes 7 columns on large screens */}
-          <div className="lg:col-span-7 mt-6 lg:mt-0 relative">
-            {/* Outer container with positioning context */}
-            <div className="relative h-96 lg:h-full">
-              {/* Background Image Container - covers the right portion */}
-              <div className="absolute right-0 top-0 w-3/4 h-full rounded-md overflow-hidden shadow-lg">
-                <img
-                  src={bgSample}
-                  alt="Resume background"
-                  className="w-full h-full object-cover object-center"
-                  loading="lazy"
-                />
-                {/* Gradient overlay for better readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-              </div>
-
-              {/* Resume Samples Overlay - positioned to span both areas */}
-              <div className="absolute inset-0 p-4 md:p-6 flex items-center justify-center">
-                {selectedCategoryData && (
-                  <div className="animate-fadeIn w-full">
-                    {/* Category title overlay */}
-                    <h4 className="text-gray-800 text-lg sm:text-xl font-bold mb-4 text-center">
-                      {selectedCategoryData.title} Samples
-                    </h4>
-
-                    {/* Resume samples grid with custom positioning */}
-                    <div className="grid grid-cols-3 gap-4 relative">
-                      {selectedCategoryData.samples.map((sample) => {
-                        // Remove the special case for the first sample
-                        return (
-                          <div
-                            key={sample.id}
-                            className="col-span-1 bg-white rounded-md shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
-                          >
-                            <div className="aspect-w-3 aspect-h-4 w-full">
-                              <img
-                                src={sample.image}
-                                alt={`${sample.title} resume sample`}
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-                            <div className="p-2 text-center bg-white">
-                              <p className="text-xs sm:text-sm font-medium text-gray-800 truncate">
-                                {sample.title}
-                              </p>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                )}
-              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      {showResumeForm && (
+        <div className="fixed inset-0  bg-opacity-30 backdrop-brightness-30 flex justify-center items-center z-50">
+          <div className="bg-white rounded-lg overflow-hidden max-w-4xl w-full mx-4">
+            <ResumeForm
+              onSubmit={handleFormSubmit}
+              onClose={() => setShowResumeForm(false)}
+            />
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
