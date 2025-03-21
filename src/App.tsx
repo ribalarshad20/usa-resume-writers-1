@@ -13,6 +13,7 @@ import FollowUpLetter from "./components/atoms/otherServices/FollowUpLetter";
 import RecommendationLetter from "./components/atoms/otherServices/RecommendationLetter";
 import JobPosting from "./components/atoms/otherServices/JobPosting";
 import WebBasedResume from "./components/atoms/WebBasedResume/WebBasedResume";
+import VideoResume from "./components/atoms/Visume/VideoResume";
 
 function App() {
   return (
@@ -62,6 +63,7 @@ function App() {
             path="/services/web-based-resume/"
             element={<WebBasedResume />}
           />
+          <Route path="/services/video-resume/" element={<VideoResume />} />
         </Route>
       </Routes>
     </BrowserRouter>
