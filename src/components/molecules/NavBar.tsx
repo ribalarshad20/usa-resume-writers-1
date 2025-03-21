@@ -22,7 +22,7 @@ const NavBar: React.FC<NavBarProps> = () => {
   // Dropdown content for Services with divider lines added
   const servicesDropdown = (
     <div
-      className="absolute top-full left-0 w-64 bg-[#1F2937] text-white z-50 rounded-xl mt-2 divide-y divide-gray-700"
+      className="absolute text-sm font-semibold top-full left-0 w-56 bg-[#1F2937] text-white z-50 rounded-xl mt-2 divide-y divide-gray-700"
       onMouseEnter={() => handleDropdownHover("services")}
       onMouseLeave={handleDropdownLeave}
     >
@@ -59,30 +59,23 @@ const NavBar: React.FC<NavBarProps> = () => {
     </div>
   );
 
-  // Dropdown content for Visume with divider lines added
   const visumeDropdown = (
     <div
-      className="absolute top-full left-0 w-64 bg-[#1F2937] text-white z-50 rounded-xl mt-2 divide-y divide-gray-700"
+      className="absolute text-sm font-semibold top-full left-0 w-56 bg-[#1F2937] text-white z-50 rounded-xl mt-2 divide-y divide-gray-700"
       onMouseEnter={() => handleDropdownHover("visume")}
       onMouseLeave={handleDropdownLeave}
     >
       <a
-        href="/visume-basic"
-        className="block px-8 py-3 hover:bg-[#2D3748] transition-colors duration-200"
+        href="/services/video-resume/"
+        className="block px-6 py-3 hover:bg-[#2D3748]"
       >
-        Basic Visume
+        Video Resume
       </a>
       <a
-        href="/visume-premium"
-        className="block px-8 py-3 hover:bg-[#2D3748] transition-colors duration-200"
+        href="/services/interactive-resume/"
+        className="block px-6 py-3 hover:bg-[#2D3748]"
       >
-        Premium Visume
-      </a>
-      <a
-        href="/visume-professional"
-        className="block px-8 py-3 hover:bg-[#2D3748] transition-colors duration-200"
-      >
-        Professional Visume
+        Interactive Resume
       </a>
     </div>
   );
@@ -90,7 +83,7 @@ const NavBar: React.FC<NavBarProps> = () => {
   // Dropdown content for Other Services with divider lines added
   const otherServicesDropdown = (
     <div
-      className="absolute top-full left-0 w-64 bg-[#1F2937] text-white z-50 rounded-xl mt-2 divide-y divide-gray-700"
+      className="absolute text-sm font-semibold top-full left-0 w-56 bg-[#1F2937] text-white z-50 rounded-xl mt-2 divide-y divide-gray-700"
       onMouseEnter={() => handleDropdownHover("otherServices")}
       onMouseLeave={handleDropdownLeave}
     >
@@ -315,22 +308,16 @@ const NavBar: React.FC<NavBarProps> = () => {
               {activeDropdown === "mobileVisume" && (
                 <div className="bg-[#1F2937] text-white divide-y divide-gray-700">
                   <a
-                    href="/visume-basic"
+                    href="/services/video-resume/"
                     className="block px-6 py-3 hover:bg-[#2D3748]"
                   >
-                    Basic Visume
+                    Video Resume
                   </a>
                   <a
-                    href="/visume-premium"
+                    href="/services/interactive-resume/"
                     className="block px-6 py-3 hover:bg-[#2D3748]"
                   >
-                    Premium Visume
-                  </a>
-                  <a
-                    href="/visume-professional"
-                    className="block px-6 py-3 hover:bg-[#2D3748]"
-                  >
-                    Professional Visume
+                    Interactive Resume
                   </a>
                 </div>
               )}
