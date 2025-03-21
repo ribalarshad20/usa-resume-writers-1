@@ -15,7 +15,7 @@ const PrivacyPolicySection: React.FC = () => {
   return (
     <div className="bg-white">
       <ServicesTitleSection
-        title="Terms Of Use"
+        title="Privacy Policy"
         backgroundImage={titleBanner}
       />
       <PrivacyPolicy />
