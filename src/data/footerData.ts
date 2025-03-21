@@ -13,10 +13,10 @@ export const footerData = {
   },
   services: [
     { title: "Resume Writing", link: "/services/resume-writing/" },
-    { title: "Cover Letter Writing", link: "/services/cover-letter-writing" },
+    { title: "Cover Letter Writing", link: "/services/cover-letters/" },
     {
       title: "LinkedIn Profile Writing",
-      link: "/services/linkedin-profile-writing",
+      link: "/services/linkedIn-profile/",
     },
     { title: "Thank You Letter", link: "/services/thank-you-letter" },
     { title: "Follow Up Letter", link: "/services/follow-up-letter" },
@@ -31,12 +31,12 @@ export const footerData = {
     { title: "Contact", link: "/contact-us/" },
   ],
   quickLinks: [
-    { title: "Our Services", link: "/services" },
-    { title: "Job Posting", link: "/job-posting" },
-    { title: "Interactive Resume", link: "/interactive-resume" },
-    { title: "Video Resume", link: "/video-resume" },
-    { title: "Terms of Use", link: "/terms-of-use" },
-    { title: "Privacy Policy", link: "/privacy-policy" },
+    { title: "Our Services", link: "/services/" },
+    { title: "Job Posting", link: "/services/job-posting/" },
+    { title: "Interactive Resume", link: "/services/interactive-resume/" },
+    { title: "Video Resume", link: "/services/video-resume/" },
+    { title: "Terms of Use", link: "/term-of-use/" },
+    { title: "Privacy Policy", link: "/privacy-policy/" },
   ],
   socialMedia: {
     facebook: "https://facebook.com/resumewritersusa",

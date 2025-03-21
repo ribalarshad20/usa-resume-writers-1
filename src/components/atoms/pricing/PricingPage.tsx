@@ -10,7 +10,7 @@ import { footerData } from "../../../data/footerData";
 import titleBanner from "../../../assets/banner-video-resume.jpeg";
 import ServicesTitleSection from "../servicePages/ServicesTitleSection";
 import ServiceFeatures from "../servicePages/ServiceFeatures";
-import ResumePricingCardExample from "./PricingCard";
+import PricingGrid from "./PricingGrid";
 
 const PricingPage: React.FC = () => {
   return (
@@ -23,7 +23,7 @@ const PricingPage: React.FC = () => {
         imageSrc={resumeCoverImage}
         onButtonClick={() => console.log("Button clicked")}
       />
-      <ResumePricingCardExample />
+      <PricingGrid />
       <HeroSectionExample />
       <CareerServicesSection />
       <ProcessSectionExample />
