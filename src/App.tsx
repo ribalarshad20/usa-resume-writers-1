@@ -12,6 +12,7 @@ import ThankYouLetter from "./components/atoms/otherServices/ThankYouLetter";
 import FollowUpLetter from "./components/atoms/otherServices/FollowUpLetter";
 import RecommendationLetter from "./components/atoms/otherServices/RecommendationLetter";
 import JobPosting from "./components/atoms/otherServices/JobPosting";
+import WebBasedResume from "./components/atoms/WebBasedResume/WebBasedResume";
 
 function App() {
   return (
@@ -56,6 +57,11 @@ function App() {
           />
 
           <Route path="/services/job-posting/" element={<JobPosting />} />
+
+          <Route
+            path="/services/web-based-resume/"
+            element={<WebBasedResume />}
+          />
         </Route>
       </Routes>
     </BrowserRouter>

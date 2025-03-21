@@ -14,7 +14,7 @@ import ServiceFeatures from "../servicePages/ServiceFeatures";
 
 const FollowUpLetter: React.FC = () => {
   return (
-    <div className="bg-white">
+    <div className="w-full h-full flex flex-col items-center justify-center">
       <ServicesTitleSection
         title="Follow Up Letter"
         backgroundImage={titleBanner}

@@ -14,7 +14,7 @@ import ServiceFeatures from "../servicePages/ServiceFeatures";
 
 const ThankYouLetter: React.FC = () => {
   return (
-    <div className="bg-white">
+    <div className="w-full h-full flex flex-col items-center justify-center">
       <ServicesTitleSection
         title="Thank You Letter"
         backgroundImage={titleBanner}

@@ -23,7 +23,7 @@ export const footerData = {
     { title: "Recommendation Letter", link: "/services/recommendation-letter" },
   ],
   companyLinks: [
-    { title: "Web Based Resume", link: "/web-based-resume" },
+    { title: "Web Based Resume", link: "/services/web-based-resume/" },
     { title: "How We Work", link: "/how-we-work" },
     { title: "Resume Samples", link: "/resume-samples" },
     { title: "Pricing Plan", link: "/pricing-plan" },

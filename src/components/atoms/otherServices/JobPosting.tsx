@@ -13,7 +13,7 @@ import RecruitmentSectionExample from "./RecruitmentSection";
 
 const JobPosting: React.FC = () => {
   return (
-    <div className="bg-white">
+    <div className="w-full h-full flex flex-col items-center justify-center">
       <ServicesTitleSection title="Job Posting" backgroundImage={titleBanner} />
       <RecruitmentSectionExample />
       <ResumeSamplesPage />

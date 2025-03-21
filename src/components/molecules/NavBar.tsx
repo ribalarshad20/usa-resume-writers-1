@@ -155,7 +155,7 @@ const NavBar: React.FC<NavBarProps> = () => {
             </div>
 
             <a
-              href="/web-based-resume"
+              href="/services/web-based-resume/"
               className="text-black font-semibold hover:text-green-500 transition-colors duration-200 py-6 px-2"
             >
               Web-Based Resume
@@ -285,7 +285,7 @@ const NavBar: React.FC<NavBarProps> = () => {
             </div>
 
             <a
-              href="/web-based-resume"
+              href="/services/web-based-resume/"
               className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
             >
               Web-Based Resume
