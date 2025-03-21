@@ -14,7 +14,7 @@ import ServicesTitleSection from "./ServicesTitleSection";
 
 const LinkedInProfileSection: React.FC = () => {
   return (
-    <div className="bg-white">
+    <div className="w-full h-full flex flex-col items-center justify-center">
       <ServicesTitleSection
         title="LinkedIn Profile Writing"
         backgroundImage={titleBanner}

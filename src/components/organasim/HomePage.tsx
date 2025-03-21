@@ -49,7 +49,7 @@ const HomePage: React.FC = () => {
       <TestimonialSectionExample />
       <CareerGuideDownload
         onSubmit={(email) => {
-          // Handle the email submission, e.g., API call
+     
           console.log(`Processing download for: ${email}`);
         }}
       />

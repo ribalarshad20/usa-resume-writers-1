@@ -17,7 +17,7 @@ const MainServicesPage: React.FC = () => {
   const featureNumbers = Array.from({ length: 11 }, (_, index) => index + 1);
 
   return (
-    <div className="bg-white">
+    <div className="w-full h-full flex flex-col items-center justify-center">
       <ServicesTitleSection title="Services" backgroundImage={titleBanner} />
 
       {featureNumbers.map((num) => (

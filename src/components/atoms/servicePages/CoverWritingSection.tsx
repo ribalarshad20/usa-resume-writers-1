@@ -14,7 +14,7 @@ import ServiceFeatures from "./ServiceFeatures";
 
 const CoverWritingSection: React.FC = () => {
   return (
-    <div className="bg-white">
+    <div className="w-full h-full flex flex-col items-center justify-center">
       <ServicesTitleSection
         title="Cover Letter Writing"
         backgroundImage={titleBanner}

@@ -14,7 +14,7 @@ import ServiceFeatures from "./ServiceFeatures";
 
 const ResumeWritingSection: React.FC = () => {
   return (
-    <div className="bg-white">
+    <div className="w-full h-full flex flex-col items-center justify-center">
       <ServicesTitleSection
         title="Resume Writing"
         backgroundImage={titleBanner}

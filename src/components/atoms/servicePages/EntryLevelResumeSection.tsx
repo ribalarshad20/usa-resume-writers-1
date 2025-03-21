@@ -14,7 +14,7 @@ import titleBanner from "../../../assets/banner-faq.jpeg";
 
 const EntryLevelResumeSection: React.FC = () => {
   return (
-    <div className="bg-white">
+    <div className="w-full h-full flex flex-col items-center justify-center">
       <ServicesTitleSection
         title="Entry Level Resume"
         backgroundImage={titleBanner}
