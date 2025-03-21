@@ -88,7 +88,7 @@ const VideoSamplesGrid: React.FC<VideoSampleProps> = ({
   onPreviewClick = () => {},
 }) => {
   return (
-    <section className="w-full">
+    <section className="w-full pb-10">
       {/* Inject hover and preview button CSS */}
       <style dangerouslySetInnerHTML={{ __html: hoverStyles }} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 mb-10 flex-nowrap overflow-hidden">

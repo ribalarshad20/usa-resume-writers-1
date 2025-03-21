@@ -115,7 +115,7 @@ const NavBar: React.FC<NavBarProps> = () => {
   );
 
   return (
-    <nav className="w-full fixed top-0 left-0 z-50 transition-all duration-300 p-1 bg-white">
+    <nav className="w-full fixed top-0 left-0 z-50 transition-all duration-300 p-1 bg-white text-[#222F3E]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex-shrink-0">
@@ -191,7 +191,7 @@ const NavBar: React.FC<NavBarProps> = () => {
             </div>
 
             <a
-              href="/pricing"
+              href="/pricing/"
               className="text-black font-semibold hover:text-green-500 transition-colors duration-200 py-6 px-2"
             >
               Pricing
@@ -371,7 +371,7 @@ const NavBar: React.FC<NavBarProps> = () => {
             </div>
 
             <a
-              href="/pricing"
+              href="/pricing/"
               className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
             >
               Pricing

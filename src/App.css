@@ -3,3 +3,16 @@
     animation: logo-spin infinite 20s linear;
   }
 }
+
+@font-face {
+  font-family: "AvantGarde Bk BT";
+  src: url("/public//fonts/AVGARDD_2.woff") format("woff2"),
+    url("/public//fonts//AVGARDDO_2.woff") format("woff"),
+    url("/public//fonts//AVGARDN_2.woff") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "AvantGarde Bk BT", sans-serif;
+}

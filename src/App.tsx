@@ -14,6 +14,8 @@ import RecommendationLetter from "./components/atoms/otherServices/Recommendatio
 import JobPosting from "./components/atoms/otherServices/JobPosting";
 import WebBasedResume from "./components/atoms/WebBasedResume/WebBasedResume";
 import VideoResume from "./components/atoms/Visume/VideoResume";
+import InteractiveResume from "./components/atoms/Visume/InteractiveResume";
+import PricingPage from "./components/atoms/pricing/PricingPage";
 
 function App() {
   return (
@@ -64,6 +66,12 @@ function App() {
             element={<WebBasedResume />}
           />
           <Route path="/services/video-resume/" element={<VideoResume />} />
+
+          <Route
+            path="/services/interactive-resume/"
+            element={<InteractiveResume />}
+          />
+          <Route path="/pricing/" element={<PricingPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

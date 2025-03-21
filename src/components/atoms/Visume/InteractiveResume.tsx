@@ -1,5 +1,5 @@
 import React from "react";
-import resumeCoverImage from "../../../assets/ser-detail-10.jpeg";
+import resumeCoverImage from "../../../assets/ser-detail-11.png";
 import HeroSectionExample from "../HeroSectionMain";
 import CareerServicesSection from "../CareerServicesSection";
 import { ProcessSectionExample } from "../ProcessSection";
@@ -10,31 +10,31 @@ import { footerData } from "../../../data/footerData";
 import titleBanner from "../../../assets/banner-video-resume.jpeg";
 import ServicesTitleSection from "../servicePages/ServicesTitleSection";
 import ServiceFeatures from "../servicePages/ServiceFeatures";
-import { VideoSamplesGridComponent } from "./VideoSamples";
+import { VisumeWorkSamples } from "./VisumeWorkSamples";
 
-const VideoResume: React.FC = () => {
+const InteractiveResume: React.FC = () => {
   return (
     <div className="bg-white">
       <ServicesTitleSection
-        title="video resume"
+        title="Interactive Resume"
         backgroundImage={titleBanner}
       />
       <ServiceFeatures
         title1="How We Make Your"
-        title2="Video Resume Professionally"
-        description="Video Resume is the best way to go beyond outmoded methods of applying for your dream job. Lasting typically 30-60 seconds, these videos are your shot to make the best first impression to your employer. Our experts create a catchy script from the detailed brief you submit. Record that script according to the guidance our experts will provide to you and submit that video to us. ‘Be sure to practice first’!"
+        title2="Interactive Resume Professionally"
+        description="Enhance your persona through your resume by adding visuals and engaging elements to highlight your exposure and industry understanding. Recruiters retain visuals more than text giving you a competitive advantage. Interactive Resumes also give increased authenticity to the profile. We create a winning resume that reflects the eye-catching visual layout of your professional experience and personality."
         imageSrc={resumeCoverImage}
         onButtonClick={() => console.log("Button clicked")}
       />
       <p className="relative max-w-7xl mx-auto p-7">
         {" "}
-        Resume Writers USA combines your achievements and opportunities to
-        create a nested structure to display you as the best fit for your dream
-        job. Show your images and videos in different layouts: thumbnails,
-        vertical, horizontal, slideshow or full screen. We create responsive and
-        dynamic web resumes that will be visible on any device.
+        Our expert resume writers and designers not only create visual resume,
+        but at Resume Writers USA, we also help you get noticed by countless
+        companies out there in the market. A variety of charts and beautiful
+        diagrams in the form of infographics will ensure that recruiters do not
+        have to go through loads of text, which is often cumbersome.
       </p>
-      <VideoSamplesGridComponent />
+      <VisumeWorkSamples />
       <HeroSectionExample />
       <CareerServicesSection />
       <ProcessSectionExample />
@@ -45,4 +45,4 @@ const VideoResume: React.FC = () => {
   );
 };
 
-export default VideoResume;
+export default InteractiveResume;
