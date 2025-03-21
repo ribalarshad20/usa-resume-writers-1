@@ -27,8 +27,8 @@ export const footerData = {
     { title: "How We Work", link: "/how-we-work" },
     { title: "Resume Samples", link: "/resume-samples" },
     { title: "Pricing Plan", link: "/pricing-plan" },
-    { title: "FAQs", link: "/faqs" },
-    { title: "Contact", link: "/contact" },
+    { title: "FAQs", link: "/faqs/" },
+    { title: "Contact", link: "/contact-us/" },
   ],
   quickLinks: [
     { title: "Our Services", link: "/services" },

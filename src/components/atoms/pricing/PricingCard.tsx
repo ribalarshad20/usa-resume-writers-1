@@ -6,7 +6,6 @@ interface PricingFeature {
   text: string;
 }
 
-// Define props for the PricingCard component
 interface PricingCardProps {
   titleLine1: string;
   titleLine2: string;
@@ -14,7 +13,7 @@ interface PricingCardProps {
   price: number;
   originalPrice: number;
   features: PricingFeature[];
-  popularLabel?: string;
+  popularLabel?: string; // Already marked as optional
   ctaText: string;
   phoneNumber: string;
   onCtaClick?: () => void;
