@@ -1,6 +1,7 @@
 import { MoveRight } from "lucide-react";
 import React, { useRef, useState, useEffect } from "react";
 import ResumeForm, { FormData } from "./ResumeForm";
+import TawkChat, { TawkChatRef } from "./TawkChat";
 // Define types for the service item
 interface ServiceItem {
   title: string;
@@ -14,7 +15,7 @@ interface CareerServicesProps {
 
 const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
   const [showResumeForm, setShowResumeForm] = useState(false);
-
+  const tawkChatRef = useRef<TawkChatRef>(null);
   const handleFormSubmit = (formData: FormData) => {
     console.log("Form submitted:", formData);
     setShowResumeForm(false);
@@ -178,7 +179,13 @@ const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
             </h1>
 
             <div className="flex flex-col xs:flex-row sm:flex-row gap-3 md:gap-4 w-full md:w-auto">
-              <button className="w-full xs:w-auto sm:w-auto md:w-48 px-2 py-2 md:py-3 text-xs sm:text-sm font-semibold bg-[#22303F] border border-transparent hover:text-black hover:bg-transparent hover:border-[#22303F] text-white transition-colors duration-200">
+              <button
+                onClick={() => {
+                  // On click, call the maximize method on TawkChat
+                  tawkChatRef.current?.maximize();
+                }}
+                className="w-full xs:w-auto sm:w-auto md:w-48 px-2 py-2 md:py-3 text-xs sm:text-sm font-semibold bg-[#22303F] border border-transparent hover:text-black hover:bg-transparent hover:border-[#22303F] text-white transition-colors duration-200"
+              >
                 Consult our Experts
               </button>
               <button
@@ -276,6 +283,9 @@ const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
           </div>
         </div>
       )}
+      <div className="fixed bottom-4 right-4 z-50">
+        <TawkChat ref={tawkChatRef} />
+      </div>
     </>
   );
 };

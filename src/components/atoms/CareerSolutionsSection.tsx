@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import bgImage from "../../assets/conquer-bg.jpeg";
+import ResumeForm, { FormData } from "./ResumeForm";
 
 interface CareerSolutionsSectionProps {
   title: string;
   subtitle: string;
   description: string;
   logos: { src: string; alt: string }[];
-  buttonText: string;
-  onButtonClick?: () => void;
 }
 
 const CareerSolutionsSection: React.FC<CareerSolutionsSectionProps> = ({
@@ -15,53 +14,67 @@ const CareerSolutionsSection: React.FC<CareerSolutionsSectionProps> = ({
   subtitle,
   description,
   logos,
-  buttonText,
-  onButtonClick,
 }) => {
+  const [showResumeForm, setShowResumeForm] = useState(false);
+
+  const handleFormSubmit = (formData: FormData) => {
+    console.log("Form submitted:", formData);
+    setShowResumeForm(false);
+  };
   return (
-    <div
-      className="w-full bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: `url(${bgImage})`,
-        minHeight: "40vh", // Decreased height
-      }}
-    >
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col lg:flex-row">
-          <div className="w-full lg:w-3/5 pr-0 lg:pr-8">
-            <h3 className="text-lg font-medium text-gray-700 mb-2">{title}</h3>
-
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 leading-tight">
-              {subtitle}
-            </h2>
-
-            <div className="w-16 h-1 bg-blue-700 mb-4"></div>
-
-            <p className="text-base md:text-lg text-gray-700 mb-6">
-              {description}
-            </p>
-
-            <div className="flex flex-wrap items-center mb-6 gap-6">
-              {logos.map((logo, index) => (
-                <img
-                  key={index}
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="h-6 md:h-8 opacity-50"
-                />
-              ))}
+    <>
+      <div
+        className="w-full bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${bgImage})`,
+          minHeight: "40vh",
+        }}
+      >
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex flex-col lg:flex-row">
+            <div className="w-full lg:w-3/5 pr-0 lg:pr-8">
+              <h3 className="text-lg font-medium text-gray-700 mb-2">
+                {title}
+              </h3>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 leading-tight">
+                {subtitle}
+              </h2>
+              <div className="w-16 h-1 bg-blue-700 mb-4"></div>
+              <p className="text-base md:text-lg text-gray-700 mb-6">
+                {description}
+              </p>
+              <div className="flex flex-wrap items-center mb-6 gap-6">
+                {logos.map((logo, index) => (
+                  <img
+                    key={index}
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="h-6 md:h-8 filter grayscale hover:grayscale-0 transition duration-300"
+                  />
+                ))}
+              </div>
+              <button
+                onClick={() => setShowResumeForm(true)}
+                className="w-52 px-6 py-3 font-semibold bg-[#67D794] border border-transparent hover:text-black hover:bg-transparent hover:border-[#67D794] text-white transition-colors duration-200"
+              >
+                Get Started Now!
+              </button>
             </div>
-
-            <button
-              onClick={onButtonClick}
-              className="bg-green-400 hover:bg-green-500 text-gray-800 font-medium py-2 px-6 rounded transition duration-300"
-            >
-              {buttonText}
-            </button>
           </div>
         </div>
       </div>
-    </div>
+
+      {showResumeForm && (
+        <div className="fixed inset-0  bg-opacity-30 backdrop-brightness-30 flex justify-center items-center z-50">
+          <div className="bg-white rounded-lg overflow-hidden max-w-4xl w-full mx-4">
+            <ResumeForm
+              onSubmit={handleFormSubmit}
+              onClose={() => setShowResumeForm(false)}
+            />
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

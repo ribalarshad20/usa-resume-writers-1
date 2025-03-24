@@ -4,13 +4,13 @@ import ResumeSamplesPage from "../ResumeSamplesSection";
 import HeroSectionExample from "../HeroSectionMain";
 import CareerServicesSection from "../CareerServicesSection";
 import { ProcessSectionExample } from "../ProcessSection";
-import { CTABannerExample } from "../CTABanner";
 import { TestimonialSectionExample } from "../TestimonialSection";
 import Footer from "../Footer";
 import { footerData } from "../../../data/footerData";
 import ServicesTitleSection from "./ServicesTitleSection";
 import ServiceFeatures from "./ServiceFeatures";
 import titleBanner from "../../../assets/banner-faq.jpeg";
+import CTABanner from "../CTABanner";
 
 const EntryLevelResumeSection: React.FC = () => {
   return (
@@ -30,7 +30,7 @@ const EntryLevelResumeSection: React.FC = () => {
       <HeroSectionExample />
       <CareerServicesSection />
       <ProcessSectionExample />
-      <CTABannerExample />
+      <CTABanner />
       <TestimonialSectionExample />
       <Footer {...footerData} />
     </div>

@@ -4,13 +4,13 @@ import ResumeSamplesPage from "../ResumeSamplesSection";
 import HeroSectionExample from "../HeroSectionMain";
 import CareerServicesSection from "../CareerServicesSection";
 import { ProcessSectionExample } from "../ProcessSection";
-import { CTABannerExample } from "../CTABanner";
 import { TestimonialSectionExample } from "../TestimonialSection";
 import Footer from "../Footer";
 import { footerData } from "../../../data/footerData";
 import ServicesTitleSection from "./ServicesTitleSection";
 import titleBanner from "../../../assets/banner-service.png";
 import FeaturesOfServices from "./FeaturesOfServices";
+import CTABanner from "../CTABanner";
 
 const MainServicesPage: React.FC = () => {
   // Create an array from 1 to 11
@@ -36,7 +36,7 @@ const MainServicesPage: React.FC = () => {
       <HeroSectionExample />
       <CareerServicesSection />
       <ProcessSectionExample />
-      <CTABannerExample />
+      <CTABanner />
       <TestimonialSectionExample />
       <Footer {...footerData} />
     </div>

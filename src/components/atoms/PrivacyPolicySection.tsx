@@ -4,12 +4,12 @@ import ResumeSamplesPage from "./ResumeSamplesSection";
 import HeroSectionExample from "./HeroSectionMain";
 import CareerServicesSection from "./CareerServicesSection";
 import { ProcessSectionExample } from "./ProcessSection";
-import { CTABannerExample } from "./CTABanner";
 import { TestimonialSectionExample } from "./TestimonialSection";
 import Footer from "./Footer";
 import { footerData } from "../../data/footerData";
 import titleBanner from "../../assets/banner-process.jpeg";
 import PrivacyPolicy from "./PrivacyPolicy";
+import CTABanner from "./CTABanner";
 
 const PrivacyPolicySection: React.FC = () => {
   return (
@@ -23,7 +23,7 @@ const PrivacyPolicySection: React.FC = () => {
       <HeroSectionExample />
       <CareerServicesSection />
       <ProcessSectionExample />
-      <CTABannerExample />
+      <CTABanner />
       <TestimonialSectionExample />
       <Footer {...footerData} />
     </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import NavBar from "../molecules/NavBar";
 import PromotionalBannerWithHoverForm from "../atoms/PromotionalBannerWithHoverForm";
+import TawkChat from "../atoms/TawkChat";
 
 const MainLayout: React.FC = () => {
   const [showBanner, setShowBanner] = useState(false);
@@ -53,6 +54,9 @@ const MainLayout: React.FC = () => {
         />
       )}
 
+      <div className="fixed bottom-4 right-4 z-50">
+        <TawkChat />
+      </div>
       <style>{`
         ::-webkit-scrollbar {
           width: 10px;

@@ -11,13 +11,12 @@ import zip from "../../assets/zip01.png";
 import glassdoor from "../../assets/glassdoor02.png";
 import indeed from "../../assets/indeed03.png";
 import { ProcessSectionExample } from "../atoms/ProcessSection";
-import { CTABannerExample } from "../atoms/CTABanner";
+import CTABanner from "../atoms/CTABanner";
 import { TestimonialSectionExample } from "../atoms/TestimonialSection";
 import CareerGuideDownload from "../atoms/CareerGuideDownload";
 import Footer from "../atoms/Footer";
 import ResumeSamplesPage from "../atoms/ResumeSamplesSection";
 import { footerData } from "../../data/footerData";
-import TawkChat from "../atoms/TawkChat"; // Adjust path if necessary
 
 const logos = [
   { src: zip, alt: "ZipRecruiter" },
@@ -42,11 +41,9 @@ const HomePage: React.FC = () => {
         subtitle="We Help You Ace Your Career By Registering You On The World's Most Trusted Referral Portals"
         description="We provide more than just resume writing service! Resume Writers USA is the veritable source of getting yourself registered on various referral platforms to get recognized among employer's social networks."
         logos={logos}
-        buttonText="Get Started Now!"
-        onButtonClick={() => console.log("Button clicked")}
       />
       <ProcessSectionExample />
-      <CTABannerExample />
+      <CTABanner />
       <TestimonialSectionExample />
       <CareerGuideDownload
         onSubmit={(email) => {
@@ -54,11 +51,6 @@ const HomePage: React.FC = () => {
         }}
       />
       <Footer {...footerData} />
-
-      {/* TawkChat integrated at the bottom right */}
-      <div className="fixed bottom-4 right-4 z-50">
-        <TawkChat />
-      </div>
     </div>
   );
 };

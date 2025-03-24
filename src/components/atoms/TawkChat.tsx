@@ -1,19 +1,38 @@
-import React, { useRef } from "react";
+import { forwardRef, useImperativeHandle, useRef } from "react";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
-interface TawkMessengerRef {
+interface TawkMessengerInstance {
+  maximize: () => void;
   minimize: () => void;
-  // Add other methods if needed
 }
 
-const TawkChat: React.FC = () => {
-  // Use the custom interface for the ref instead of any
-  const tawkMessengerRef = useRef<TawkMessengerRef | null>(null);
+export interface TawkChatRef {
+  maximize: () => void;
+  minimize: () => void;
+}
 
-  // Callback when the widget has loaded
+type TawkChatProps = object; // Define an empty interface for props
+
+const TawkChat = forwardRef<TawkChatRef, TawkChatProps>((_, ref) => {
+  const tawkMessengerRef = useRef<TawkMessengerInstance | null>(null);
+
   const onLoad = () => {
     console.log("Tawk.to chat loaded!");
   };
+
+  // Expose the maximize and minimize methods to the parent component
+  useImperativeHandle(ref, () => ({
+    maximize: () => {
+      if (tawkMessengerRef.current) {
+        tawkMessengerRef.current.maximize();
+      }
+    },
+    minimize: () => {
+      if (tawkMessengerRef.current) {
+        tawkMessengerRef.current.minimize();
+      }
+    },
+  }));
 
   return (
     <div className="w-full h-full">
@@ -25,6 +44,6 @@ const TawkChat: React.FC = () => {
       />
     </div>
   );
-};
+});
 
 export default TawkChat;

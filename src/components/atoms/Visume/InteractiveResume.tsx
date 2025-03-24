@@ -3,7 +3,6 @@ import resumeCoverImage from "../../../assets/ser-detail-11.png";
 import HeroSectionExample from "../HeroSectionMain";
 import CareerServicesSection from "../CareerServicesSection";
 import { ProcessSectionExample } from "../ProcessSection";
-import { CTABannerExample } from "../CTABanner";
 import { TestimonialSectionExample } from "../TestimonialSection";
 import Footer from "../Footer";
 import { footerData } from "../../../data/footerData";
@@ -11,6 +10,7 @@ import titleBanner from "../../../assets/banner-video-resume.jpeg";
 import ServicesTitleSection from "../servicePages/ServicesTitleSection";
 import ServiceFeatures from "../servicePages/ServiceFeatures";
 import { VisumeWorkSamples } from "./VisumeWorkSamples";
+import CTABanner from "../CTABanner";
 
 const InteractiveResume: React.FC = () => {
   return (
@@ -38,7 +38,7 @@ const InteractiveResume: React.FC = () => {
       <HeroSectionExample />
       <CareerServicesSection />
       <ProcessSectionExample />
-      <CTABannerExample />
+      <CTABanner />
       <TestimonialSectionExample />
       <Footer {...footerData} />
     </div>

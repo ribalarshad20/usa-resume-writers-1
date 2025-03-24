@@ -4,7 +4,6 @@ import resumeCoverImage from "../../../assets/ser-detail-9.jpeg";
 import HeroSectionExample from "../HeroSectionMain";
 import CareerServicesSection from "../CareerServicesSection";
 import { ProcessSectionExample } from "../ProcessSection";
-import { CTABannerExample } from "../CTABanner";
 import { TestimonialSectionExample } from "../TestimonialSection";
 import Footer from "../Footer";
 import { footerData } from "../../../data/footerData";
@@ -12,6 +11,7 @@ import titleBanner from "../../../assets/banner-web-portfolio.jpeg";
 import ServicesTitleSection from "../servicePages/ServicesTitleSection";
 import ServiceFeatures from "../servicePages/ServiceFeatures";
 import WorkSamplesSection from "./WorkSamplesSection";
+import CTABanner from "../CTABanner";
 
 const WebBasedResume: React.FC = () => {
   return (
@@ -39,7 +39,7 @@ const WebBasedResume: React.FC = () => {
       <HeroSectionExample />
       <CareerServicesSection />
       <ProcessSectionExample />
-      <CTABannerExample />
+      <CTABanner />
       <TestimonialSectionExample />
       <Footer {...footerData} />
     </div>

@@ -1,12 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ResumeForm, { FormData } from "./ResumeForm";
-interface CTABannerProps {
-  title: string;
-  highlightText: string;
-  subtitle: string;
-  onPrimaryClick?: () => void;
-  onSecondaryClick?: () => void;
-}
+import TawkChat, { TawkChatRef } from "./TawkChat";
 
 interface DotProps {
   id: number;
@@ -18,73 +12,83 @@ interface DotProps {
   speedY: number;
 }
 
-/**
- * A responsive call-to-action banner component with a dark background, animated dots, and two action buttons.
- */
-const CTABanner: React.FC<CTABannerProps> = ({
-  title,
-  highlightText,
-  subtitle,
-  onPrimaryClick,
-  onSecondaryClick,
-}) => {
+const CTABanner: React.FC = () => {
+  const tawkChatRef = useRef<TawkChatRef>(null);
   const [dots, setDots] = useState<DotProps[]>([]);
-  const totalDots = 40; // Increased from 20 to 40 dots
-
   const [showResumeForm, setShowResumeForm] = useState(false);
+
+  // Configuration constants
+  const CONFIG = {
+    totalDots: 40,
+    title: "Get A",
+    highlightText: "Step Closer",
+    subtitle: "To Your Dream Job!",
+  };
+
+  // Initialize dots with randomized properties
+  const initializeDots = () => {
+    return Array.from({ length: CONFIG.totalDots }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 2.5 + 1.5,
+      opacity: Math.random() * 0.5 + 0.2,
+      speedX: (Math.random() - 0.5) * 0.1,
+      speedY: (Math.random() - 0.5) * 0.1,
+    }));
+  };
+
+  // Animate dots movement
+  const animateDots = (prevDots: DotProps[]) =>
+    prevDots.map((dot) => {
+      const newX = dot.x + dot.speedX;
+      const newY = dot.y + dot.speedY;
+
+      // Bounce logic for x and y coordinates
+      const bounceX =
+        newX <= 0 || newX >= 100
+          ? { x: Math.max(0, Math.min(100, newX)), speedX: -dot.speedX }
+          : { x: newX, speedX: dot.speedX };
+
+      const bounceY =
+        newY <= 0 || newY >= 100
+          ? { y: Math.max(0, Math.min(100, newY)), speedY: -dot.speedY }
+          : { y: newY, speedY: dot.speedY };
+
+      return { ...dot, ...bounceX, ...bounceY };
+    });
+
+  // Effects for dot initialization and animation
+  useEffect(() => {
+    setDots(initializeDots());
+  }, []);
+
+  useEffect(() => {
+    const animationFrame = requestAnimationFrame(() => {
+      setDots(animateDots);
+    });
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, [dots]);
+
+  // Event Handlers
+  const handleConsultExperts = () => {
+    tawkChatRef.current?.maximize();
+  };
+
+  const handleGetStarted = () => {
+    setShowResumeForm(true);
+  };
 
   const handleFormSubmit = (formData: FormData) => {
     console.log("Form submitted:", formData);
     setShowResumeForm(false);
   };
 
-  // Initialize dots
-  useEffect(() => {
-    const initialDots = Array(totalDots)
-      .fill(0)
-      .map((_, i) => ({
-        id: i,
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        // Increased size range from (0.5-2px) to (1.5-4px)
-        size: Math.random() * 2.5 + 1.5,
-        opacity: Math.random() * 0.5 + 0.2,
-        speedX: (Math.random() - 0.5) * 0.1,
-        speedY: (Math.random() - 0.5) * 0.1,
-      }));
-    setDots(initialDots);
-  }, []);
-
-  // Animate dots
-  useEffect(() => {
-    const animationFrame = requestAnimationFrame(() => {
-      setDots((prevDots) =>
-        prevDots.map((dot) => {
-          let newX = dot.x + dot.speedX;
-          let newY = dot.y + dot.speedY;
-
-          // Bounce off edges
-          if (newX <= 0 || newX >= 100) {
-            newX = Math.max(0, Math.min(100, newX));
-            return { ...dot, x: newX, speedX: -dot.speedX };
-          }
-          if (newY <= 0 || newY >= 100) {
-            newY = Math.max(0, Math.min(100, newY));
-            return { ...dot, y: newY, speedY: -dot.speedY };
-          }
-
-          return { ...dot, x: newX, y: newY };
-        })
-      );
-    });
-
-    return () => cancelAnimationFrame(animationFrame);
-  }, [dots]);
-
   return (
     <>
       <div className="relative min-w-7xl overflow-hidden bg-gray-900 py-16 px-4 md:px-6 lg:px-8">
-        {/* Animated dots/stars effect with increased size and count */}
+        {/* Animated Dots Background */}
         <div className="absolute inset-0 opacity-20">
           {dots.map((dot) => (
             <div
@@ -102,67 +106,47 @@ const CTABanner: React.FC<CTABannerProps> = ({
           ))}
         </div>
 
+        {/* Content Container */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
-          {/* Text content */}
+          {/* Title Section */}
           <div className="mb-10 md:mb-0 text-center md:text-left">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              {title} <span className="text-emerald-400">{highlightText}</span>
+              {CONFIG.title}{" "}
+              <span className="text-emerald-400">{CONFIG.highlightText}</span>
               <br />
-              {subtitle}
+              {CONFIG.subtitle}
             </h2>
           </div>
 
-          {/* Action buttons */}
+          {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
             <button
-              onClick={onSecondaryClick}
-              className="group w-full xs:w-auto sm:w-auto md:w-48 px-2 py-2 md:py-3 text-xs sm:text-sm font-semibold bg-white text-black border border-transparent transition-all duration-200"
-              style={{
-                position: "relative",
-                overflow: "hidden",
-              }}
+              onClick={handleConsultExperts}
+              className="group relative w-full xs:w-auto sm:w-auto md:w-48 px-4 py-3 text-sm font-semibold 
+                         bg-white text-black hover:bg-gray-100 
+                         cursor-pointer transition-all duration-300 
+                         border border-transparent hover:border-gray-300"
             >
-              <span className="relative z-10 group-hover:text-black group-hover:bg-transparent transition-colors duration-200">
-                Consult Our Experts
-              </span>
-              <span
-                className="absolute inset-0 bg-white group-hover:bg-transparent transition-colors duration-200"
-                style={{ zIndex: 0 }}
-              ></span>
-              <span
-                className="absolute inset-0 border border-transparent group-hover:border-white transition-colors duration-200"
-                style={{ zIndex: 0 }}
-              ></span>
+              Consult Our Experts
             </button>
+
             <button
-              onClick={onPrimaryClick}
-              className="group w-52 px-6 py-3 font-semibold text-white border border-transparent transition-all duration-200"
-              style={{
-                position: "relative",
-                overflow: "hidden",
-              }}
+              onClick={handleGetStarted}
+              className="group relative w-full xs:w-auto sm:w-auto md:w-48 px-4 py-3 text-sm font-semibold 
+                         bg-[#5FD797] text-white 
+                         hover:bg-emerald-500 
+                         cursor-pointer transition-all duration-300 
+                         border border-transparent hover:border-emerald-600"
             >
-              <span
-                className="relative z-10 group-hover:text-[#5FD797] transition-colors duration-200"
-                onClick={() => setShowResumeForm(true)}
-              >
-                Get Started Now!
-              </span>
-              <span
-                className="absolute inset-0 bg-[#5FD797] group-hover:bg-transparent transition-colors duration-200"
-                style={{ zIndex: 0 }}
-              ></span>
-              <span
-                className="absolute inset-0 border border-transparent group-hover:border-[#5FD797] transition-colors duration-200"
-                style={{ zIndex: 0 }}
-              ></span>
+              Get Started Now!
             </button>
           </div>
         </div>
       </div>
 
+      {/* Resume Form Modal */}
       {showResumeForm && (
-        <div className="fixed inset-0  bg-opacity-30 backdrop-brightness-30 flex justify-center items-center z-50">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white rounded-lg overflow-hidden max-w-4xl w-full mx-4">
             <ResumeForm
               onSubmit={handleFormSubmit}
@@ -171,22 +155,12 @@ const CTABanner: React.FC<CTABannerProps> = ({
           </div>
         </div>
       )}
-    </>
-  );
-};
 
-/**
- * Example implementation of the CTABanner component.
- */
-export const CTABannerExample: React.FC = () => {
-  return (
-    <CTABanner
-      title="Get A"
-      highlightText="Step Closer"
-      subtitle="To Your Dream Job!"
-      onPrimaryClick={() => console.log("Primary button clicked")}
-      onSecondaryClick={() => console.log("Secondary button clicked")}
-    />
+      {/* Tawk Chat */}
+      <div className="fixed bottom-4 right-4 z-50">
+        <TawkChat ref={tawkChatRef} />
+      </div>
+    </>
   );
 };
 
