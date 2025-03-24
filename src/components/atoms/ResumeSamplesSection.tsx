@@ -154,9 +154,8 @@ const ResumeSamplesSection: React.FC<ResumeSamplesSectionProps> = ({
 
             {/* Samples Display Section - takes 7 columns on large screens */}
             <div className="lg:col-span-7 mt-6 lg:mt-0 relative">
-              {/* Outer container with positioning context */}
               <div className="relative h-96 lg:h-full">
-                {/* Background Image Container - covers the right portion */}
+                {/* Background Image Container */}
                 <div className="absolute right-0 top-0 w-3/4 h-full rounded-md overflow-hidden shadow-lg">
                   <img
                     src={bgSample}
@@ -164,33 +163,40 @@ const ResumeSamplesSection: React.FC<ResumeSamplesSectionProps> = ({
                     className="w-full h-full object-cover object-center"
                     loading="lazy"
                   />
-                  {/* Gradient overlay for better readability */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                 </div>
 
-                {/* Resume Samples Overlay - positioned to span both areas */}
+                {/* Resume Samples Overlay */}
                 <div className="absolute inset-0 p-4 md:p-6 flex items-center justify-center">
                   {selectedCategoryData && (
                     <div className="animate-fadeIn w-full">
-                      {/* Resume samples grid with custom positioning */}
-                      <div className="grid grid-cols-3 gap-4 relative">
-                        {selectedCategoryData.samples.map((sample) => {
-                          // Remove the special case for the first sample
-                          return (
-                            <div
-                              key={sample.id}
-                              className="col-span-1 bg-white rounded-md shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
-                            >
-                              <div className="aspect-w-3 aspect-h-4 w-full">
-                                <img
-                                  src={sample.image}
-                                  alt={`${sample.title} resume sample`}
-                                  className="w-full h-full object-cover"
-                                />
-                              </div>
+                      {/* Resume samples grid with smooth transitions */}
+                      <div
+                        key={selectedCategory} // Key to trigger re-render and animation
+                        className="grid grid-cols-3 gap-4 relative"
+                      >
+                        {selectedCategoryData.samples.map((sample) => (
+                          <div
+                            key={sample.id}
+                            className="col-span-1 bg-white rounded-md shadow-lg overflow-hidden transform transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-xl opacity-0 animate-staggeredFadeIn"
+                            style={{
+                              animationDelay: `${
+                                selectedCategoryData.samples.findIndex(
+                                  (s) => s.id === sample.id
+                                ) * 100
+                              }ms`,
+                            }}
+                          >
+                            <div className="aspect-w-3 aspect-h-4 w-full">
+                              <img
+                                src={sample.image}
+                                alt={`${sample.title} resume sample`}
+                                className="w-full h-full object-cover transition-all duration-500 ease-in-out transform hover:scale-105"
+                                loading="lazy"
+                              />
                             </div>
-                          );
-                        })}
+                          </div>
+                        ))}
                       </div>
                     </div>
                   )}
@@ -418,12 +424,34 @@ const getResumeCategories = (): ResumeCategory[] => {
 // Add a simple fade-in animation for Tailwind
 const customStyles = `
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { 
+      opacity: 0; 
+      transform: translateY(20px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+
+  @keyframes staggeredFadeIn {
+    from { 
+      opacity: 0; 
+      transform: scale(0.9); 
+    }
+    to { 
+      opacity: 1; 
+      transform: scale(1); 
+    }
   }
   
   .animate-fadeIn {
-    animation: fadeIn 0.3s ease-out forwards;
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-staggeredFadeIn {
+    animation: staggeredFadeIn 0.5s ease-out forwards;
+    opacity: 0;
   }
 `;
 
