@@ -4,7 +4,7 @@ import bannerImage2 from "../../assets/banner2.jpeg";
 import bannerImage3 from "../../assets/banner3.png";
 import trusted_logos from "../../assets/logos-trusted-partners.svg";
 import { CircleCheckBig } from "lucide-react";
-import ResumeForm, { FormData } from "./ResumeForm"; // Import FormData type
+import ResumeForm, { FormData } from "./ResumeForm";
 
 interface HeroSectionProps {
   heading?: string;
@@ -37,7 +37,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   // State to control the visibility of the ResumeForm modal
   const [showResumeForm, setShowResumeForm] = useState(false);
 
-  // Cycle through banner images
+  // Cycle through banner images every 3 seconds
   useEffect(() => {
     const imageInterval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -45,7 +45,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     return () => clearInterval(imageInterval);
   }, [images.length]);
 
-  // Cycle through titles for animated text
+  // Cycle through titles for animated text every 3 seconds
   useEffect(() => {
     const titleInterval = setInterval(() => {
       setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titles.length);
@@ -53,7 +53,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     return () => clearInterval(titleInterval);
   }, [titles.length]);
 
-  // Handler for form submission (example: log the form data and close the modal)
+  // Handler for form submission (logs the data and closes the modal)
   const handleFormSubmit = (formData: FormData) => {
     console.log("Form submitted:", formData);
     setShowResumeForm(false);
@@ -61,7 +61,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
   return (
     <>
-      <div className="relative w-full overflow-hidden min-h-[700px]">
+      <div className="relative w-full overflow-hidden min-h-screen md:min-h-[700px]">
         {/* Custom style for slide in/out animation */}
         <style>{`
           @keyframes slideInOut {
@@ -101,10 +101,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         ))}
 
         {/* Content Overlay */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-24 pb-8 sm:pb-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="text-white">
-              <h1 className="text-4xl sm:text-5xl font-bold mb-4 leading-tight mt-8">
+              <h1 className="text-3xl sm:text-5xl font-bold mb-4 leading-tight mt-8">
                 <span className="relative inline-block overflow-hidden">
                   <span
                     key={currentTitleIndex}
@@ -119,16 +119,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 <span className="inline-block">Writing Services</span>
               </h1>
 
-              {/* Blue Banner for Subheading */}
+              {/* Subheading */}
               <div className="py-3 px-1 mb-10 -mx-1">
-                <p className="text-2xl text-white font-semibold">
+                <p className="text-xl sm:text-2xl text-white font-semibold">
                   Earn more career prospects with a resume
                 </p>
-                <p className="text-2xl text-white font-semibold">
+                <p className="text-xl sm:text-2xl text-white font-semibold">
                   that wins the recruiter's 6-second review.
                 </p>
               </div>
 
+              {/* Features List */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-3 mb-10">
                 {features.map((feature, index) => (
                   <div key={index} className="flex items-center gap-2">
@@ -140,24 +141,25 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 ))}
               </div>
 
+              {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
-                  className="w-52 px-6 py-3 font-semibold bg-[#67D794] border border-transparent hover:text-white hover:bg-transparent hover:border-[#67D794] text-black transition-colors duration-200"
+                  className="w-full sm:w-52 px-6 py-3 font-semibold bg-[#67D794] border border-transparent hover:text-white hover:bg-transparent hover:border-[#67D794] text-black transition-colors duration-200"
                   onClick={() => setShowResumeForm(true)}
                 >
                   Get Started
                 </button>
-
-                <button className="w-52 px-6 py-3 font-semibold bg-white text-[#67D794] border border-transparent hover:bg-transparent hover:text-white hover:border-[#67D794] transition-colors duration-200">
+                <button className="w-full sm:w-52 px-6 py-3 font-semibold bg-white text-[#67D794] border border-transparent hover:bg-transparent hover:text-white hover:border-[#67D794] transition-colors duration-200">
                   Consult Our Experts
                 </button>
               </div>
 
+              {/* Trusted Logos */}
               <div className="mt-12 flex flex-wrap items-center gap-6">
                 <img
                   src={trusted_logos}
                   alt="Trust Badges"
-                  className="h-auto w-full"
+                  className="h-auto w-full max-w-xs sm:max-w-full"
                 />
               </div>
             </div>
@@ -165,8 +167,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
       </div>
 
+      {/* Modal for ResumeForm */}
       {showResumeForm && (
-        <div className="fixed inset-0  bg-opacity-30 backdrop-brightness-30 flex justify-center items-center z-50">
+        <div className="fixed inset-0 bg-opacity-30 backdrop-brightness-30 flex justify-center items-center z-50">
           <div className="bg-white rounded-lg overflow-hidden max-w-4xl w-full mx-4">
             <ResumeForm
               onSubmit={handleFormSubmit}

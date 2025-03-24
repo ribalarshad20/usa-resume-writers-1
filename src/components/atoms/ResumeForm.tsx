@@ -47,8 +47,8 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
 
   return (
     <div className="flex flex-col md:flex-row w-full bg-gray-100 max-w-7xl mx-auto overflow-hidden rounded-lg">
-      {/* Left side - Image */}
-      <div className="w-full md:w-2/5 relative">
+      {/* Left side - Image (hidden on mobile) */}
+      <div className="hidden md:block md:w-2/5 relative">
         <img
           src={popUpImage}
           alt="Professional woman in business attire"

@@ -1,25 +1,33 @@
 import React, { useState } from "react";
-import { Menu, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import bradLogo from "../../assets/brand_logo.png";
+import ResumeForm, { FormData } from "../atoms/ResumeForm";
 
 interface NavBarProps {
   logoUrl?: string;
 }
 
 const NavBar: React.FC<NavBarProps> = () => {
+  // Controls the desktop dropdowns
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [showResumeForm, setShowResumeForm] = useState(false);
+  // Controls the mobile side panel
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-
+  // Hover handlers for desktop dropdown
   const handleDropdownHover = (dropdown: string) => {
     setActiveDropdown(dropdown);
   };
-
   const handleDropdownLeave = () => {
     setActiveDropdown(null);
   };
 
-  // Dropdown content for Services with divider lines added
+  const handleFormSubmit = (formData: FormData) => {
+    console.log("Form submitted:", formData);
+    setShowResumeForm(false);
+  };
+
+  // Desktop dropdown content: Services
   const servicesDropdown = (
     <div
       className="absolute text-sm font-semibold top-full left-0 w-56 bg-[#1F2937] text-white z-50 rounded-xl mt-2 divide-y divide-gray-700"
@@ -59,6 +67,7 @@ const NavBar: React.FC<NavBarProps> = () => {
     </div>
   );
 
+  // Desktop dropdown content: Visume
   const visumeDropdown = (
     <div
       className="absolute text-sm font-semibold top-full left-0 w-56 bg-[#1F2937] text-white z-50 rounded-xl mt-2 divide-y divide-gray-700"
@@ -80,7 +89,7 @@ const NavBar: React.FC<NavBarProps> = () => {
     </div>
   );
 
-  // Dropdown content for Other Services with divider lines added
+  // Desktop dropdown content: Other Services
   const otherServicesDropdown = (
     <div
       className="absolute text-sm font-semibold top-full left-0 w-56 bg-[#1F2937] text-white z-50 rounded-xl mt-2 divide-y divide-gray-700"
@@ -115,277 +124,301 @@ const NavBar: React.FC<NavBarProps> = () => {
   );
 
   return (
-    <nav className="w-full fixed top-0 left-0 z-50 transition-all duration-300 p-1 bg-white text-[#222F3E]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          <div className="flex-shrink-0">
-            <a href="/" className="flex items-center">
-              <img
-                src={bradLogo}
-                alt="Resume Writers USA"
-                className="h-8 md:h-12"
-              />
-            </a>
-          </div>
-
-          <div className="hidden md:flex md:items-center md:space-x-3">
-            <div
-              className="relative group"
-              onMouseEnter={() => handleDropdownHover("services")}
-              onMouseLeave={handleDropdownLeave}
-            >
-              <a
-                href="/services/"
-                className={`text-black font-semibold transition-colors duration-200 py-3 px-4 pb-12 rounded-xl ${
-                  activeDropdown === "services"
-                    ? "bg-[#1F2937] text-white"
-                    : "bg-transparent"
-                }`}
-              >
-                Services
+    <>
+      <nav className="w-full fixed top-0 left-0 z-50 transition-all duration-300 p-1 bg-white text-[#222F3E]">
+        {/* Top bar container */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 md:h-20">
+            {/* Logo */}
+            <div className="flex-shrink-0">
+              <a href="/" className="flex items-center">
+                <img
+                  src={bradLogo}
+                  alt="Resume Writers USA"
+                  className="h-8 md:h-12"
+                />
               </a>
-              {activeDropdown === "services" && servicesDropdown}
             </div>
 
-            <a
-              href="/services/web-based-resume/"
-              className="text-black font-semibold hover:text-green-500 transition-colors duration-200 py-6 px-2"
-            >
-              Web-Based Resume
-            </a>
-
-            <div
-              className="relative group"
-              onMouseEnter={() => handleDropdownHover("visume")}
-              onMouseLeave={handleDropdownLeave}
-            >
-              <a
-                href="/visume"
-                className={`text-black font-semibold transition-colors duration-200 py-3 px-4 pb-12 rounded-xl ${
-                  activeDropdown === "visume"
-                    ? "bg-[#1F2937] text-white"
-                    : "bg-transparent"
-                }`}
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex md:items-center md:space-x-3">
+              <div
+                className="relative group"
+                onMouseEnter={() => handleDropdownHover("services")}
+                onMouseLeave={handleDropdownLeave}
               >
-                Visume
+                <a
+                  href="/services/"
+                  className={`text-black font-semibold transition-colors duration-200 py-3 px-4 pb-12 rounded-xl ${
+                    activeDropdown === "services"
+                      ? "bg-[#1F2937] text-white"
+                      : "bg-transparent"
+                  }`}
+                >
+                  Services
+                </a>
+                {activeDropdown === "services" && servicesDropdown}
+              </div>
+
+              <a
+                href="/services/web-based-resume/"
+                className="text-black font-semibold hover:text-green-500 transition-colors duration-200 py-6 px-2"
+              >
+                Web-Based Resume
               </a>
-              {activeDropdown === "visume" && visumeDropdown}
+
+              <div
+                className="relative group"
+                onMouseEnter={() => handleDropdownHover("visume")}
+                onMouseLeave={handleDropdownLeave}
+              >
+                <a
+                  href="/services/video-resume/"
+                  className={`text-black font-semibold transition-colors duration-200 py-3 px-4 pb-12 rounded-xl ${
+                    activeDropdown === "visume"
+                      ? "bg-[#1F2937] text-white"
+                      : "bg-transparent"
+                  }`}
+                >
+                  Visume
+                </a>
+                {activeDropdown === "visume" && visumeDropdown}
+              </div>
+
+              <div
+                className="relative group"
+                onMouseEnter={() => handleDropdownHover("otherServices")}
+                onMouseLeave={handleDropdownLeave}
+              >
+                <a
+                  href="/services/thank-you-letter/"
+                  className={`text-black font-semibold transition-colors duration-200 py-3 px-4 pb-12 rounded-xl ${
+                    activeDropdown === "otherServices"
+                      ? "bg-[#1F2937] text-white"
+                      : "bg-transparent"
+                  }`}
+                >
+                  Other Services
+                </a>
+                {activeDropdown === "otherServices" && otherServicesDropdown}
+              </div>
+
+              <a
+                href="/pricing/"
+                className="text-black font-semibold hover:text-green-500 transition-colors duration-200 py-6 px-2"
+              >
+                Pricing
+              </a>
+              <button
+                onClick={() => setShowResumeForm(true)}
+                className="ml-4 px-6 py-3 font-semibold bg-[#67D794] border border-transparent hover:bg-white hover:border-[#67D794] text-black transition-colors duration-200"
+              >
+                Get Your Resume Today!
+              </button>
             </div>
 
-            <div
-              className="relative group"
-              onMouseEnter={() => handleDropdownHover("otherServices")}
-              onMouseLeave={handleDropdownLeave}
-            >
-              <a
-                href="/other-services"
-                className={`text-black font-semibold transition-colors duration-200 py-3 px-4 pb-12 rounded-xl ${
-                  activeDropdown === "otherServices"
-                    ? "bg-[#1F2937] text-white"
-                    : "bg-transparent"
-                }`}
+            {/* Hamburger Button (Mobile) */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setIsMenuOpen(true)}
+                className="p-2 text-[#67D794]"
               >
-                Other Services
-              </a>
-              {activeDropdown === "otherServices" && otherServicesDropdown}
+                <Menu size={24} />
+              </button>
             </div>
-
-            <a
-              href="/pricing/"
-              className="text-black font-semibold hover:text-green-500 transition-colors duration-200 py-6 px-2"
-            >
-              Pricing
-            </a>
-            <a
-              href="/get-started"
-              className="ml-4 px-6 py-3 font-semibold bg-[#67D794] border border-transparent hover:bg-white hover:border-[#67D794] text-black transition-colors duration-200"
-            >
-              Get Your Resume Today!
-            </a>
-          </div>
-
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-[#67D794]"
-            >
-              <Menu size={24} />
-            </button>
           </div>
         </div>
-      </div>
 
-      {isMenuOpen && (
-        <div className="md:hidden bg-white">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <div className="block">
-              <button
-                onClick={() =>
-                  setActiveDropdown(
-                    activeDropdown === "mobileServices"
-                      ? null
-                      : "mobileServices"
-                  )
-                }
-                className={`flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md ${
-                  activeDropdown === "mobileServices"
-                    ? "bg-[#1F2937] text-white"
-                    : ""
-                }`}
-              >
-                Services
-                <ChevronDown
-                  size={16}
-                  className={`transition-transform ${
-                    activeDropdown === "mobileServices" ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              {activeDropdown === "mobileServices" && (
-                <div className="bg-[#1F2937] text-white divide-y divide-gray-700">
-                  <a
-                    href="/resume-writing"
-                    className="block px-6 py-3 hover:bg-[#2D3748]"
-                  >
-                    Resume Writing
-                  </a>
-                  <a
-                    href="/services/cover-letters/"
-                    className="block px-6 py-3 hover:bg-[#2D3748]"
-                  >
-                    Cover Letter Writing
-                  </a>
-                  <a
-                    href="/services/linkedIn-profile/"
-                    className="block px-6 py-3 hover:bg-[#2D3748]"
-                  >
-                    LinkedIn Profile Writing
-                  </a>
-                  <a
-                    href="/services/career-switch/"
-                    className="block px-6 py-3 hover:bg-[#2D3748]"
-                  >
-                    Career Switch Resume
-                  </a>
-                  <a
-                    href="/services/entry-level/"
-                    className="block px-6 py-3 hover:bg-[#2D3748]"
-                  >
-                    Entry Level Resume
-                  </a>
-                </div>
-              )}
-            </div>
+        {/* Mobile Side Panel */}
+        <div
+          className={`
+          fixed top-0 left-0 w-full h-full bg-black text-white 
+          transform transition-transform duration-300 
+          ${isMenuOpen ? "translate-x-0" : "-translate-x-full"} 
+          md:hidden
+        `}
+        >
+          {/* Close Button */}
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="absolute top-4 right-4 text-white"
+          >
+            <X size={24} />
+          </button>
 
-            <a
-              href="/services/web-based-resume/"
-              className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
-            >
-              Web-Based Resume
-            </a>
+          {/* Side Panel Content */}
+          <div className="mt-16 px-4">
+            <ul className="space-y-3 text-base">
+              {/* Services */}
+              <li className="border-b border-gray-600 pb-3">
+                <a href="/services/" className="font-semibold">
+                  Services
+                </a>
+                <ul className="pl-4 mt-2 space-y-1 text-gray-300 text-sm">
+                  <li>
+                    <a
+                      href="/services/resume-writing/"
+                      className="hover:text-gray-100"
+                    >
+                      - Resume Writing
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/services/cover-letters/"
+                      className="hover:text-gray-100"
+                    >
+                      - Cover Letter Writing
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/services/linkedIn-profile/"
+                      className="hover:text-gray-100"
+                    >
+                      - LinkedIn Profile Writing
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/services/career-switch/"
+                      className="hover:text-gray-100"
+                    >
+                      - Career Switch Resume
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/services/entry-level/"
+                      className="hover:text-gray-100"
+                    >
+                      - Entry Level Resume
+                    </a>
+                  </li>
+                </ul>
+              </li>
 
-            <div className="block">
-              <button
-                onClick={() =>
-                  setActiveDropdown(
-                    activeDropdown === "mobileVisume" ? null : "mobileVisume"
-                  )
-                }
-                className={`flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md ${
-                  activeDropdown === "mobileVisume"
-                    ? "bg-[#1F2937] text-white"
-                    : ""
-                }`}
-              >
-                Visume
-                <ChevronDown
-                  size={16}
-                  className={`transition-transform ${
-                    activeDropdown === "mobileVisume" ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              {activeDropdown === "mobileVisume" && (
-                <div className="bg-[#1F2937] text-white divide-y divide-gray-700">
-                  <a
-                    href="/services/video-resume/"
-                    className="block px-6 py-3 hover:bg-[#2D3748]"
-                  >
-                    Video Resume
-                  </a>
-                  <a
-                    href="/services/interactive-resume/"
-                    className="block px-6 py-3 hover:bg-[#2D3748]"
-                  >
-                    Interactive Resume
-                  </a>
-                </div>
-              )}
-            </div>
+              {/* Web-Based Resume */}
+              <li className="border-b border-gray-600 pb-3">
+                <a
+                  href="/services/web-based-resume/"
+                  className="font-semibold hover:text-gray-100"
+                >
+                  Web-Based Resume
+                </a>
+              </li>
 
-            <div className="block">
-              <button
-                onClick={() =>
-                  setActiveDropdown(
-                    activeDropdown === "mobileOtherServices"
-                      ? null
-                      : "mobileOtherServices"
-                  )
-                }
-                className={`flex justify-between items-center w-full px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md ${
-                  activeDropdown === "mobileOtherServices"
-                    ? "bg-[#1F2937] text-white"
-                    : ""
-                }`}
-              >
-                Other Services
-                <ChevronDown
-                  size={16}
-                  className={`transition-transform ${
-                    activeDropdown === "mobileOtherServices" ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              {activeDropdown === "mobileOtherServices" && (
-                <div className="bg-[#1F2937] text-white divide-y divide-gray-700">
-                  <a
-                    href="/interview-coaching"
-                    className="block px-6 py-3 hover:bg-[#2D3748]"
-                  >
-                    Interview Coaching
-                  </a>
-                  <a
-                    href="/career-counseling"
-                    className="block px-6 py-3 hover:bg-[#2D3748]"
-                  >
-                    Career Counseling
-                  </a>
-                  <a
-                    href="/job-search-assistance"
-                    className="block px-6 py-3 hover:bg-[#2D3748]"
-                  >
-                    Job Search Assistance
-                  </a>
-                </div>
-              )}
-            </div>
+              {/* Visume */}
+              <li className="border-b border-gray-600 pb-3">
+                <a
+                  href="/services/video-resume/"
+                  className="font-semibold hover:text-gray-100"
+                >
+                  Visume
+                </a>
+                <ul className="pl-4 mt-2 space-y-1 text-gray-300 text-sm">
+                  <li>
+                    <a
+                      href="/services/video-resume/"
+                      className="hover:text-gray-100"
+                    >
+                      - Video Resume
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/services/interactive-resume/"
+                      className="hover:text-gray-100"
+                    >
+                      - Interactive Resume
+                    </a>
+                  </li>
+                </ul>
+              </li>
 
-            <a
-              href="/pricing/"
-              className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
-            >
-              Pricing
-            </a>
-            <a
-              href="/get-started"
-              className="block px-3 py-2 mt-4 bg-[#67D794] hover:bg-white hover:border hover:border-[#67D794] text-black font-semibold text-center"
-            >
-              Get Your Resume Today!
-            </a>
+              {/* Other Services */}
+              <li className="border-b border-gray-600 pb-3">
+                <a
+                  href="/services/thank-you-letter/"
+                  className="font-semibold hover:text-gray-100"
+                >
+                  Other Services
+                </a>
+                <ul className="pl-4 mt-2 space-y-1 text-gray-300 text-sm">
+                  <li>
+                    <a
+                      href="/services/thank-you-letter/"
+                      className="hover:text-gray-100"
+                    >
+                      - Thank You Letter
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/services/follow-up-letter/"
+                      className="hover:text-gray-100"
+                    >
+                      - Follow Up Letter
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/services/recommendation-letter/"
+                      className="hover:text-gray-100"
+                    >
+                      - Recommendation Letter
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/services/job-posting/"
+                      className="hover:text-gray-100"
+                    >
+                      - Job Posting
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              {/* Pricing */}
+              <li className="border-b border-gray-600 pb-3">
+                <a
+                  href="/pricing/"
+                  className="font-semibold hover:text-gray-100"
+                >
+                  Pricing
+                </a>
+              </li>
+
+              {/* CTA Button */}
+              <li className="mt-4">
+                <button
+                  onClick={() => {
+                    setShowResumeForm(true);
+                    setIsMenuOpen(false);
+                  }}
+                  className="inline-block w-full px-3 py-2 bg-[#67D794] text-black text-center font-semibold rounded-md hover:bg-white hover:border hover:border-[#67D794]"
+                >
+                  Get Your Resume Today!
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      {/* Resume Form Modal */}
+      {showResumeForm && (
+        <div className="fixed inset-0 bg-opacity-30 backdrop-brightness-30 flex justify-center items-center z-50">
+          <div className="bg-white rounded-lg overflow-hidden max-w-4xl w-full mx-4">
+            <ResumeForm
+              onSubmit={handleFormSubmit}
+              onClose={() => setShowResumeForm(false)}
+            />
           </div>
         </div>
       )}
-    </nav>
+    </>
   );
 };
 

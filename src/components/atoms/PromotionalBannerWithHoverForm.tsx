@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ResumeReviewForm from "./ResumeReviewForm";
+import { ArrowLeft } from "lucide-react";
 
 interface PromotionalBannerWithFormProps {
   discountPercentage?: number;
@@ -23,28 +24,19 @@ const PromotionalBannerWithForm: React.FC<PromotionalBannerWithFormProps> = ({
         onClick={handleBannerClick}
         className="flex flex-col items-center bg-black text-white rounded-4xl overflow-hidden w-16 md:w-15 h-full transform transition-transform duration-300 hover:scale-105"
       >
-        <div className="flex items-center justify-center w-12 h-12 md:w-15 md:h-15 bg-green-400 rounded-full -mb-5">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 md:h-8 md:w-8"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
+        <div className="flex items-center justify-center w-12 h-12 md:w-15 md:h-15 bg-green-400 rounded-full -mb-6">
+          <ArrowLeft
+            className={`transition-transform duration-300 ${
+              showForm ? "rotate-180" : ""
+            }`}
+          />
         </div>
 
         <div className="py-8 px-4">
           <div className="vertical-text text-green-400 font-bold text-xl md:text-2xl mb-6">
             {discountPercentage}% OFF
           </div>
-          <div className="vertical-text text-white text-sm md:text-base font-medium tracking-wide">
+          <div className="vertical-text text-white font-bold text-xl md:text-2xl mb-6">
             {actionText}
           </div>
         </div>
