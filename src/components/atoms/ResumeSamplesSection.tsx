@@ -1,11 +1,28 @@
 import React, { useState } from "react";
 import bgSample from "../../assets/bg-sample.jpeg";
-import resume01 from "../../assets/resume/01.jpeg";
-import resume02 from "../../assets/resume/02.jpeg";
-import resume03 from "../../assets/resume/03.jpeg";
 import ResumeForm, { FormData } from "./ResumeForm";
 
-// Define types for our resume category
+//Images resume samples
+import artResumeSample01 from "../../assets/resume/Art & Design Resume/01.jpeg";
+import artResumeSample02 from "../../assets/resume/Art & Design Resume/02.jpeg";
+import artResumeSample03 from "../../assets/resume/Art & Design Resume/03.jpeg";
+
+import corporateResumeSample01 from "../../assets/resume/Corporate & Business/01.jpeg";
+import corporateResumeSample02 from "../../assets/resume/Corporate & Business/02.jpeg";
+import corporateResumeSample03 from "../../assets/resume/Corporate & Business/03.jpeg";
+
+import educationResumeSample01 from "../../assets/resume/Education Resume/01.jpeg";
+import educationResumeSample02 from "../../assets/resume/Education Resume/02.jpeg";
+import educationResumeSample03 from "../../assets/resume/Education Resume/03.jpeg";
+
+import realStateResumeSample01 from "../../assets/resume/Real Estate Resume/01.jpeg";
+import realStateResumeSample02 from "../../assets/resume/Real Estate Resume/02.jpeg";
+import realStateResumeSample03 from "../../assets/resume/Real Estate Resume/03.jpeg";
+
+import iTRresumeSample01 from "../../assets/resume/IT Management/01.jpeg";
+import iTRresumeSample02 from "../../assets/resume/IT Management/02.jpeg";
+import iTRresumeSample03 from "../../assets/resume/IT Management/03.jpeg";
+
 interface ResumeCategory {
   id: string;
   title: string;
@@ -155,11 +172,6 @@ const ResumeSamplesSection: React.FC<ResumeSamplesSectionProps> = ({
                 <div className="absolute inset-0 p-4 md:p-6 flex items-center justify-center">
                   {selectedCategoryData && (
                     <div className="animate-fadeIn w-full">
-                      {/* Category title overlay */}
-                      <h4 className="text-gray-800 text-lg sm:text-xl font-bold mb-4 text-center">
-                        {selectedCategoryData.title} Samples
-                      </h4>
-
                       {/* Resume samples grid with custom positioning */}
                       <div className="grid grid-cols-3 gap-4 relative">
                         {selectedCategoryData.samples.map((sample) => {
@@ -175,11 +187,6 @@ const ResumeSamplesSection: React.FC<ResumeSamplesSectionProps> = ({
                                   alt={`${sample.title} resume sample`}
                                   className="w-full h-full object-cover"
                                 />
-                              </div>
-                              <div className="p-2 text-center bg-white">
-                                <p className="text-xs sm:text-sm font-medium text-gray-800 truncate">
-                                  {sample.title}
-                                </p>
                               </div>
                             </div>
                           );
@@ -235,17 +242,17 @@ const getResumeCategories = (): ResumeCategory[] => {
       samples: [
         {
           id: "art-1",
-          image: resume01, // In real app, use specific art-design-1.jpeg
+          image: artResumeSample01,
           title: "Graphic Design CV",
         },
         {
           id: "art-2",
-          image: resume02, // In real app, use specific art-design-2.jpeg
+          image: artResumeSample02,
           title: "UX/UI Designer",
         },
         {
           id: "art-3",
-          image: resume03, // In real app, use specific art-design-3.jpeg
+          image: artResumeSample03,
           title: "Creative Director",
         },
       ],
@@ -274,17 +281,17 @@ const getResumeCategories = (): ResumeCategory[] => {
       samples: [
         {
           id: "corp-1",
-          image: resume01, // In real app, use specific corporate-1.jpeg
+          image: corporateResumeSample01,
           title: "Executive Resume",
         },
         {
           id: "corp-2",
-          image: resume02, // In real app, use specific corporate-2.jpeg
+          image: corporateResumeSample02,
           title: "Business Analyst",
         },
         {
           id: "corp-3",
-          image: resume03, // In real app, use specific corporate-3.jpeg
+          image: corporateResumeSample03,
           title: "Project Manager",
         },
       ],
@@ -310,17 +317,17 @@ const getResumeCategories = (): ResumeCategory[] => {
       samples: [
         {
           id: "edu-1",
-          image: resume01, // In real app, use specific education-1.jpeg
+          image: educationResumeSample01,
           title: "Teacher Resume",
         },
         {
           id: "edu-2",
-          image: resume02, // In real app, use specific education-2.jpeg
+          image: educationResumeSample02,
           title: "Professor CV",
         },
         {
           id: "edu-3",
-          image: resume03, // In real app, use specific education-3.jpeg
+          image: educationResumeSample03,
           title: "School Administrator",
         },
       ],
@@ -350,17 +357,17 @@ const getResumeCategories = (): ResumeCategory[] => {
       samples: [
         {
           id: "real-1",
-          image: resume01, // In real app, use specific real-estate-1.jpeg
+          image: realStateResumeSample01,
           title: "Realtor Resume",
         },
         {
           id: "real-2",
-          image: resume02, // In real app, use specific real-estate-2.jpeg
+          image: realStateResumeSample02,
           title: "Property Manager",
         },
         {
           id: "real-3",
-          image: resume03, // In real app, use specific real-estate-3.jpeg
+          image: realStateResumeSample03,
           title: "Commercial Agent",
         },
       ],
@@ -390,17 +397,17 @@ const getResumeCategories = (): ResumeCategory[] => {
       samples: [
         {
           id: "it-1",
-          image: resume01, // In real app, use specific it-management-1.jpeg
+          image: iTRresumeSample01,
           title: "IT Director",
         },
         {
           id: "it-2",
-          image: resume02, // In real app, use specific it-management-2.jpeg
+          image: iTRresumeSample02,
           title: "CTO Resume",
         },
         {
           id: "it-3",
-          image: resume03, // In real app, use specific it-management-3.jpeg
+          image: iTRresumeSample03,
           title: "DevOps Manager",
         },
       ],

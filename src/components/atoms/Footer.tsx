@@ -303,7 +303,7 @@ const Footer: React.FC<FooterProps> = ({
         </div>
       </div>
 
-      {/* Bottom Wave Decoration */}
+      {/* Bottom Wave Decoration
       <div className="w-full overflow-hidden leading-0">
         <svg
           className="relative block w-full h-8 sm:h-12"
@@ -317,7 +317,7 @@ const Footer: React.FC<FooterProps> = ({
             fill="#1a2530"
           ></path>
         </svg>
-      </div>
+      </div> */}
     </footer>
   );
 };
