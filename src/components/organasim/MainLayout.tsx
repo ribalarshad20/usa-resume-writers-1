@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import NavBar from "../molecules/NavBar";
-import PromotionalSideBanner from "../atoms/PromotionalBanner";
+import PromotionalBannerWithHoverForm from "../atoms/PromotionalBannerWithHoverForm";
 
 const MainLayout: React.FC = () => {
   const [showBanner, setShowBanner] = useState(false);
@@ -36,12 +36,6 @@ const MainLayout: React.FC = () => {
     };
   }, []);
 
-  const handleBannerClick = () => {
-    // Handle the banner click event
-    console.log("Promotional banner clicked");
-    // Add your implementation here
-  };
-
   return (
     <div className="w-full">
       <header className="sticky top-0 z-50 bg-white">
@@ -53,10 +47,9 @@ const MainLayout: React.FC = () => {
 
       {/* Promotional Side Banner - only show if not mobile and scrolled down */}
       {showBanner && !isMobile && (
-        <PromotionalSideBanner
+        <PromotionalBannerWithHoverForm
           discountPercentage={20}
           actionText="SIGN UP HERE TO GET"
-          onClick={handleBannerClick}
         />
       )}
 
