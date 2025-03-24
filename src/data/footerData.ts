@@ -39,7 +39,7 @@ export const footerData = {
     { title: "Privacy Policy", link: "/privacy-policy/" },
   ],
   socialMedia: {
-    facebook: "https://facebook.com/resumewritersusa",
-    linkedin: "https://linkedin.com/company/resumewritersusa",
+    facebook: "https://facebook.com",
+    linkedin: "https://linkedin.com",
   },
 };
