@@ -9,7 +9,7 @@
     "prebuild": "node -e \"process.platform === 'win32' && console.log('Windows build') || process.exit(0)\"",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build-vercel": "tsc -b && vite build --config vite.vercel.config.js"
+    "build-vercel": "npm install --include=optional && tsc -b && vite build"
   },
   "optionalDependencies": {
     "@rollup/rollup-win32-x64-msvc": "^4.37.0"
