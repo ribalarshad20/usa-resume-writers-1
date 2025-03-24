@@ -17,6 +17,7 @@ import CareerGuideDownload from "../atoms/CareerGuideDownload";
 import Footer from "../atoms/Footer";
 import ResumeSamplesPage from "../atoms/ResumeSamplesSection";
 import { footerData } from "../../data/footerData";
+import TawkChat from "../atoms/TawkChat"; // Adjust path if necessary
 
 const logos = [
   { src: zip, alt: "ZipRecruiter" },
@@ -26,7 +27,7 @@ const logos = [
 
 const HomePage: React.FC = () => {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center pt-20">
+    <div className="w-full h-full flex flex-col items-center justify-center pt-20 relative">
       <HeroSection />
       <FeatureServices />
       <WhyChooseUs />
@@ -53,6 +54,11 @@ const HomePage: React.FC = () => {
         }}
       />
       <Footer {...footerData} />
+
+      {/* TawkChat integrated at the bottom right */}
+      <div className="fixed bottom-4 right-4 z-50">
+        <TawkChat />
+      </div>
     </div>
   );
 };
