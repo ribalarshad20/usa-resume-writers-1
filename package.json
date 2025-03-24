@@ -6,11 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "prebuild": "node -e \"process.platform === 'win32' && console.log('Windows build') || process.exit(0)\"",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build-vercel": "tsc -b && vite build --config vite.vercel.config.js"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-win32-x64-msvc": "^4.37.0"
   },
   "dependencies": {
-    "@rollup/rollup-win32-x64-msvc": "^4.37.0",
+    "@rollup/rollup-linux-x64-gnu": "^4.37.0",
     "@tailwindcss/vite": "^4.0.14",
     "@tawk.to/tawk-messenger-react": "^2.0.2",
     "lucide-react": "^0.483.0",
