@@ -1,3 +1,4 @@
+import { Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 
 interface ContactFormProps {
@@ -52,7 +53,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
     <div className="max-w-7xl mx-auto px-4 py-12">
       <h1 className="text-4xl md:text-5xl font-bold mb-8">
         <span className="text-slate-800">Get In </span>
-        <span className="text-emerald-400">Touch With Us</span>
+        <span className="text-[#C11A2F]">Touch With Us</span>
       </h1>
 
       <div className="flex flex-col md:flex-row gap-8">
@@ -164,7 +165,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
 
             <button
               type="submit"
-              className="bg-emerald-400 hover:bg-emerald-500 text-white font-medium py-3 px-8 rounded transition duration-300"
+              className="bg-[#2F4376] border border-transparent hover:bg-transparent text-white hover:text-black hover:border-[#2F4376] font-medium py-3 px-8 rounded transition duration-300"
             >
               Submit
             </button>
@@ -184,17 +185,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
               <div>
                 <p className="text-slate-800 font-medium mb-2">Phone :</p>
                 <div className="flex items-center">
-                  <svg
-                    className="w-5 h-5 text-emerald-400 mr-2"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                  </svg>
+                  <Phone className="w-5 h-5 text-[#C11A2F] mr-2" />
                   <a
                     href="tel:+18558460134"
-                    className="text-slate-700 hover:text-emerald-500 transition duration-300"
+                    className="text-slate-700 hover:text-[#2F4376] transition duration-300"
                   >
                     +1 (855) 846-0134
                   </a>
@@ -204,18 +198,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
               <div>
                 <p className="text-slate-800 font-medium mb-2">Email :</p>
                 <div className="flex items-center">
-                  <svg
-                    className="w-5 h-5 text-emerald-400 mr-2"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                  </svg>
+                  <Mail className="w-5 h-5 text-[#C11A2F] mr-2" />
                   <a
                     href="mailto:info@resumewritersusa.com"
-                    className="text-slate-700 hover:text-emerald-500 transition duration-300"
+                    className="text-slate-700 hover:text-[#2F4376] transition duration-300"
                   >
                     info@resumewritersusa.com
                   </a>
@@ -225,18 +211,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
               <div>
                 <p className="text-slate-800 font-medium mb-2">Address :</p>
                 <div className="flex items-start">
-                  <svg
-                    className="w-5 h-5 text-emerald-400 mr-2 mt-1"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
+                  <MapPin className="w-5 h-5 text-[#C11A2F] mr-2 mt-1" />
                   <p className="text-slate-700">
                     2251 Barry Ave, Los Angeles, CA 90064, USA
                   </p>

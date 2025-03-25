@@ -6,7 +6,7 @@ interface SectionProps {
 const Section: React.FC<SectionProps> = ({ title, children }) => {
   return (
     <div className="mb-6">
-      <h2 className="text-xl font-bold text-emerald-500 mb-2">{title}</h2>
+      <h2 className="text-xl font-bold text-[#C11A2F] mb-2">{title}</h2>
       <div className="text-gray-700">{children}</div>
     </div>
   );

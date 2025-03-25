@@ -37,10 +37,10 @@ const FAQItem: React.FC<FAQItemProps> = ({
         aria-expanded={isOpen}
       >
         <div className="flex items-center">
-          <span className="text-green-500 font-medium mr-2">{number}.</span>
+          <span className="text-[#C11A2F] font-medium mr-2">{number}.</span>
           <span
             className={`font-medium ${
-              isOpen ? "text-green-500" : "text-gray-800"
+              isOpen ? "text-[#C11A2F]" : "text-gray-800"
             }`}
           >
             {question}
@@ -48,7 +48,7 @@ const FAQItem: React.FC<FAQItemProps> = ({
         </div>
         <svg
           className={`w-6 h-6 transition-transform duration-300 ${
-            isOpen ? "transform rotate-180 text-green-500" : "text-gray-400"
+            isOpen ? "transform rotate-180 text-[#2F4376]" : "text-gray-400"
           }`}
           fill="none"
           viewBox="0 0 24 24"

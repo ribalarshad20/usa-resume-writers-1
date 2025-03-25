@@ -148,7 +148,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
-                  className="w-full sm:w-52 px-6 py-3 font-semibold bg-[#C11A2F] border border-transparent hover:text-white hover:bg-transparent hover:border-red-600 text-white transition-colors duration-200"
+                  className="w-full sm:w-52 px-6 py-3 font-semibold bg-[#C11A2F] border border-transparent hover:text-white hover:bg-transparent hover:border-white text-white transition-colors duration-200"
                   onClick={() => setShowResumeForm(true)}
                 >
                   Get Started
