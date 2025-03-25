@@ -164,7 +164,7 @@ const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
 
   return (
     <>
-      <div className="relative z-10 w-full max-w-full md:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-8 md:pb-12">
+      <div className="relative z-10 w-full max-w-full md:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 md:pt-24 pb-2 md:pb-2">
         <div className="mb-8 md:mb-12">
           <p className="text-gray-800 font-medium mb-2 text-sm sm:text-base">
             Our Professional Services
@@ -184,12 +184,12 @@ const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
                   // On click, call the maximize method on TawkChat
                   tawkChatRef.current?.maximize();
                 }}
-                className="ml-4 px-6 py-3 font-semibold bg-[#2F4376] border border-transparent hover:bg-transparent hover:border-[#2F4376] hover:text-[#2F4376] text-white transition-colors duration-200"
+                className="w-full xs:w-auto px-4 py-2 sm:px-6 sm:py-3 font-semibold bg-[#2F4376] border border-transparent hover:bg-transparent hover:border-[#2F4376] hover:text-[#2F4376] text-white transition-colors duration-200 text-sm sm:text-base whitespace-nowrap"
               >
                 Consult our Experts
               </button>
               <button
-                className="w-full sm:w-52 px-6 py-3 font-semibold bg-[#C11A2F] border border-transparent hover:text-black hover:bg-transparent hover:border-red-600 text-white transition-colors duration-200"
+                className="w-full xs:w-auto px-4 py-2 sm:px-6 sm:py-3 font-semibold bg-[#C11A2F] border border-transparent hover:text-black hover:bg-transparent hover:border-red-600 text-white transition-colors duration-200 text-sm sm:text-base"
                 onClick={() => setShowResumeForm(true)}
               >
                 Get Started Now!
@@ -274,7 +274,7 @@ const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
       `}</style>
       </div>
       {showResumeForm && (
-        <div className="fixed inset-0  bg-opacity-30 backdrop-brightness-30 flex justify-center items-center z-50">
+        <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-brightness-30 flex justify-center items-center z-50">
           <div className="bg-white rounded-lg overflow-hidden max-w-4xl w-full mx-4">
             <ResumeForm
               onSubmit={handleFormSubmit}

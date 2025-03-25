@@ -21,7 +21,7 @@ const ATSResumeSection: React.FC<ATSResumeSectionProps> = ({
 
   return (
     <>
-      <div className="w-full bg-gray-50 py-8 md:py-16">
+      <div className="w-full bg-gray-50 py-8 md:py-8">
         <div className="container mx-auto px-4 md:px-8 max-w-7xl">
           <div className="text-center mb-8">
             <div className="flex flex-col items-center text-center">

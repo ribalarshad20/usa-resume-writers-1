@@ -93,7 +93,7 @@ const WorkSamples: React.FC<WorkSamplesProps> = ({
   onPreviewClick = () => {},
 }) => {
   return (
-    <section className="w-full py-16 px-4 bg-gradient-to-br from-white to-gray-50">
+    <section className="w-full py-8 px-4 bg-gradient-to-br from-white to-gray-50">
       {/* Add the styles to the document */}
       <style dangerouslySetInnerHTML={{ __html: hoverStyles }} />
 
