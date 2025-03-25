@@ -241,7 +241,7 @@ const Footer: React.FC<FooterProps> = ({
                 {socialMedia.twitter && (
                   <a
                     href={socialMedia.twitter}
-                    className="bg-[#C11A2F] text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-green-400 transition duration-300 transform hover:scale-110 hover:rotate-3"
+                    className="bg-[#C11A2F] text-white rounded-full w-10 h-10 flex items-center justify-center transition duration-300 transform hover:scale-110 hover:rotate-3"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Twitter"
@@ -252,7 +252,7 @@ const Footer: React.FC<FooterProps> = ({
                 {socialMedia.instagram && (
                   <a
                     href={socialMedia.instagram}
-                    className="bg-[#C11A2F] text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-green-400 transition duration-300 transform hover:scale-110 hover:rotate-3"
+                    className="bg-[#C11A2F] text-white rounded-full w-10 h-10 flex items-center justify-center transition duration-300 transform hover:scale-110 hover:rotate-3"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"

@@ -18,13 +18,12 @@ const PromotionalBannerWithForm: React.FC<PromotionalBannerWithFormProps> = ({
   };
 
   return (
-    <div className="fixed top-10 right-0 z-50 flex items-stretch h-[500px]">
-      {/* Banner (bar) */}
+    <div className="fixed top-10 right-0 z-50 flex items-stretch">
       <button
         onClick={handleBannerClick}
-        className="flex flex-col items-center bg-black text-white rounded-4xl overflow-hidden w-16 md:w-15 h-full transform transition-transform duration-300 hover:scale-105"
+        className="flex flex-col items-center bg-black text-white rounded-4xl overflow-hidden w-13 md:w-13 h-full transform transition-transform duration-300 hover:scale-105"
       >
-        <div className="flex items-center justify-center w-12 h-12 md:w-15 md:h-15 bg-[#ef0a28] rounded-full -mb-6">
+        <div className="flex items-center justify-center w-8 h-8 md:w-13 md:h-13 bg-[#ef0a28] rounded-full -mb-4">
           <ArrowLeft
             className={`transition-transform duration-300 ${
               showForm ? "rotate-180" : ""

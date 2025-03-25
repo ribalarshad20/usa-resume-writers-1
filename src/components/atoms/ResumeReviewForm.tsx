@@ -1,3 +1,5 @@
+import React from "react";
+
 interface ResumeReviewFormProps {
   title?: string;
   onSubmit?: () => void;
@@ -13,7 +15,7 @@ const ResumeReviewForm: React.FC<ResumeReviewFormProps> = ({
   };
 
   return (
-    <div className="w-full h-full bg-white p-6 rounded-xl shadow-xl">
+    <div className="w-full h-full bg-white p-6 rounded-xl shadow-xl overflow-y-auto max-h-full">
       {/* Heading */}
       <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-4">
         {title}
@@ -33,7 +35,7 @@ const ResumeReviewForm: React.FC<ResumeReviewFormProps> = ({
             type="text"
             id="fullName"
             placeholder="Full Name"
-            className="block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+            className="block w-full border border-gray-300 rounded-md px-3 py-2"
             required
           />
         </div>
@@ -49,7 +51,7 @@ const ResumeReviewForm: React.FC<ResumeReviewFormProps> = ({
           <div className="flex">
             <select
               defaultValue="US"
-              className="border border-gray-300 rounded-l-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+              className="border border-gray-300 rounded-l-md px-3 py-2"
             >
               <option value="US">United States</option>
               <option value="UK">United Kingdom</option>
@@ -60,7 +62,7 @@ const ResumeReviewForm: React.FC<ResumeReviewFormProps> = ({
               type="tel"
               id="phone"
               placeholder="000 000 000"
-              className="flex-1 border border-gray-300 rounded-r-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+              className="flex-1 border border-gray-300 rounded-r-md px-3 py-2"
               required
             />
           </div>
@@ -78,7 +80,7 @@ const ResumeReviewForm: React.FC<ResumeReviewFormProps> = ({
             type="email"
             id="email"
             placeholder="Email Address"
-            className="block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+            className="block w-full border border-gray-300 rounded-md px-3 py-2"
             required
           />
         </div>
@@ -95,16 +97,16 @@ const ResumeReviewForm: React.FC<ResumeReviewFormProps> = ({
             id="message"
             placeholder="Enter Your Message"
             rows={4}
-            className="block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+            className="block w-full border border-gray-300 rounded-md px-3 py-2"
           ></textarea>
         </div>
 
         {/* Checkbox */}
-        <div className="flex items-center">
+        <div className="flex items-center space-x-2">
           <input
             type="checkbox"
             id="terms"
-            className="mr-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+            className="h-4 w-4 border-gray-300 rounded"
             required
           />
           <label htmlFor="terms" className="text-sm text-gray-700">
@@ -113,12 +115,14 @@ const ResumeReviewForm: React.FC<ResumeReviewFormProps> = ({
         </div>
 
         {/* Submit Button */}
-        <button
-          type="submit"
-          className="w-full bg-green-500 text-white py-2 rounded-md font-bold hover:bg-green-600 transition-colors"
-        >
-          START YOUR PROJECT
-        </button>
+        <div>
+          <button
+            type="submit"
+            className="w-full bg-[#2F4376] text-white py-2 rounded-md font-bold hover:bg-[#2F4376] transition-colors"
+          >
+            START YOUR PROJECT
+          </button>
+        </div>
       </form>
     </div>
   );
