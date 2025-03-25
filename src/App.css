@@ -24,3 +24,20 @@ body {
   white-space: nowrap;
   letter-spacing: 1px;
 }
+
+.react-select__menu {
+  scrollbar-width: thin;
+  scrollbar-color: #2f4376 #f1f1f1; /* Blue scrollbar */
+}
+
+.react-select__menu::-webkit-scrollbar {
+  width: 8px;
+}
+
+.react-select__menu::-webkit-scrollbar-thumb {
+  background-color: #2f4376; /* Blue scrollbar */
+}
+
+.react-select__menu::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}

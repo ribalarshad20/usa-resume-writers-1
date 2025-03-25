@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import popUpImage from "../../assets/popup-element.png";
 import { X } from "lucide-react";
+import CountryList, { Country } from "country-list-with-dial-code-and-flag";
+import Select from "react-select"; // Importing react-select
 
 export interface FormData {
   fullName: string;
@@ -29,6 +31,10 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
     termsAgreed: false,
   });
 
+  const [selectedCountry, setSelectedCountry] = useState(
+    CountryList.findOneByCountryCode("US") as Country
+  );
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -40,6 +46,24 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
       ...formData,
       [name]: type === "checkbox" ? checked : value,
     });
+  };
+
+  interface CountryOption {
+    label: string;
+    value: string;
+  }
+
+  const handleCountryChange = (selectedOption: CountryOption | null) => {
+    if (selectedOption) {
+      const country = CountryList.findOneByCountryCode(
+        selectedOption.value
+      ) as Country;
+      setSelectedCountry(country);
+      setFormData({
+        ...formData,
+        country: selectedOption.label,
+      });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -57,14 +81,13 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
       phone_number: formData.phoneNumber,
       marketing_consent: formData.marketingConsent ? "Yes" : "No",
       text_messages: formData.textMessages ? "Yes" : "No",
-      message: `
-  Full Name: ${formData.fullName}
-  Email: ${formData.email}
-  Country: ${formData.country}
-  Phone Number: ${formData.phoneNumber}
-  Marketing Consent: ${formData.marketingConsent ? "Yes" : "No"}
-  Text Messages: ${formData.textMessages ? "Yes" : "No"}
-  Terms Agreed: ${formData.termsAgreed ? "Yes" : "No"}
+      message: `Full Name: ${formData.fullName}
+      Email: ${formData.email}
+      Country: ${formData.country}
+      Phone Number: ${formData.phoneNumber}
+      Marketing Consent: ${formData.marketingConsent ? "Yes" : "No"}
+      Text Messages: ${formData.textMessages ? "Yes" : "No"}
+      Terms Agreed: ${formData.termsAgreed ? "Yes" : "No"}
       `,
     };
 
@@ -80,6 +103,11 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
       console.error("Failed to send email:", error);
     }
   };
+
+  const allCountries = CountryList.getAll().map((country) => ({
+    label: `${country.flag} ${country.name} (${country.dialCode})`,
+    value: country.code,
+  }));
 
   return (
     <div className="flex flex-col md:flex-row w-full bg-gray-100 max-w-7xl mx-auto overflow-hidden rounded-lg">
@@ -139,23 +167,32 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
           </div>
 
           <div>
-            <select
-              name="country"
-              value={formData.country}
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded p-2 appearance-none bg-white"
-              required
-            >
-              <option value="UNITED STATES">🇺🇸 UNITED STATES</option>
-              <option value="CANADA">🇨🇦 CANADA</option>
-              <option value="UK">🇬🇧 UNITED KINGDOM</option>
-              {/* Add more countries as needed */}
-            </select>
+            <Select
+              value={{
+                label: `${selectedCountry.name} (${selectedCountry.dialCode})`,
+                value: selectedCountry.code,
+              }}
+              onChange={handleCountryChange}
+              options={allCountries}
+              styles={{
+                control: (base) => ({
+                  ...base,
+                  border: "1px solid #D1D5DB", // Tailwind's border-gray-300 color
+                  borderRadius: "0.25rem", // Tailwind's rounded
+                  boxShadow: "none",
+                  "&:hover": {
+                    border: "1px solid #D1D5DB",
+                  },
+                }),
+              }}
+              className="w-full"
+              classNamePrefix="react-select"
+            />
           </div>
 
           <div className="flex">
             <div className="w-16 border border-gray-300 rounded-l p-2 bg-gray-50 text-center">
-              +1
+              {selectedCountry.dialCode}
             </div>
             <input
               type="tel"
@@ -209,7 +246,7 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
               required
             />
             <label htmlFor="termsAgreed" className="text-sm">
-              I Agree and accepts Terms Conditions and Privacy Policy
+              I Agree and accept Terms Conditions and Privacy Policy
             </label>
           </div>
 
