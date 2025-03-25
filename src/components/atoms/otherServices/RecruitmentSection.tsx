@@ -13,11 +13,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   description,
 }) => {
   return (
-    <div className="bg-white p-6 rounded shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-start text-left h-full">
-      <div className="bg-[#5FD797] pt-5 pb-5 pl-3 pr-3 rounded-lg mb-5 flex items-left justify-left">
+    <div className="bg-white pt-8 pb-8 pr-4 pl-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-start text-left w-60">
+      <div className="bg-[#C11A2F] pt-4 pb-4 pl-3 pr-3 rounded-lg mb-4 flex items-center justify-center">
         {icon}
       </div>
-      <h3 className="text-lg font-semibold text-gray-800 mb-3">{title}</h3>
+      <h3 className="text-base font-semibold text-gray-800 mb-2">{title}</h3>
       <p className="text-gray-600 text-sm">{description}</p>
     </div>
   );
@@ -43,9 +43,9 @@ const RecruitmentSection: React.FC<RecruitmentSectionProps> = ({
   laptopImageUrl,
 }) => {
   return (
-    <section className="relative py-16 px-4 overflow-hidden">
+    <section className="relative py-16 px-4 overflow-hidden w-full">
       {/* Laptop image container - positioned absolutely */}
-      <div className="absolute left-0 bottom-0 w-1/2 max-w-xl hidden md:block">
+      <div className="absolute left-0 bottom-0 w-1/2 max-w-2xl hidden md:block">
         <img
           src={laptopImageUrl}
           alt="Recruitment Dashboard on Laptop"
@@ -54,27 +54,25 @@ const RecruitmentSection: React.FC<RecruitmentSectionProps> = ({
       </div>
 
       {/* Content container with z-index to appear above the laptop image */}
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10 w-full mx-auto pb-6">
         <div className="text-center mb-12">
-          <p className="text-sm text-gray-600 mb-2 italic font-semibold">
-            {tagline}
-          </p>
+          <p className="text-sm text-gray-600 font-semibold mb-8">{tagline}</p>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-2">
             {title}
           </h2>
-          <h3 className="text-3xl md:text-5xl font-bold text-[#5FD797]">
+          <h3 className="text-3xl md:text-5xl font-bold text-[#C11A2F]">
             {subtitle}
           </h3>
-          <div className="w-24 h-[2px] bg-[#5FD797] mx-auto mt-6"></div>
-          <p className="mt-4 mb-10 text-[#22303F] font-semibold max-w-2xl mx-auto">
+          <div className="w-24 h-[2px] bg-[#C11A2F] mx-auto mt-6"></div>
+          <p className="mt-4 mb-24 text-[#22303F] font-semibold max-w-2xl mx-auto">
             {services.length > 0
               ? "Tired of Applying to Jobs? Sit back and relax while our professionals do the work for you."
               : ""}
           </p>
         </div>
 
-        {/* Offset the grid to the right on medium screens and up */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:ml-80 md:mr-20 pb-16">
+        {/* Removed gap, used flex instead to minimize spacing */}
+        <div className="flex justify-center md:ml-80 md:mr-30 pb-16 space-x-8">
           {services.map((service, index) => (
             <ServiceCard
               key={index}

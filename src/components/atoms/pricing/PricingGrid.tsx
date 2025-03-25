@@ -1,4 +1,4 @@
-import { PricingCard } from "./PricingCard";
+import PricingCard from "./PricingCard";
 
 // Define types for the feature items
 interface PricingFeature {

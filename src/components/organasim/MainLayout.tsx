@@ -59,7 +59,7 @@ const MainLayout: React.FC = () => {
       </div>
       <style>{`
         ::-webkit-scrollbar {
-          width: 10px;
+          width: 8px;
         }
         ::-webkit-scrollbar-track {
           background: #67D794;
@@ -67,14 +67,14 @@ const MainLayout: React.FC = () => {
         }
         ::-webkit-scrollbar-thumb {
           background: #67D794;
-          border-radius: 10px;
+          border-radius: 16px;
         }
         ::-webkit-scrollbar-thumb:hover {
           background: #67D794;
         }
         * {
           scrollbar-width: thin;
-          scrollbar-color: #67D794 #f0f0f0;
+          scrollbar-color: #2F4376;
         }
       `}</style>
     </div>

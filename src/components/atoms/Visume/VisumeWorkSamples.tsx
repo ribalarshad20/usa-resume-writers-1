@@ -83,7 +83,7 @@ const hoverStyles = `
   
   .preview-button:hover {
     background: white;
-    color: #67D794;
+    color: #C11A2F;
   }
 `;
 
@@ -99,10 +99,10 @@ const WorkSamples: React.FC<WorkSamplesProps> = ({
       <div className="max-w-6xl mx-auto">
         {/* Heading Section */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-emerald-400 mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#C11A2F] mb-4">
             Work Samples
           </h2>
-          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-emerald-400 mb-8">
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#2F4376] mb-8">
             Interactive Resume Portfolio
           </h3>
           <p className="text-gray-600 max-w-3xl mx-auto text-lg">
@@ -176,9 +176,7 @@ export const VisumeWorkSamples: React.FC = () => {
       />
       <div className="flex justify-center mb-16">
         <button
-          className="w-52 px-6 py-3 font-semibold bg-[#67D794] border-1 border-transparent 
-                     hover:text-black hover:bg-transparent hover:border-[#67D794] 
-                     text-black transition-colors duration-200"
+          className="w-52 px-6 py-3 font-semibold bg-[#2F4376] text-white border border-transparent hover:bg-transparent hover:text-black hover:border-[#2F4376] transition-colors duration-200"
           onClick={() => setShowResumeForm(true)}
         >
           Request For More

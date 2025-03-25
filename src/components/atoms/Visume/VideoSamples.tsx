@@ -78,7 +78,7 @@ const hoverStyles = `
   
   .preview-button:hover {
     background: white;
-    color: #67D794;
+    color: #C11A2F;
   }
 `;
 
