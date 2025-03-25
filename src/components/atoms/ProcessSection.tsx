@@ -46,10 +46,10 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-2 leading-tight">
             {title}
-            <span className="block text-emerald-400">{subtitle}</span>
+            <span className="block text-[#C11A2F]">{subtitle}</span>
           </h2>
 
-          <div className="w-12 md:w-16 h-1 bg-emerald-400 mt-4"></div>
+          <div className="w-12 md:w-16 h-[2px] bg-[#C11A2F] mt-4"></div>
         </header>
 
         {/* Process steps grid */}
@@ -60,7 +60,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({
               className="flex flex-col items-center text-center p-4"
             >
               {/* Icon circle */}
-              <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full border-2 border-gray-200 flex items-center justify-center mb-5 md:mb-6 transition-all duration-300 hover:border-emerald-300">
+              <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full border-2 border-gray-200 flex items-center justify-center mb-5 md:mb-6 transition-all duration-300 hover:border-[#C11A2F]">
                 {React.cloneElement(step.icon, {
                   size: 48,
                   strokeWidth: 1.5,

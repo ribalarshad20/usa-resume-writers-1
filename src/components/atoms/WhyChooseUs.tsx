@@ -1,5 +1,14 @@
 import { useState } from "react";
 import ResumeForm, { FormData } from "./ResumeForm";
+import {
+  Search,
+  Briefcase,
+  PenTool,
+  Layout,
+  FileText,
+  Award,
+} from "lucide-react";
+
 interface FeatureItem {
   icon: React.ReactNode;
   title: string;
@@ -21,120 +30,30 @@ const WhyChooseUs: React.FC<ResumeWritersSectionProps> = ({
     console.log("Form submitted:", formData);
     setShowResumeForm(false);
   };
+
   const featureItems: FeatureItem[] = [
     {
-      icon: (
-        <svg
-          width="50"
-          height="50"
-          viewBox="0 0 50 50"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-12 h-12"
-        >
-          <rect width="50" height="50" rx="4" fill="#ebf7f0" />
-          <path
-            d="M20 25a5 5 0 1 1 10 0 5 5 0 0 1-10 0z"
-            stroke="#4ade80"
-            strokeWidth="2"
-          />
-          <path
-            d="M17 18h16M17 32h16M25 15v20"
-            stroke="#4ade80"
-            strokeWidth="2"
-          />
-        </svg>
-      ),
+      icon: <Search size={50} color="#000000" />,
       title: "Keyword Optimized to get through ATS",
     },
     {
-      icon: (
-        <svg
-          width="50"
-          height="50"
-          viewBox="0 0 50 50"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-12 h-12"
-        >
-          <rect width="50" height="50" rx="4" fill="#ebf7f0" />
-          <path
-            d="M17 33l4-4 4 2 8-10M17 17h16v16h-16z"
-            stroke="#4ade80"
-            strokeWidth="2"
-          />
-        </svg>
-      ),
+      icon: <Briefcase size={50} color="#000000" />,
       title: "Job Placement & Career Transition Support",
     },
     {
-      icon: (
-        <svg
-          width="50"
-          height="50"
-          viewBox="0 0 50 50"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-12 h-12"
-        >
-          <rect width="50" height="50" rx="4" fill="#ebf7f0" />
-          <circle cx="25" cy="25" r="8" stroke="#4ade80" strokeWidth="2" />
-          <path d="M31 31l7 7" stroke="#4ade80" strokeWidth="2" />
-        </svg>
-      ),
+      icon: <PenTool size={50} color="#000000" />,
       title: "Multi-Dimensional Certified Resume Writers",
     },
     {
-      icon: (
-        <svg
-          width="50"
-          height="50"
-          viewBox="0 0 50 50"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-12 h-12"
-        >
-          <rect width="50" height="50" rx="4" fill="#ebf7f0" />
-          <path d="M17 17h16v16h-16z" stroke="#4ade80" strokeWidth="2" />
-          <path d="M21 21h8v2h-8zM21 25h8v2h-8zM21 29h4v2h-4z" fill="#4ade80" />
-        </svg>
-      ),
+      icon: <Layout size={50} color="#000000" />,
       title: "Market Focused Design Templates",
     },
     {
-      icon: (
-        <svg
-          width="50"
-          height="50"
-          viewBox="0 0 50 50"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-12 h-12"
-        >
-          <rect width="50" height="50" rx="4" fill="#ebf7f0" />
-          <path d="M17 17h16v16h-16z" stroke="#4ade80" strokeWidth="2" />
-          <path d="M17 21h16M21 21v12" stroke="#4ade80" strokeWidth="2" />
-          <path d="M24 25h6v2h-6zM24 29h6v2h-6z" fill="#4ade80" />
-        </svg>
-      ),
+      icon: <FileText size={50} color="#000000" />,
       title: "Applicant Tracking System Compliant Resume",
     },
     {
-      icon: (
-        <svg
-          width="50"
-          height="50"
-          viewBox="0 0 50 50"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-12 h-12"
-        >
-          <rect width="50" height="50" rx="4" fill="#ebf7f0" />
-          <path d="M17 17h12v16H17z" stroke="#4ade80" strokeWidth="2" />
-          <path d="M21 21h4v2h-4zM21 25h4v2h-4zM21 29h4v2h-4z" fill="#4ade80" />
-          <circle cx="33" cy="25" r="4" stroke="#4ade80" strokeWidth="2" />
-        </svg>
-      ),
+      icon: <Award size={50} color="#000000" />,
       title: "Certified Professional Resume Writers (CPRW)",
     },
   ];
@@ -156,7 +75,7 @@ const WhyChooseUs: React.FC<ResumeWritersSectionProps> = ({
               <h2 className="text-4xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-gray-800">
                 <span>Broaden Your</span>
                 <span className="block mt-4">
-                  <span className="text-[#5FD797]">Career Horizons</span> With
+                  <span className="text-[#C1371A]">Career Horizons</span> With
                 </span>
                 <span className="block mt-4">
                   Resume Writers <span className="text-gray-800">USA.</span>
@@ -179,7 +98,7 @@ const WhyChooseUs: React.FC<ResumeWritersSectionProps> = ({
 
           {/* Green line (visible on md and larger screens) */}
           <div className="hidden md:block mt-6">
-            <div className="h-[2px] w-24 bg-[#5FD797]"></div>
+            <div className="h-[2px] w-24 bg-[#C1371A]"></div>
           </div>
 
           {/* Features grid */}
@@ -199,7 +118,7 @@ const WhyChooseUs: React.FC<ResumeWritersSectionProps> = ({
           {/* CTA Button */}
           <div className="mt-12 flex justify-center">
             <button
-              className="ml-4 px-6 py-3 font-semibold bg-[#67D794] border border-transparent hover:bg-white hover:border-[#67D794] text-black transition-colors duration-200"
+              className="ml-4 px-6 py-3 font-semibold bg-[#2F4376] border border-transparent hover:bg-transparent hover:border-[#2F4376] hover:text-[#2F4376] text-white transition-colors duration-200"
               onClick={() => setShowResumeForm(true)}
             >
               Get Your Resume Today!
@@ -208,7 +127,7 @@ const WhyChooseUs: React.FC<ResumeWritersSectionProps> = ({
         </div>
       </div>
       {showResumeForm && (
-        <div className="fixed inset-0  bg-opacity-30 backdrop-brightness-30 flex justify-center items-center z-50">
+        <div className="fixed inset-0 bg-opacity-30 backdrop-brightness-30 flex justify-center items-center z-50">
           <div className="bg-white rounded-lg overflow-hidden max-w-4xl w-full mx-4">
             <ResumeForm
               onSubmit={handleFormSubmit}

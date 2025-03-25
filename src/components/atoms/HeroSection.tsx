@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react";
-import bannerImage1 from "../../assets/banner1.jpeg";
-import bannerImage2 from "../../assets/banner2.jpeg";
-import bannerImage3 from "../../assets/banner3.png";
+import bannerImage1 from "../../assets/NewUpdatedImages/banner2.jpg";
+import bannerImage2 from "../../assets/NewUpdatedImages/banner5.jpg";
+import bannerImage3 from "../../assets/NewUpdatedImages/banner3.jpg";
 import trusted_logos from "../../assets/logos-trusted-partners.svg";
 import { CircleCheckBig } from "lucide-react";
 import ResumeForm, { FormData } from "./ResumeForm";
-import TawkChat, { TawkChatRef } from "./TawkChat"; // Adjust path as needed
+import TawkChat, { TawkChatRef } from "./TawkChat";
 
 interface HeroSectionProps {
   heading?: string;
@@ -148,13 +148,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
-                  className="w-full sm:w-52 px-6 py-3 font-semibold bg-[#67D794] border border-transparent hover:text-white hover:bg-transparent hover:border-[#67D794] text-black transition-colors duration-200"
+                  className="w-full sm:w-52 px-6 py-3 font-semibold bg-[#C11A2F] border border-transparent hover:text-white hover:bg-transparent hover:border-red-600 text-white transition-colors duration-200"
                   onClick={() => setShowResumeForm(true)}
                 >
                   Get Started
                 </button>
                 <button
-                  className="w-full sm:w-52 px-6 py-3 font-semibold bg-white text-[#67D794] border border-transparent hover:bg-transparent hover:text-white hover:border-[#67D794] transition-colors duration-200"
+                  className="w-full sm:w-52 px-6 py-3 font-semibold bg-white text-[#2F4376] border border-transparent hover:bg-transparent hover:text-white  hover:border-white transition-colors duration-200"
                   onClick={() => {
                     // On click, call the maximize method on TawkChat
                     tawkChatRef.current?.maximize();

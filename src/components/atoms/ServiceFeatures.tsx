@@ -19,7 +19,7 @@ const Feature: React.FC<FeatureProps> = ({
       className={`
         group flex flex-col items-start 
         p-12 
-        bg-white text-slate-900 
+        bg-white text-[slate-900 ]
         hover:bg-slate-800 hover:text-white 
         transition-colors duration-300
         ${showRightBorder ? "border-r border-gray-200" : ""}
@@ -37,8 +37,8 @@ const Feature: React.FC<FeatureProps> = ({
         className="
           w-12 h-1 
           mb-6 
-          bg-gray-600 
-          group-hover:bg-gray-500
+          bg-[#C11A2F]
+          group-hover:bg-[#C11A2F]
         "
       ></div>
 

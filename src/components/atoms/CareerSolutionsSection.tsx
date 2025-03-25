@@ -24,7 +24,7 @@ const CareerSolutionsSection: React.FC<CareerSolutionsSectionProps> = ({
   return (
     <>
       <div
-        className="w-full bg-cover bg-center bg-no-repeat"
+        className="w-full bg-cover bg-center bg-no-repeat pt-8 pb-8"
         style={{
           backgroundImage: `url(${bgImage})`,
           minHeight: "40vh",
@@ -55,7 +55,7 @@ const CareerSolutionsSection: React.FC<CareerSolutionsSectionProps> = ({
               </div>
               <button
                 onClick={() => setShowResumeForm(true)}
-                className="w-52 px-6 py-3 font-semibold bg-[#67D794] border border-transparent hover:text-black hover:bg-transparent hover:border-[#67D794] text-white transition-colors duration-200"
+                className="ml-4 px-6 py-3 font-semibold bg-[#2F4376] border border-transparent hover:bg-transparent hover:border-[#2F4376] hover:text-[#2F4376] text-white transition-colors duration-200"
               >
                 Get Started Now!
               </button>

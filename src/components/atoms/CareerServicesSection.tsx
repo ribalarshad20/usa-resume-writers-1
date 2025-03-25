@@ -166,14 +166,14 @@ const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
     <>
       <div className="relative z-10 w-full max-w-full md:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-8 md:pb-12">
         <div className="mb-8 md:mb-12">
-          <p className="text-gray-800 italic font-medium mb-2 text-sm sm:text-base">
+          <p className="text-gray-800 font-medium mb-2 text-sm sm:text-base">
             Our Professional Services
           </p>
 
           <div className="flex flex-col md:flex-row md:items-center justify-between">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-0 md:w-2/3 lg:w-3/5">
               <span className="text-gray-800">One Window </span>
-              <span className="text-[#5FD797]">Career</span>
+              <span className="text-[#C11A2F]">Career</span>
               <br />
               <span className="text-gray-800">Solutions To Get Dream Job</span>
             </h1>
@@ -184,12 +184,12 @@ const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
                   // On click, call the maximize method on TawkChat
                   tawkChatRef.current?.maximize();
                 }}
-                className="w-full xs:w-auto sm:w-auto md:w-48 px-2 py-2 md:py-3 text-xs sm:text-sm font-semibold bg-[#22303F] border border-transparent hover:text-black hover:bg-transparent hover:border-[#22303F] text-white transition-colors duration-200"
+                className="ml-4 px-6 py-3 font-semibold bg-[#2F4376] border border-transparent hover:bg-transparent hover:border-[#2F4376] hover:text-[#2F4376] text-white transition-colors duration-200"
               >
                 Consult our Experts
               </button>
               <button
-                className="w-52 px-6 py-3 font-semibold bg-[#67D794] border border-transparent hover:text-black hover:bg-transparent hover:border-[#67D794] text-white transition-colors duration-200"
+                className="w-full sm:w-52 px-6 py-3 font-semibold bg-[#C11A2F] border border-transparent hover:text-black hover:bg-transparent hover:border-red-600 text-white transition-colors duration-200"
                 onClick={() => setShowResumeForm(true)}
               >
                 Get Started Now!
@@ -228,14 +228,14 @@ const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
                   <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4 group-hover:text-white transition-colors duration-300 line-clamp-2">
                     {service.title}
                   </h3>
-                  <div className="w-10 sm:w-12 h-[2px] bg-[#67D794] mb-4 sm:mb-6"></div>
+                  <div className="w-10 sm:w-12 h-[2px] bg-[#C11A2F] mb-4 sm:mb-6"></div>
                   <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 group-hover:text-white transition-colors duration-300 line-clamp-3 sm:line-clamp-4">
                     {service.description}
                   </p>
                 </div>
                 <a href={service.link} className="inline-flex items-center">
                   <MoveRight
-                    size={32}
+                    size={48}
                     className="text-black group-hover:text-white transition-colors duration-300"
                   />
                 </a>

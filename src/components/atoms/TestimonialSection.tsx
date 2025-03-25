@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import person1 from "../../assets/Testimonials/person1.jpg";
-import person2 from "../../assets/Testimonials/person2.jpg";
-import person3 from "../../assets/Testimonials/person3.jpg";
+import person1 from "../../assets/NewUpdatedImages/testimonials/person1.jpg.png";
+import person2 from "../../assets/NewUpdatedImages/testimonials/person2.jpg.png";
+import person3 from "../../assets/NewUpdatedImages/testimonials/person3.jpg.png";
 
 interface Testimonial {
   id: number;
@@ -55,12 +55,12 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row gap-8 md:gap-16">
           {/* Image Column */}
-          <div className="w-full md:w-2/5 relative h-64 md:h-auto">
-            <div className="rounded-lg overflow-hidden h-full">
+          <div className="w-full md:w-2/5 relative h-[500px] md:h-[500px]">
+            <div className="absolute inset-0 rounded-lg overflow-hidden">
               <img
                 src={activeTestimonial.image}
                 alt={activeTestimonial.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover absolute top-0 left-0"
               />
             </div>
           </div>
@@ -68,29 +68,28 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
           {/* Content Column */}
           <div className="w-full md:w-3/5 flex flex-col justify-center">
             <div className="mb-8">
-              <h3 className="text-gray-600 italic mb-4 text-lg font-medium">
+              <h3 className="text-gray-600 mb-4 text-lg font-medium">
                 Hear from them!
               </h3>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
                 What Our Clients Say
               </h2>
-              <div className="w-20 h-1 bg-teal-400 mb-8"></div>
+              <div className="w-20 h-[2px] bg-[#C11A2F] mb-8"></div>
             </div>
 
             {/* Testimonial Card */}
-            <div className="bg-white p-6 rounded-lg shadow">
+            <div className="bg-white p-6 rounded-lg">
               <p className="text-gray-700 text-lg italic mb-6 leading-relaxed">
                 {activeTestimonial.content}
               </p>
               <div>
-                <h4 className="text-xl font-bold text-gray-800">
+                <h4 className="text-xl font-bold text-[#2F4376]">
                   {activeTestimonial.name}
                 </h4>
                 <p className="text-gray-500">{activeTestimonial.position}</p>
               </div>
             </div>
 
-            {/* Pagination Dots */}
             <div className="flex items-center justify-start mt-8 space-x-2">
               {testimonials.map((_, index) => (
                 <button
@@ -98,7 +97,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
                   onClick={() => handleDotClick(index)}
                   className={`w-4 h-4 rounded-full transition-colors ${
                     index === activeIndex
-                      ? "bg-teal-400"
+                      ? "bg-[#C11A2F]"
                       : "bg-gray-200 hover:bg-gray-300"
                   }`}
                   aria-label={`Show testimonial ${index + 1}`}
@@ -122,7 +121,7 @@ export const TestimonialSectionExample: React.FC = () => {
       name: "Jose M. Snyder",
       position: "Media Planner",
       content:
-        "If you are looking for someone who can polish, and make you unique the way that you value yourself more, Resume Writers USA would be the most perfect choice and you never need any other advice to discuss your work experience. I have recommended them to my colleagues as well. Thank you so much, my heart is with you guys and you are the only one who ever I could contact for any advice and review of my professional work summary and all services which can come with it. I hope you can assist us in the future.",
+        "If you are looking for someone who can polish, and make you unique the way that you value yourself more, Resume Writers USA would be the most perfect choice and you never need any other advice to discuss your work experience. I have recommended them to my colleagues as well. Thank you so much, my heart is with you guys and you are the only one who ever I could contact for any advice and review of my work.",
       image: person1,
     },
     {

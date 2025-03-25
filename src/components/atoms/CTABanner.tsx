@@ -112,7 +112,7 @@ const CTABanner: React.FC = () => {
           <div className="mb-10 md:mb-0 text-center md:text-left">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               {CONFIG.title}{" "}
-              <span className="text-emerald-400">{CONFIG.highlightText}</span>
+              <span className="text-[#C11A2F]">{CONFIG.highlightText}</span>
               <br />
               {CONFIG.subtitle}
             </h2>
@@ -122,8 +122,8 @@ const CTABanner: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
             <button
               onClick={handleConsultExperts}
-              className="group relative w-full xs:w-auto sm:w-auto md:w-48 px-4 py-3 text-sm font-semibold 
-                         bg-white text-black hover:bg-gray-100 
+              className="group relative w-full xs:w-auto sm:w-auto md:w-52 px-4 py-3 text-sm font-semibold 
+                         bg-white text-[#2F4376] hover:bg-gray-100 
                          cursor-pointer transition-all duration-300 
                          border border-transparent hover:border-gray-300"
             >
@@ -132,11 +132,11 @@ const CTABanner: React.FC = () => {
 
             <button
               onClick={handleGetStarted}
-              className="group relative w-full xs:w-auto sm:w-auto md:w-48 px-4 py-3 text-sm font-semibold 
-                         bg-[#5FD797] text-white 
-                         hover:bg-emerald-500 
+              className="group relative w-full xs:w-auto sm:w-auto md:w-52 px-4 py-3 text-sm font-semibold 
+                         bg-[#C11A2F] text-white 
+                         hover:bg-transparent hover:text-[white] hover:border-white 
                          cursor-pointer transition-all duration-300 
-                         border border-transparent hover:border-emerald-600"
+                         border border-transparen"
             >
               Get Started Now!
             </button>

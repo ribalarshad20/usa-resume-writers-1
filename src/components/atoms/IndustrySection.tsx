@@ -84,7 +84,7 @@ const IndustrySection: React.FC<IndustrySectionProps> = ({ industries }) => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   return (
-    <section className="relative z-10 max-w-full mx-auto">
+    <section className="relative z-10 max-w-full mx-auto pt-8">
       <div className="p-2 mx-auto">
         <div className="text-center mb-16">
           <p className="text-sm font-medium text-gray-700">
@@ -92,11 +92,11 @@ const IndustrySection: React.FC<IndustrySectionProps> = ({ industries }) => {
           </p>
           <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
             <span className="text-gray-800">Over </span>
-            <span className="text-green-400">200 Industries</span>
+            <span className="text-[#C11A2F]">200 Industries</span>
             <span className="text-gray-800"> Served</span>
           </h2>
           <div className="mt-4 flex justify-center">
-            <div className="h-1 w-16 bg-green-400"></div>
+            <div className="h-1 w-16 bg-[#C11A2F]"></div>
           </div>
           <p className="mt-6 max-w-2xl mx-auto text-xs sm:text-sm text-gray-600 text-center">
             Through Our Professional Resume Writing and Job Posting Services, We

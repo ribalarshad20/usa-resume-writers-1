@@ -82,7 +82,7 @@ const ResumeSamplesSection: React.FC<ResumeSamplesSectionProps> = ({
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-8 sm:mb-12">
-            <span className="text-[#5FD797] italic text-lg font-medium block mb-2 sm:mb-3">
+            <span className="text-[#C11A2F] text-lg font-medium block mb-2 sm:mb-3">
               Work Samples
             </span>
             <h2
@@ -114,7 +114,7 @@ const ResumeSamplesSection: React.FC<ResumeSamplesSectionProps> = ({
                   <div
                     className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 mt-1 ${
                       selectedCategory === category.id
-                        ? "text-[#5FD797]"
+                        ? "text-[#C11A2F]"
                         : "text-gray-400"
                     }`}
                   >
@@ -124,7 +124,7 @@ const ResumeSamplesSection: React.FC<ResumeSamplesSectionProps> = ({
                     <h3
                       className={`text-lg sm:text-xl font-bold mb-1 sm:mb-2 ${
                         selectedCategory === category.id
-                          ? "text-[#5FD797]"
+                          ? "text-[#C11A2F]"
                           : "text-gray-600"
                       }`}
                     >
@@ -143,7 +143,7 @@ const ResumeSamplesSection: React.FC<ResumeSamplesSectionProps> = ({
               {/* CTA Button */}
               <div className="mt-8 sm:mt-10">
                 <button
-                  className="w-64 px-6 py-3 font-semibold bg-[#67D794] border border-transparent hover:text-black white hover:bg-transparent hover:border-[#67D794] text-black transition-colors duration-200"
+                  className="ml-4 px-6 py-3 font-semibold bg-[#2F4376] border border-transparent hover:bg-transparent hover:border-[#2F4376] hover:text-[#2F4376] text-white transition-colors duration-200"
                   aria-label="Request for more resume samples"
                   onClick={() => setShowResumeForm(true)}
                 >

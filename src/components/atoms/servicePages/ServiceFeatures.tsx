@@ -43,23 +43,23 @@ const ServiceFeatures: React.FC<ResumeServiceComponentProps> = ({
           <img
             src={imageSrc}
             alt="Resume Writing"
-            className="w-full max-w-[580px] h-auto md:h-[600px] rounded shadow border-2 border-green-400"
+            className="w-full max-w-[580px] h-auto md:h-[600px] rounded shadow border-2 border-[#2F4376]"
           />
         </div>
         <div className="mt-8 md:mt-0 md:w-1/2 md:pl-4">
           <div className="flex items-center mb-4">
             {/* Vertical green line */}
-            <div className="w-[4px] h-20 bg-[#6DD4A1] mr-3"></div>
+            <div className="w-[3px] h-20 bg-[#C11A2F] mr-3"></div>
             <div>
-              <h2 className="text-4xl font-bold text-[#6DD4A1]">{title1}</h2>
-              <h2 className="text-4xl font-bold text-[#6DD4A1]">{title2}</h2>
+              <h2 className="text-4xl font-bold text-[#C11A2F]">{title1}</h2>
+              <h2 className="text-4xl font-bold text-[#C11A2F]">{title2}</h2>
             </div>
           </div>
           <p className="text-gray-700 leading-relaxed mb-6">{description}</p>
           <button
             type="button"
             onClick={handleButtonClick}
-            className="w-52 px-6 py-3 font-semibold bg-[#67D794] border border-transparent hover:text-black hover:bg-transparent hover:border-[#67D794] text-black transition-colors duration-200"
+            className="w-full sm:w-52 px-6 py-3 font-semibold bg-[#C11A2F] border border-transparent hover:text-black hover:bg-transparent hover:border-red-600 text-white transition-colors duration-200"
           >
             Start Your Project
           </button>

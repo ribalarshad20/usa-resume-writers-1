@@ -162,7 +162,7 @@ const NavBar: React.FC<NavBarProps> = () => {
 
               <a
                 href="/services/web-based-resume/"
-                className="text-black font-semibold hover:text-green-500 transition-colors duration-200 py-6 px-2"
+                className="text-black font-semibold hover:text-[#C11A2F] transition-colors duration-200 py-6 px-2"
               >
                 Web-Based Resume
               </a>
@@ -205,13 +205,13 @@ const NavBar: React.FC<NavBarProps> = () => {
 
               <a
                 href="/pricing/"
-                className="text-black font-semibold hover:text-green-500 transition-colors duration-200 py-6 px-2"
+                className="text-black font-semibold hover:text-[#C11A2F] transition-colors duration-200 py-6 px-2"
               >
                 Pricing
               </a>
               <button
                 onClick={() => setShowResumeForm(true)}
-                className="ml-4 px-6 py-3 font-semibold bg-[#67D794] border border-transparent hover:bg-white hover:border-[#67D794] text-black transition-colors duration-200"
+                className="ml-4 px-6 py-3 font-semibold bg-[#C11A2F] border border-transparent hover:bg-transparent hover:border-red-600 hover:text-black text-white transition-colors duration-200"
               >
                 Get Your Resume Today!
               </button>

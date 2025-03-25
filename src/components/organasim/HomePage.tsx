@@ -12,7 +12,7 @@ import indeed from "../../assets/indeed03.png";
 import { ProcessSectionExample } from "../atoms/ProcessSection";
 import CTABanner from "../atoms/CTABanner";
 import { TestimonialSectionExample } from "../atoms/TestimonialSection";
-import CareerGuideDownload from "../atoms/CareerGuideDownload";
+
 import Footer from "../atoms/Footer";
 import ResumeSamplesPage from "../atoms/ResumeSamplesSection";
 import { footerData } from "../../data/footerData";
@@ -44,11 +44,7 @@ const HomePage: React.FC = () => {
       <ProcessSectionExample />
       <CTABanner />
       <TestimonialSectionExample />
-      <CareerGuideDownload
-        onSubmit={(email) => {
-          console.log(`Processing download for: ${email}`);
-        }}
-      />
+
       <Footer {...footerData} />
     </div>
   );

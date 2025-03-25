@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import popUpImage from "../../assets/popup-element.png";
+import { X } from "lucide-react";
 
 export interface FormData {
   fullName: string;
@@ -96,28 +97,15 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 bg-green-600 text-white rounded-full w-10 h-10 flex items-center justify-center"
+          className="absolute top-4 right-4 bg-[#C11A2F] text-white rounded-full w-10 h-10 flex items-center justify-center"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
+          <X />
         </button>
 
         {/* Heading */}
         <div className="mb-6">
           <h1 className="text-3xl md:text-4xl font-bold mb-2">
-            Get A <span className="text-green-400">Resume</span> that
+            Get A <span className="text-[#C11A2F]">Resume</span> that
           </h1>
           <h2 className="text-3xl md:text-4xl font-bold">
             Aces All HR Standards.
@@ -228,7 +216,7 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
           <div>
             <button
               type="submit"
-              className="w-full bg-green-600 text-white py-2 rounded font-medium hover:bg-green-700 transition-colors"
+              className="w-full bg-[#2F4376] text-white py-2 rounded font-medium transition-colors"
             >
               Submit
             </button>

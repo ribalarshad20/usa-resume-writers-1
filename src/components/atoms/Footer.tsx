@@ -4,7 +4,7 @@ import {
   FaTwitter,
   FaInstagram,
 } from "react-icons/fa";
-import companyLogo from "../../assets/brand_logo.png";
+import companyLogo from "../../assets/NewUpdatedImages/brand-logo-white.png";
 
 interface FooterProps {
   companyName: string;
@@ -51,8 +51,8 @@ const Footer: React.FC<FooterProps> = ({
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-b from-[#1c2836] to-[#222F3E] relative z-10 w-full text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <footer className="bg-[#2F4376] relative z-10 w-full text-white">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-24 pb-8 sm:pb-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
@@ -76,7 +76,7 @@ const Footer: React.FC<FooterProps> = ({
               </p>
               <a
                 href={`mailto:${contact.email}`}
-                className="text-green-400 hover:text-green-300 text-sm mb-2 flex items-center group"
+                className="text-white  text-sm mb-2 flex items-center group"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +96,7 @@ const Footer: React.FC<FooterProps> = ({
               </a>
               <a
                 href={`tel:${contact.phone}`}
-                className="text-green-400 hover:text-green-300 text-sm flex items-center group"
+                className="text-white text-sm flex items-center group"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +119,7 @@ const Footer: React.FC<FooterProps> = ({
 
           {/* Services */}
           <div className="mt-4 sm:mt-0">
-            <h3 className="text-xl font-medium mb-4 pb-2 border-b border-green-400 inline-block">
+            <h3 className="text-xl font-medium mb-4 pb-2 border-b border-[#C11A2F] inline-block">
               Services
             </h3>
             <ul className="space-y-3">
@@ -133,7 +133,7 @@ const Footer: React.FC<FooterProps> = ({
                     className="text-gray-300 hover:text-white transition duration-300 text-sm flex items-center"
                   >
                     <svg
-                      className="h-3 w-3 mr-2 text-green-400"
+                      className="h-3 w-3 mr-2 text--[#C11A2F]"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -152,7 +152,7 @@ const Footer: React.FC<FooterProps> = ({
 
           {/* Company */}
           <div className="mt-4 lg:mt-0">
-            <h3 className="text-xl font-medium mb-4 pb-2 border-b border-green-400 inline-block">
+            <h3 className="text-xl font-medium mb-4 pb-2 border-b border-[#C11A2F] inline-block">
               Company
             </h3>
             <ul className="space-y-3">
@@ -166,7 +166,7 @@ const Footer: React.FC<FooterProps> = ({
                     className="text-gray-300 hover:text-white transition duration-300 text-sm flex items-center"
                   >
                     <svg
-                      className="h-3 w-3 mr-2 text-green-400"
+                      className="h-3 w-3 mr-2 text-[#C11A2F]"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -185,7 +185,7 @@ const Footer: React.FC<FooterProps> = ({
 
           {/* Quick Links & Social */}
           <div className="mt-4 lg:mt-0">
-            <h3 className="text-xl font-medium mb-4 pb-2 border-b border-green-400 inline-block">
+            <h3 className="text-xl font-medium mb-4 pb-2 border-b border-[#C11A2F] inline-block">
               Quick Links
             </h3>
             <ul className="space-y-3 mb-8">
@@ -199,7 +199,7 @@ const Footer: React.FC<FooterProps> = ({
                     className="text-gray-300 hover:text-white transition duration-300 text-sm flex items-center"
                   >
                     <svg
-                      className="h-3 w-3 mr-2 text-green-400"
+                      className="h-3 w-3 mr-2 text-[#C11A2F]"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -216,13 +216,13 @@ const Footer: React.FC<FooterProps> = ({
             </ul>
 
             <div>
-              <h3 className="text-xl font-medium mb-4 pb-2 border-b border-green-400 inline-block">
+              <h3 className="text-xl font-medium mb-4 pb-2 border-b border-[#C11A2F] inline-block">
                 Connect with us
               </h3>
               <div className="flex space-x-3">
                 <a
                   href={socialMedia.facebook}
-                  className="bg-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-green-400 transition duration-300 transform hover:scale-110 hover:rotate-3"
+                  className="bg-[#C11A2F] text-white rounded-full w-10 h-10 flex items-center justify-center transition duration-300 transform hover:scale-110 hover:rotate-3"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
@@ -231,7 +231,7 @@ const Footer: React.FC<FooterProps> = ({
                 </a>
                 <a
                   href={socialMedia.linkedin}
-                  className="bg-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-green-400 transition duration-300 transform hover:scale-110 hover:rotate-3"
+                  className="bg-[#C11A2F] text-white rounded-full w-10 h-10 flex items-center justify-center transition duration-300 transform hover:scale-110 hover:rotate-3"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
@@ -241,7 +241,7 @@ const Footer: React.FC<FooterProps> = ({
                 {socialMedia.twitter && (
                   <a
                     href={socialMedia.twitter}
-                    className="bg-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-green-400 transition duration-300 transform hover:scale-110 hover:rotate-3"
+                    className="bg-[#C11A2F] text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-green-400 transition duration-300 transform hover:scale-110 hover:rotate-3"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Twitter"
@@ -252,7 +252,7 @@ const Footer: React.FC<FooterProps> = ({
                 {socialMedia.instagram && (
                   <a
                     href={socialMedia.instagram}
-                    className="bg-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-green-400 transition duration-300 transform hover:scale-110 hover:rotate-3"
+                    className="bg-[#C11A2F] text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-green-400 transition duration-300 transform hover:scale-110 hover:rotate-3"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
