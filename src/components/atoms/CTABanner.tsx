@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ResumeForm, { FormData } from "./ResumeForm";
 import TawkChat, { TawkChatRef } from "./TawkChat";
 

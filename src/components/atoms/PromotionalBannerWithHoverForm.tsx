@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ResumeReviewForm from "./ResumeReviewForm";
 import { ArrowLeft } from "lucide-react";
 

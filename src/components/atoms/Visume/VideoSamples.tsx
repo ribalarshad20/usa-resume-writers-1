@@ -1,4 +1,3 @@
-import React from "react";
 import video01 from "../../../assets/videoSamples/resume-01.jpeg";
 import video02 from "../../../assets/videoSamples/resume-02.jpeg";
 import video03 from "../../../assets/videoSamples/resume-03.jpeg";

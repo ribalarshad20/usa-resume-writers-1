@@ -1,5 +1,3 @@
-import React from "react";
-
 // Define type for feature items
 interface PricingFeature {
   id: string;

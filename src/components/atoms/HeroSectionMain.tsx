@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import bgImage from "../../assets/bg-cta.jpg";
 import ResumeForm, { FormData } from "./ResumeForm";
 import TawkChat, { TawkChatRef } from "./TawkChat";

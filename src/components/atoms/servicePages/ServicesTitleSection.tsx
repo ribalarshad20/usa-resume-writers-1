@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ServicesSectionProps {
   title?: string;
   backgroundImage?: string;

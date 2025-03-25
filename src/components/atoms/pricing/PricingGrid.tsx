@@ -1,4 +1,3 @@
-import React from "react";
 import { PricingCard } from "./PricingCard";
 
 // Define types for the feature items

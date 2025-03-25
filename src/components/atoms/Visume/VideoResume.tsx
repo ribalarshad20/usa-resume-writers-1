@@ -1,4 +1,3 @@
-import React from "react";
 import resumeCoverImage from "../../../assets/ser-detail-10.jpeg";
 import HeroSectionExample from "../HeroSectionMain";
 import CareerServicesSection from "../CareerServicesSection";

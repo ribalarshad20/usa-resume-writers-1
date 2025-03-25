@@ -1,5 +1,5 @@
 import { MoveRight } from "lucide-react";
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import ResumeForm, { FormData } from "./ResumeForm";
 import TawkChat, { TawkChatRef } from "./TawkChat";
 // Define types for the service item

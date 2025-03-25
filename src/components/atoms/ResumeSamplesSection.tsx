@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import bgSample from "../../assets/bg-sample.jpeg";
 import ResumeForm, { FormData } from "./ResumeForm";
 

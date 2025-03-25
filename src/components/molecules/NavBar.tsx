@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import bradLogo from "../../assets/brand_logo.png";
 import ResumeForm, { FormData } from "../atoms/ResumeForm";

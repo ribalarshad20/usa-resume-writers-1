@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import popUpImage from "../../assets/popup-element.png";
 
 export interface FormData {
@@ -40,9 +41,43 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Trigger your original onSubmit function
     onSubmit(formData);
+
+    const emailData = {
+      from_name: formData.fullName,
+      from_email: formData.email,
+      to_name: "Amjad Ali",
+      to_email: "amjad.ali@martechsol.com",
+      country: formData.country,
+      phone_number: formData.phoneNumber,
+      marketing_consent: formData.marketingConsent ? "Yes" : "No",
+      text_messages: formData.textMessages ? "Yes" : "No",
+      message: `
+  Full Name: ${formData.fullName}
+  Email: ${formData.email}
+  Country: ${formData.country}
+  Phone Number: ${formData.phoneNumber}
+  Marketing Consent: ${formData.marketingConsent ? "Yes" : "No"}
+  Text Messages: ${formData.textMessages ? "Yes" : "No"}
+  Terms Agreed: ${formData.termsAgreed ? "Yes" : "No"}
+      `,
+    };
+
+    try {
+      const result = await emailjs.send(
+        "service_cxhuka6",
+        "template_igiiah9",
+        emailData,
+        "YNny0-3qgWWt29BlW"
+      );
+      console.log("Email sent successfully:", result.text);
+    } catch (error) {
+      console.error("Failed to send email:", error);
+    }
   };
 
   return (

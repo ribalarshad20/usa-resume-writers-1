@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import resumeImage from "../../assets/optmz-img-01.png";
 import TawkChat, { TawkChatRef } from "./TawkChat";
 interface ATSResumeSectionProps {
