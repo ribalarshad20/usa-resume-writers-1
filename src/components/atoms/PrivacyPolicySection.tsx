@@ -1,4 +1,3 @@
-import React from "react";
 import ServicesTitleSection from "./servicePages/ServicesTitleSection";
 import ResumeSamplesPage from "./ResumeSamplesSection";
 import HeroSectionExample from "./HeroSectionMain";

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import bannerImage1 from "../../assets/banner1.jpeg";
 import bannerImage2 from "../../assets/banner2.jpeg";
 import bannerImage3 from "../../assets/banner3.png";

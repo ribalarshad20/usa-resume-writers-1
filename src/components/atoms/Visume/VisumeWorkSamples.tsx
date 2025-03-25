@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 // Import all portfolio images
 import sample01 from "../../../assets/visume/interactive-01.jpeg";
 import sample02 from "../../../assets/visume/interactive-02.jpeg";

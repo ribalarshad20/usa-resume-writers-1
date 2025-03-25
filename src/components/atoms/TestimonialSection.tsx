@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import person1 from "../../assets/Testimonials/person1.jpg";
 import person2 from "../../assets/Testimonials/person2.jpg";
 import person3 from "../../assets/Testimonials/person3.jpg";
@@ -19,7 +19,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
   testimonials,
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   // Automatically cycle testimonials every 5 seconds
   useEffect(() => {

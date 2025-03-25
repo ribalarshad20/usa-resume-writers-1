@@ -1,4 +1,3 @@
-import React from "react";
 import { Search, FileText, Upload } from "lucide-react";
 import laptopImage from "../../../assets/element-3.png";
 

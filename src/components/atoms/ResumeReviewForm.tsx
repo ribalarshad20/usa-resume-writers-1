@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ResumeReviewFormProps {
   title?: string;
   onSubmit?: () => void;

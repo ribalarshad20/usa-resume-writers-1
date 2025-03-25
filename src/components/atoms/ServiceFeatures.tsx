@@ -1,4 +1,3 @@
-import React from "react";
 import { Monitor, Clock, RefreshCw, ShieldCheck } from "lucide-react";
 
 // Single Feature card component

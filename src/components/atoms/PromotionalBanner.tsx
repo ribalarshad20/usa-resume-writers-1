@@ -1,5 +1,3 @@
-import React from "react";
-
 interface PromotionalBannerProps {
   discountPercentage: number;
   actionText: string;

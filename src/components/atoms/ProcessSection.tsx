@@ -1,8 +1,8 @@
-import React from "react";
 import { Users, Lightbulb, BarChart3, Target, LucideProps } from "lucide-react";
 
 // Background image import
 import bgImage from "../../assets/bg-process.jpg";
+import React from "react";
 
 // Type definitions
 interface ProcessStep {
