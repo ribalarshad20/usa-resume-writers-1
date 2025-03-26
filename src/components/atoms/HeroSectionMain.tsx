@@ -64,7 +64,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       </div>
 
       {showResumeForm && (
-        <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-brightness-50 flex justify-center items-center z-50">
+        <div className="fixed inset-0 bg-opacity-30 backdrop-brightness-50 flex justify-center items-center z-50">
           <div className="bg-white rounded-lg overflow-hidden max-w-4xl w-full mx-4">
             <ResumeForm
               onSubmit={handleFormSubmit}
