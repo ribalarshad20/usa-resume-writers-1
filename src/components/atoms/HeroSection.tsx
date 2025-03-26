@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import bannerImage1 from "../../assets/NewUpdatedImages/banner2.jpg";
 import bannerImage2 from "../../assets/NewUpdatedImages/banner5.jpg";
-import bannerImage3 from "../../assets/NewUpdatedImages/banner3.jpg";
+import bannerImage3 from "../../assets/NewUpdatedImages/banner1.jpg";
 import trusted_logos from "../../assets/logos-trusted-partners.svg";
 import { CircleCheckBig } from "lucide-react";
 import ResumeForm, { FormData } from "./ResumeForm";
