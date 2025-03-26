@@ -20,8 +20,8 @@ const FollowUpLetter: React.FC = () => {
       />
       <ServiceFeatures
         title1="Follow Up Letter"
-        title2="Resume Writing Service"
-        description="Sending a Follow-Up letter after a point of contact is an opportunity for you to mention anything you forgot to say during the meeting. Resume Writers USA has made it easy for you to forward the precise Follow-Up letter to your prospective employers. Our CPCC certified writers make sure that the letter they create is one that shares all that you would like it to share and that asks the questions that you would like to ask. We work magic to structure and create the professional Follow-Up letter that wins you a thorough reply."
+        title2="Writing Service"
+        description="A well-crafted follow-up letter can make all the difference after an interview or networking conversation. At USA Resume Writers, our certified experts write personalized follow-up letters that help you reaffirm interest, add anything you missed, and professionally ask questions that matter. We make sure your message is clear, courteous, and aligned with your goals—helping you leave a lasting impression. With our expertise, you’ll follow up the right way and stay at the top of your mind."
         imageSrc={resumeCoverImage}
         onButtonClick={() => console.log("Button clicked")}
       />

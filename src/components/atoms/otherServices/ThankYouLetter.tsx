@@ -20,8 +20,8 @@ const ThankYouLetter: React.FC = () => {
       />
       <ServiceFeatures
         title1="Thank You Letter"
-        title2="Service"
-        description="Congratulations on getting selected for your dream job! Want to thank your employers for choosing you as the best fit? Having the right skills and expertise of writing a good professional thank you letter is paramount. Our self-motivated team of writers with ample knowledge in crafting pleasant Thank You Letter for your employer. Get professionally written Thank You letter to get insights from CPCC certified professionals."
+        title2="Writing Service"
+        description="Got the job? Great! Now, leave a lasting impression with a professionally written thank you letter. USA Resume Writers has experts who create professional and well-structured appreciation letters for their clients. Your professional appreciation is written through our assistance to demonstrate gratitude toward hiring managers and referral connections who maintain their understanding of your worth."
         imageSrc={resumeCoverImage}
         onButtonClick={() => console.log("Button clicked")}
       />
