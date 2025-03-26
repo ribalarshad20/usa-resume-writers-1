@@ -21,9 +21,7 @@ interface ResumeWritersSectionProps {
   };
 }
 
-const WhyChooseUs: React.FC<ResumeWritersSectionProps> = ({
-  statistics = { applicantsHelped: 500000, interviewMultiplier: 3 },
-}) => {
+const WhyChooseUs: React.FC<ResumeWritersSectionProps> = () => {
   const [showResumeForm, setShowResumeForm] = useState(false);
 
   const handleFormSubmit = (formData: FormData) => {
@@ -34,27 +32,27 @@ const WhyChooseUs: React.FC<ResumeWritersSectionProps> = ({
   const featureItems: FeatureItem[] = [
     {
       icon: <Search size={50} color="#000000" />,
-      title: "Keyword Optimized to get through ATS",
+      title: "ATS-Optimized Content",
     },
     {
       icon: <Briefcase size={50} color="#000000" />,
-      title: "Job Placement & Career Transition Support",
+      title: "Career Growth Guidance",
     },
     {
       icon: <PenTool size={50} color="#000000" />,
-      title: "Multi-Dimensional Certified Resume Writers",
+      title: "Certified Writing Specialists",
     },
     {
       icon: <Layout size={50} color="#000000" />,
-      title: "Market Focused Design Templates",
+      title: "Industry-Aligned Formatting",
     },
     {
       icon: <FileText size={50} color="#000000" />,
-      title: "Applicant Tracking System Compliant Resume",
+      title: "Modern Resume Layouts",
     },
     {
       icon: <Award size={50} color="#000000" />,
-      title: "Certified Professional Resume Writers (CPRW)",
+      title: "Trusted Resume Experts",
     },
   ];
 
@@ -64,8 +62,8 @@ const WhyChooseUs: React.FC<ResumeWritersSectionProps> = ({
         <div className="relative z-10 max-w-7xl mx-auto py-12">
           {/* Why Choose Us */}
           <div className="text-center md:text-left">
-            <h3 className="text-lg font-medium text-gray-700 italic">
-              Why Choose Us
+            <h3 className="text-lg font-medium text-gray-700">
+              Why Work with Us?{" "}
             </h3>
           </div>
 
@@ -73,24 +71,22 @@ const WhyChooseUs: React.FC<ResumeWritersSectionProps> = ({
           <div className="mt-4 md:flex md:items-center md:justify-between">
             <div className="md:max-w-xl lg:max-w-2xl">
               <h2 className="text-4xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-gray-800">
-                <span>Broaden Your</span>
+                <span>Expand Your</span>
                 <span className="block mt-4">
-                  <span className="text-[#C1371A]">Career Horizons</span> With
+                  <span className="text-[#C1371A]">Career Potential</span> with
                 </span>
                 <span className="block mt-4">
-                  Resume Writers <span className="text-gray-800">USA.</span>
+                  USA Resume <span className="text-gray-800"> Writers.</span>
                 </span>
               </h2>
             </div>
 
             <div className="mt-6 md:mt-0 md:max-w-lg lg:max-w-xl">
               <p className="text-sm md:text-base text-gray-700">
-                No matter which career, industry, or position you seek, our
-                career coaching experts and PARWCC certified writers know how to
-                show your value and impact so employers see you as the top
-                candidate. With professional resume writing services, we have
-                helped more than {statistics.applicantsHelped.toLocaleString()}{" "}
-                applicants secure {statistics.interviewMultiplier}x more job
+                Our resume writing services are tailored to highlight your
+                strengths and achievements. With our professional resume
+                services, you’ll make a strong impression. Trusted by thousands,
+                our certified experts help job seekers get noticed and land more
                 interviews.
               </p>
             </div>
@@ -121,7 +117,7 @@ const WhyChooseUs: React.FC<ResumeWritersSectionProps> = ({
               className="ml-4 px-6 py-3 font-semibold bg-[#2F4376] border border-transparent hover:bg-transparent hover:border-[#2F4376] hover:text-[#2F4376] text-white transition-colors duration-200"
               onClick={() => setShowResumeForm(true)}
             >
-              Get Your Resume Today!
+              Let’s Build Yours Today!
             </button>
           </div>
         </div>

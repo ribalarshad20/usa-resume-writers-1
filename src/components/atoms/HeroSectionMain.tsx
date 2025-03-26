@@ -36,7 +36,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         }}
       >
         <div className="relative z-10 container mx-auto px-4 py-6 md:py-6 lg:py-10 text-center flex flex-col items-center justify-center max-w-7xl w-full">
-          <p className="text-lg md:text-xl mb-4 italic">Contact Our Experts</p>
+          <p className="text-lg md:text-xl mb-4">Contact Our Experts</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight max-w-full">
             <span className="whitespace-normal sm:whitespace-nowrap">
               {title} <span className="text-[#C11A2F]">{highlightedText}</span>
@@ -92,9 +92,9 @@ const HeroSectionExample: React.FC = () => {
 
   return (
     <HeroSection
-      title="Explore Vast Professional"
-      highlightedText="Opportunities"
-      subtitle="With Resume Writers USA"
+      title="Unlock New "
+      highlightedText="Career Paths "
+      subtitle="with USA Resume Writers"
       secondaryButtonText="Consult Our Experts"
       primaryButtonText="Get Started Now!"
       onSecondaryClick={handleConsultClick}

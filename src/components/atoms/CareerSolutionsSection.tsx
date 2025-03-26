@@ -55,7 +55,7 @@ const CareerSolutionsSection: React.FC<CareerSolutionsSectionProps> = ({
               </div>
               <button
                 onClick={() => setShowResumeForm(true)}
-                className="ml-4 px-6 py-3 font-semibold bg-[#2F4376] border border-transparent hover:bg-transparent hover:border-[#2F4376] hover:text-[#2F4376] text-white transition-colors duration-200"
+                className="mt-3 px-6 py-3 font-semibold bg-[#2F4376] border border-transparent hover:bg-transparent hover:border-[#2F4376] hover:text-[#2F4376] text-white transition-colors duration-200"
               >
                 Get Started Now!
               </button>

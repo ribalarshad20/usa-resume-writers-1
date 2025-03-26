@@ -79,27 +79,27 @@ const FeatureServices: React.FC = () => {
   const features = [
     {
       icon: <Monitor size={32} />,
-      title: "SEO Optimization",
+      title: "Smart Keyword Targeting",
       description:
-        "Gain the edge on the job application competition by using proven SEO tools and proper keyword research.",
+        "Boost your resume’s visibility with strategic keywords and SEO practices tailored to your dream role.",
     },
     {
       icon: <Clock size={32} />,
-      title: "24/7 Free Consultancy",
+      title: "Around-the-Clock Support",
       description:
-        "Our team of experts work directly with you via our 24/7 live chat to reach a quick and efficient resolution.",
+        "Connect with our experts anytime through 24/7 live chat for quick answers and personalized resume assistance.",
     },
     {
       icon: <RefreshCw size={32} />,
-      title: "Unlimited Revisions",
+      title: "Endless Custom Edits",
       description:
-        "Premium quality resumes with respect to your industry and get unlimited revisions until completely satisfied.",
+        "Enjoy unlimited revisions to match your industry goals—perfection is guaranteed until you’re completely satisfied.",
     },
     {
       icon: <ShieldCheck size={32} />,
-      title: "100% Quality Assured",
+      title: "Top-Tier Quality Promise",
       description:
-        "Guarantee absolute, 100% quality. We build ourselves on great customers and we want you to be one of them.",
+        "We promise 100% satisfaction with resumes that exceed expectations and elevate your professional brand confidently.",
     },
   ];
 

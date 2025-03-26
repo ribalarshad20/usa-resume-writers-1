@@ -17,10 +17,10 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = ({
   features = [
-    "Certified Professional Writers",
-    "ATS Friendly Resumes",
-    "Interview Calls Guarantee",
-    "Highlights Your Strengths",
+    "Expert Resume Writers",
+    "Optimized for ATS",
+    "Guaranteed Interview Success",
+    "Showcases Your Value",
   ],
 }) => {
   const images = [bannerImage1, bannerImage2, bannerImage3];
@@ -126,15 +126,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               {/* Subheading */}
               <div className="py-3 px-1 mb-10 -mx-1">
                 <p className="text-xl sm:text-2xl text-white font-semibold">
-                  Earn more career prospects with a resume
+                  Get noticed faster with a resume designed
                 </p>
                 <p className="text-xl sm:text-2xl text-white font-semibold">
-                  that wins the recruiter's 6-second review.
+                  to impress recruiters in six seconds.
                 </p>
               </div>
 
               {/* Features List */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-3 mb-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-3 mb-10">
                 {features.map((feature, index) => (
                   <div key={index} className="flex items-center gap-2">
                     <CircleCheckBig size={18} color="white" />
