@@ -19,9 +19,9 @@ const EntryLevelResumeSection: React.FC = () => {
         backgroundImage={titleBanner}
       />
       <ServiceFeatures
-        title1="Entry Level"
+        title1="Entry-Level"
         title2="Resume Writing Service"
-        description="Represent yourself for the impeccably suitable job, which can be a tough call for fresh graduates otherwise. Our Certified Professional Resume Writers and Career Coaches work round the clock eminently to put you on show in front of your prospective employers. No matter what your experience is, we work magic to make you look proficient by highlighting your core strengths."
+        description="Just starting your career? Our organization creates professional resumes that demonstrate the strengths of students and new graduates. USA Resume Writers demonstrates extensive experience in turning educational achievements combined with potential into employer impressions through their certified professionals’ work. We position you confidently for the roles you want."
         imageSrc={resumeCoverImage}
         onButtonClick={() => console.log("Button clicked")}
       />

@@ -19,9 +19,9 @@ const ResumeWritingSection: React.FC = () => {
         backgroundImage={titleBanner}
       />
       <ServiceFeatures
-        title1="ATS Compliant"
+        title1="ATS-Friendly"
         title2="Resume Writing Service"
-        description="Get picked by corporates and multinationals of the market even before going through the process of interview. Resume Writers USA has a self-motivated and energetic team of certified professional resume writers and HR professionals with ample knowledge in analyzing and crafting powerful resumes for niche industries. No matter what your experience is, Resume Writers USA is here to make you appear adroit by highlighting your core expertise."
+        description="Be noticed by top companies before the interview begins. Our certified professional resume writer team creates industry-focused resumes tailored for impact. At USA Resume Writers, our resume services are built to highlight your expertise, align with job requirements, and pass applicant tracking systems—no matter your background or experience."
         imageSrc={resumeCoverImage}
         onButtonClick={() => console.log("Button clicked")}
       />

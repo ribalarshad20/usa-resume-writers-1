@@ -19,9 +19,9 @@ const CareerSwitchSection: React.FC = () => {
         backgroundImage={titleBanner}
       />
       <ServiceFeatures
-        title1="Career Switch"
+        title1="Career Change"
         title2="Resume Writing Service"
-        description="Transiting from a career demands a powerful and impactful resume from scratch. HR Professionals and recruiters usually avoid to hire someone fresh and coming from another field, unless our writers’ word your resume in a way that lands you interview calls. Lack of experience does not stop us from creating impressive resumes. We work magic to make you look proficient by highlighting your core strengths."
+        description="Switching careers? We create resumes that translate your past experience into relevant value for new industries. At USA Resume Writers, our experts craft impactful documents that show your potential, highlight transferable skills, and grab recruiter attention—no matter your background. A lack of direct experience won’t hold you back."
         imageSrc={resumeCoverImage}
         onButtonClick={() => console.log("Button clicked")}
       />
