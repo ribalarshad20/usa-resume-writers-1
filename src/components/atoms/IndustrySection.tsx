@@ -91,17 +91,17 @@ const IndustrySection: React.FC<IndustrySectionProps> = ({ industries }) => {
             Dynamic Resume Services
           </p>
           <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
-            <span className="text-gray-800">Over </span>
-            <span className="text-[#C11A2F]">200 Industries</span>
-            <span className="text-gray-800"> Served</span>
+            <span className="text-gray-800">Serving </span>
+            <span className="text-[#C11A2F]">200+ Industries</span>
+            <span className="text-gray-800"> Globally</span>
           </h2>
           <div className="mt-4 flex justify-center">
-            <div className="h-1 w-16 bg-[#C11A2F]"></div>
+            <div className="h-[3px] w-16 bg-[#C11A2F]"></div>
           </div>
           <p className="mt-6 max-w-2xl mx-auto text-xs sm:text-sm text-gray-600 text-center">
-            Through Our Professional Resume Writing and Job Posting Services, We
-            Have Meritoriously Served Clients Emanating from Every Industry
-            Throughout the Globe
+            Our professional resume writer team offers expert resume services
+            trusted by clients across industries, roles, and career levels
+            worldwide.
           </p>
         </div>
 

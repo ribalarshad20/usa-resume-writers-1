@@ -66,7 +66,7 @@ const RecruitmentSection: React.FC<RecruitmentSectionProps> = ({
           <div className="w-24 h-[2px] bg-[#C11A2F] mx-auto mt-6"></div>
           <p className="mt-4 mb-24 text-[#22303F] font-semibold max-w-2xl mx-auto">
             {services.length > 0
-              ? "Tired of Applying to Jobs? Sit back and relax while our professionals do the work for you."
+              ? "Tired of endlessly applying? Let our experts handle the job hunt while you focus on what matters."
               : ""}
           </p>
         </div>
@@ -92,29 +92,29 @@ const RecruitmentSectionExample = () => {
   const services = [
     {
       icon: <Search className="h-8 w-8 text-white" />,
-      title: "Database Search for Suitable Jobs for You",
+      title: "We Search Job Databases for You",
       description:
-        "Our professionals know that corresponding people to the precise roles to create that perfect 'fit' transforms people's lives.",
+        "Our team identifies roles that perfectly align with your skills, background, and career goals.",
     },
     {
       icon: <FileText className="h-8 w-8 text-white" />,
-      title: "Apply & Fill in All Job Applications for You",
+      title: "We Handle Applications on Your Behalf",
       description:
-        "No clue where to initiate? Don't worry, we know the art of filling in a stellar job application and land that opportunity for you.",
+        "Not sure where to begin? We’ll complete job applications with precision and professionalism.",
     },
     {
       icon: <Upload className="h-8 w-8 text-white" />,
-      title: "Send Resume to Our Recruiter Database",
+      title: "We Share Your Resume with Recruiters",
       description:
-        "We direct your resume to recruiters through distinguished platforms and boost your chances at landing a dream job prospect.",
+        "We distribute your resume across trusted platforms to increase visibility and attract top-tier opportunities.",
     },
   ];
 
   return (
     <RecruitmentSection
-      tagline="Bringing Recruiters-Seekers Together"
-      title="Bringing Recruiters-Seekers Together"
-      subtitle="to Achieve Great Things"
+      tagline="Connecting Talent with Opportunities"
+      title="Matching Job Seekers and Recruiters"
+      subtitle="for Career Success"
       services={services}
       laptopImageUrl={laptopImage}
     />

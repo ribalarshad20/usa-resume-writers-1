@@ -19,19 +19,19 @@ const InteractiveResume: React.FC = () => {
         backgroundImage={titleBanner}
       />
       <ServiceFeatures
-        title1="How We Make Your"
-        title2="Interactive Resume Professionally"
-        description="Enhance your persona through your resume by adding visuals and engaging elements to highlight your exposure and industry understanding. Recruiters retain visuals more than text giving you a competitive advantage. Interactive Resumes also give increased authenticity to the profile. We create a winning resume that reflects the eye-catching visual layout of your professional experience and personality."
+        title1="How We Create Your"
+        title2="Interactive Resume with Impact"
+        description="USA Resume Writers combines creative design elements and strategic functions to create interactive resumes that showcase your real personality. Modern resumes transform into multimedia experiences because we embed visual elements from charts to infographics together with icons and dynamic layouts. The visual designs create an immediate response in hiring managers since they retain your qualifications more effectively than traditional text-based formats do."
         imageSrc={resumeCoverImage}
         onButtonClick={() => console.log("Button clicked")}
       />
       <p className="relative max-w-7xl mx-auto p-7">
         {" "}
-        Our expert resume writers and designers not only create visual resume,
-        but at Resume Writers USA, we also help you get noticed by countless
-        companies out there in the market. A variety of charts and beautiful
-        diagrams in the form of infographics will ensure that recruiters do not
-        have to go through loads of text, which is often cumbersome.
+        Our team of writers and designers collaborates to showcase your
+        professional accomplishments in visually compelling designs. Our
+        professional services will create an elegant, mobile-friendly resume
+        that captivates readers without being overwhelming. This is resuming
+        writing, reimagined for the modern job market.
       </p>
       <VisumeWorkSamples />
       <HeroSectionExample />

@@ -79,7 +79,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
 
             {/* Testimonial Card */}
             <div className="bg-white p-6 rounded-lg">
-              <p className="text-gray-700 text-lg italic mb-6 leading-relaxed">
+              <p className="text-gray-700 text-lg italic mb-6 leading-relaxed text-justify">
                 {activeTestimonial.content}
               </p>
               <div>
@@ -118,26 +118,26 @@ export const TestimonialSectionExample: React.FC = () => {
   const testimonialData: Testimonial[] = [
     {
       id: 1,
-      name: "Jose M. Snyder",
-      position: "Media Planner",
+      name: "Amanda Raymond",
+      position: "Marketing Specialist",
       content:
-        "If you are looking for someone who can polish, and make you unique the way that you value yourself more, Resume Writers USA would be the most perfect choice and you never need any other advice to discuss your work experience. I have recommended them to my colleagues as well. Thank you so much, my heart is with you guys and you are the only one who ever I could contact for any advice and review of my work.",
+        "I can’t believe the difference a professional resume can make. USA Resume Writers completely reworked my old resume, and within days I started hearing back from companies. I finally feel like my experience is being seen the right way.",
       image: person1,
     },
     {
       id: 2,
-      name: "Michael T. Smith",
-      position: "Software Engineer",
+      name: "James Leroy",
+      position: "Project Manager (Former Educator)",
       content:
-        "Working with Resume Writers USA transformed my job search completely. Their team took the time to understand my career goals and crafted a resume that highlighted my strengths perfectly. Within two weeks of using my new resume, I received three interview requests from top companies in my field. The personalized approach and attention to detail made all the difference.",
+        "I was nervous about switching careers, but the team made the whole process easy. They really understood how to translate my past work into something relevant to a new field. I’ve already landed two interviews!.",
       image: person2,
     },
     {
       id: 3,
-      name: "Jessica R. Williams",
-      position: "Financial Analyst",
+      name: "Sofia M.",
+      position: "Business Analyst",
       content:
-        "After struggling for months with my job search, I decided to invest in professional resume help. Resume Writers USA exceeded all my expectations. They completely restructured my resume to showcase my achievements rather than just listing responsibilities. The result was amazing - my interview rate increased by 70%! I appreciate how they made my experience shine in ways I couldn't have done myself.",
+        "I had no idea where to start with my resume and LinkedIn profile. USA Resume Writers not only cleaned it all up—they made me feel confident again. It feels like I’m finally presenting my best self.",
       image: person3,
     },
   ];

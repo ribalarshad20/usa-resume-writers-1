@@ -19,9 +19,9 @@ const LinkedInProfileSection: React.FC = () => {
         backgroundImage={titleBanner}
       />
       <ServiceFeatures
-        title1="Influential LinkedIn"
-        title2="Profile Writing Service"
-        description="Get an optimized LinkedIn profile that grabs the instant attention and brings the recruiters at your doorstep. We know how to dress up your professional networking profile to make it look appealing to Human Resource personnel. No matter what your experience is, Resume Writers USA is all set to make you look Proficient by highlighting your core strengths and expertise."
+        title1="LinkedIn Profile"
+        title2="Writing Service"
+        description="Make your LinkedIn profile work for you. The writers at USA Resume Writers will create profiles using strategic keywords that enhance your visibility while attracting recruiters and presenting your professional essence in the best way possible. USA Resume Writers positions candidates strongly in the market while they search for jobs or network through professional resumes that highlight their skills, accomplishments, and career aspirations."
         imageSrc={resumeCoverImage}
         onButtonClick={() => console.log("Button clicked")}
       />

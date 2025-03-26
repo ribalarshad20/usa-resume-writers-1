@@ -19,9 +19,9 @@ const CoverWritingSection: React.FC = () => {
         backgroundImage={titleBanner}
       />
       <ServiceFeatures
-        title1="Persuasive Cover"
-        title2="Letter Writing Service"
-        description="Win the attention of Human Resource Professional to review your job application that break the deal for you. Get professionally written cover letters to get insights from Certified Professional Co-Active Coach (CPCC) certified professionals. No matter what your experience is, Resume Writers USA is all set to make you look proficient by highlighting your core strengths and expertise."
+        title1="Professional Letter"
+        title2="Writing Service"
+        description="Most important words come from personalized letters that show your distinct personality, professional approach, and what you intend to achieve. USA Resume Writers produces individualized written correspondence, including cover letters, thank-you notes, and recommendations, which leave a strong impression on readers. Your message to the reader will connect through expert recommendations that emphasize your strengths."
         imageSrc={resumeCoverImage}
         onButtonClick={() => console.log("Button clicked")}
       />

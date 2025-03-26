@@ -89,11 +89,11 @@ const ResumeSamplesSection: React.FC<ResumeSamplesSectionProps> = ({
               id="resume-samples-title"
               className="text-gray-800 text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6"
             >
-              Custom Written Resume
+              Expert-Crafted Resume Samples
             </h2>
             <p className="text-gray-700 max-w-3xl mx-auto text-sm sm:text-base">
-              Our certified resume writers effortlessly build a job-worthy
-              resume that gets you hired faster and fits all the HR standards.
+              Our resume writers create polished, custom resumes that meet
+              hiring standards and help you land interviews faster than ever.
             </p>
           </div>
 
@@ -132,7 +132,7 @@ const ResumeSamplesSection: React.FC<ResumeSamplesSectionProps> = ({
                     </h3>
                     {selectedCategory === category.id &&
                       category.description && (
-                        <p className="text-gray-600 text-sm sm:text-base animate-fadeIn">
+                        <p className="text-gray-600 text-sm sm:text-base animate-fadeIn text-justify">
                           {category.description}
                         </p>
                       )}
@@ -244,7 +244,7 @@ const getResumeCategories = (): ResumeCategory[] => {
         </svg>
       ),
       description:
-        "Give latent employers a taste of your flair and show your eye for design with professionally written and crafted art & design resume.",
+        "Showcase your artistic style and creative thinking with a custom resume designed to capture attention and reflect your unique talent in the design world.",
       samples: [
         {
           id: "art-1",
@@ -283,7 +283,7 @@ const getResumeCategories = (): ResumeCategory[] => {
         </svg>
       ),
       description:
-        "Showcase your business acumen with a professionally crafted corporate resume that highlights your leadership and management expertise.",
+        "A one-size-fits-all resume won’t cut it. We craft business resumes tailored to your goals, company culture, and the role you’re targeting.",
       samples: [
         {
           id: "corp-1",
@@ -319,7 +319,7 @@ const getResumeCategories = (): ResumeCategory[] => {
         </svg>
       ),
       description:
-        "Highlight your teaching philosophy, education credentials, and instructional achievements with our specialized education resumes.",
+        "Land your next role in academia with a resume that highlights your teaching experience, certifications, classroom impact, and passion for shaping future minds.",
       samples: [
         {
           id: "edu-1",
@@ -359,7 +359,7 @@ const getResumeCategories = (): ResumeCategory[] => {
         </svg>
       ),
       description:
-        "Present your property expertise, sales achievements, and client relationship skills with a professionally crafted real estate resume.",
+        "Stand out in property sales with a real estate resume that focuses on client service, negotiation skills, and your ability to close deals.",
       samples: [
         {
           id: "real-1",
@@ -399,7 +399,7 @@ const getResumeCategories = (): ResumeCategory[] => {
         </svg>
       ),
       description:
-        "Demonstrate your technical leadership, project management skills, and IT expertise with our specialized technology management resumes.",
+        "Get noticed in tech leadership with a resume built to showcase your strategic mindset, technical know-how, and ability to drive innovation across teams.",
       samples: [
         {
           id: "it-1",

@@ -20,8 +20,8 @@ const RecommendationLetter: React.FC = () => {
       />
       <ServiceFeatures
         title1="Recommendation Letter"
-        title2="Resume Writing Service"
-        description="It takes lots of concentration and effort to strike a balance when writing recommendations as they need to be professional as well as genuine to create the credibility of the candidate. Resume Writers USA understands your dilemma and that’s why we have a perfect solution for you. Our experts tackle every type of recommendation letter ranging from entry level to executive level by hiring the professionals in the field and of course who can do it better than us."
+        title2="Writing Service"
+        description="Writing a recommendation letter that’s both heartfelt and professional can be tricky. That’s where USA Resume Writers steps in. Our Certified Professional resume writers craft compelling, personalized recommendation letters that reflect credibility, sincerity, and professionalism. Whether you’re endorsing an intern, employee, or executive, we tailor each letter to suit the opportunity. From structure to tone, we ensure your message hits the mark—leaving a strong impression on hiring managers or academic boards."
         imageSrc={resumeCoverImage}
         onButtonClick={() => console.log("Button clicked")}
       />

@@ -38,7 +38,7 @@ const ServiceFeatures: React.FC<ResumeServiceComponentProps> = ({
 
   return (
     <>
-      <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center pt-30">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center pt-30 pb-16">
         <div className="md:w-1/2 flex justify-center">
           <img
             src={imageSrc}
@@ -55,7 +55,9 @@ const ServiceFeatures: React.FC<ResumeServiceComponentProps> = ({
               <h2 className="text-4xl font-bold text-[#C11A2F]">{title2}</h2>
             </div>
           </div>
-          <p className="text-gray-700 leading-relaxed mb-6">{description}</p>
+          <p className="text-gray-700 leading-relaxed mb-6 text-justify">
+            {description}
+          </p>
           <button
             type="button"
             onClick={handleButtonClick}

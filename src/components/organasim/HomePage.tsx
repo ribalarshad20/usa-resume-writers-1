@@ -36,9 +36,9 @@ const HomePage: React.FC = () => {
       <HeroSectionExample />
 
       <CareerSolutionsSection
-        title="Ultimate Career Solutions"
-        subtitle="We Help You Ace Your Career By Registering You On The World's Most Trusted Referral Portals"
-        description="We provide more than just resume writing service! Resume Writers USA is the veritable source of getting yourself registered on various referral platforms to get recognized among employer's social networks."
+        title="Career Growth Partner"
+        subtitle="We connect your resume to top referral platforms and networks trusted by global recruiters and employers."
+        description="At USA Resume Writers, we go beyond resumes—connecting you to trusted referral networks to boost visibility, credibility, and job opportunities across professional platforms and hiring communities."
         logos={logos}
       />
       <ProcessSectionExample />

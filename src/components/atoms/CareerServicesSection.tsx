@@ -293,28 +293,54 @@ const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
 const CareerServicesSection: React.FC = () => {
   const servicesData: ServiceItem[] = [
     {
+      title: "ATS Compliant Resume Writing Service",
+      description:
+        "Beat the bots! Our resume services are built to pass ATS scans and get your resume into human hands quickly.",
+      link: "/services/resume-writing/",
+    },
+    {
+      title: "Career Switch Resume Writing Service",
+      description:
+        "Switching industries? Our resume services reshape your experience to match new paths—spotlighting transferable skills that hiring managers value most.",
+      link: "/services/career-switch/",
+    },
+    {
+      title: "Entry Level Resume Writing Service",
+      description:
+        "Starting fresh? Our experts create impactful, first-time resumes that reflect your passion, potential, and readiness to enter the professional world.",
+      link: "/services/entry-level/",
+    },
+    {
+      title: "LinkedIn Profile Writing Service",
+      description:
+        "Let a professional resume writer polish your LinkedIn profile to reflect your skills and goals and make recruiters take notice fast.",
+      link: "/services/linkedIn-profile/",
+    },
+
+    {
+      title: "Cover Letter Writing Service",
+      description:
+        "Let a professional resume writer craft a compelling cover letter that complements your resume and captures employer interest from the start.",
+      link: "/services/cover-letters/",
+    },
+
+    {
       title: "Follow Up Letter Writing Service",
       description:
-        "Sending a Follow-Up letter after a point of contact is an opportunity for you to mention anything you forgot to say during the meeting.",
-      link: "/follow-up-letter",
+        "A well-timed follow-up letter shows initiative. We help you express interest, clarify key points, and leave a lasting impression.",
+      link: "/services/follow-up-letter/",
     },
     {
       title: "Recommendation Letter Writing Service",
       description:
-        "We put in great effort to strike a balance when writing letter as they need to be professional as well as genuine to create the credibility.",
-      link: "/recommendation-letter",
+        "Our writers craft thoughtful, personalized recommendations that feel authentic—enhancing your credibility while maintaining a polished, professional tone throughout.",
+      link: "/services/recommendation-letter/",
     },
     {
       title: "Thank You Letter Writing Service",
       description:
-        "Congratulations on getting selected for your dream job! Want to thank your employers through a thank you letter for choosing you as the best fit?",
-      link: "/thank-you-letter",
-    },
-    {
-      title: "ATS Compliant Resume Writing Service",
-      description:
-        "Let our professional resume writers help you earn the attention of your prospective employer and optimize your reach within no time.",
-      link: "/ats-resume",
+        "Say thanks the right way! We write warm, sincere thank-you letters that reinforce your value and leave employers feeling appreciated.",
+      link: "/services/thank-you-letter/",
     },
   ];
 

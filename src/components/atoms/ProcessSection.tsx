@@ -1,4 +1,10 @@
-import { Users, Lightbulb, BarChart3, Target, LucideProps } from "lucide-react";
+import {
+  Lightbulb,
+  Target,
+  LucideProps,
+  SquarePen,
+  RefreshCw,
+} from "lucide-react";
 
 // Background image import
 import bgImage from "../../assets/bg-process.jpg";
@@ -40,7 +46,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({
       <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <header className="mb-12 md:mb-16">
-          <p className="text-gray-700 italic text-base sm:text-lg mb-2">
+          <p className="text-gray-700 text-base sm:text-lg mb-2">
             Comprehensive Process
           </p>
 
@@ -92,31 +98,30 @@ export const ProcessSectionExample: React.FC = () => {
   const processSteps = [
     {
       id: 1,
-      icon: <Users />,
-      title: "Submit Career Brief",
-      description:
-        "Sign up with us and submit your detailed career brief or previous resume.",
+      icon: <RefreshCw />,
+      title: "Step-by-Step Process",
+      description: "How our experts’ craft Job-Winning Resumes with Precision",
     },
     {
       id: 2,
       icon: <Lightbulb />,
-      title: "Get Your First Draft",
+      title: "Submit Your Career Info",
       description:
-        "Our PARWCC experts will write your resume's first draft for you to make tweaks or finalize.",
+        "Sign up and share your previous resume or detailed career information to help us understand your goals.",
     },
     {
       id: 3,
-      icon: <BarChart3 />,
-      title: "Finalize Your Resume",
+      icon: <SquarePen />,
+      title: "Receive First Draft",
       description:
-        "Review your draft and request for revision, if any. Finalize it to get the final files.",
+        "Our professional resume writer prepares your first draft, which is crafted to align with industry standards and your career direction.",
     },
     {
       id: 4,
       icon: <Target />,
-      title: "Download Your Files",
+      title: "Download & Apply",
       description:
-        "Download your file. Now you are ready to apply for your dream job with a proficient resume.",
+        "Once finalized, download your resume files and start applying confidently with a strong, tailored document in hand.",
     },
   ];
 

@@ -11,11 +11,11 @@ interface ATSResumeSectionProps {
 }
 
 const ATSResumeSection: React.FC<ATSResumeSectionProps> = ({
-  headerText = "ATS Compliant Resume",
+  headerText = "ATS-Friendly Resume Writing",
 
-  descriptionText = "Once we custom written your resume, we deploy the services of the ATS technology to make sure that your resume will pass through it when you apply for a prospective job.",
-  subTitle = "Professionally Written Resumes",
-  paragraphText = "Applicants get rejected for using resume templates that are unreadable by Applicant Tracking Systems (ATS) and resume screening software. We make sure that you never get rejected by a computer again. Our expert writers custom write professional resumes that are vetted by recruiters and are optimized to pass ATS and recruitment software.",
+  descriptionText = "Our experts craft resumes designed to work with modern ATS tools—ensuring your application reaches recruiters without getting lost in the system or filtered out.",
+  subTitle = "ATS-Ready Professional Resumes",
+  paragraphText = "Many candidates get filtered out due to poorly formatted resumes. Our professional resume writers create custom resumes that work perfectly with Applicant Tracking Systems—designed, written, and recruiter-approved to get noticed by both software and hiring managers.",
 }) => {
   const tawkChatRef = useRef<TawkChatRef>(null);
 
@@ -26,7 +26,7 @@ const ATSResumeSection: React.FC<ATSResumeSectionProps> = ({
           <div className="text-center mb-8">
             <div className="flex flex-col items-center text-center">
               <p className="font-semibold text-black mb-2">
-                Optimized for Applicant Tracking System
+                Built for Applicant Tracking Systems
               </p>
               <h1 className="text-4xl md:text-5xl font-bold">
                 <span className="text-[#C11A2F]">
@@ -54,10 +54,10 @@ const ATSResumeSection: React.FC<ATSResumeSectionProps> = ({
                 <h2 className="text-xl md:text-3xl font-bold mt-2 mb-2">
                   Optimized for <span className="text-[#C11A2F]">ATS</span>
                 </h2>
-                <div className="h-[3px] w-24 mt-4 bg-[#C11A2F]"></div>
+                <div className="h-[2px] w-24 mt-4 bg-[#C11A2F]"></div>
               </div>
 
-              <p className="text-sm md:text-base text-gray-700">
+              <p className="text-sm md:text-base text-gray-700 text-justify">
                 {paragraphText}
               </p>
 
@@ -67,9 +67,9 @@ const ATSResumeSection: React.FC<ATSResumeSectionProps> = ({
                     // On click, call the maximize method on TawkChat
                     tawkChatRef.current?.maximize();
                   }}
-                  className="ml-4 px-6 py-3 font-semibold bg-[#2F4376] border border-transparent hover:bg-transparent hover:border-[#2F4376] hover:text-[#2F4376] text-white transition-colors duration-200"
+                  className="px-6 py-3 font-semibold bg-[#2F4376] border border-transparent hover:bg-transparent hover:border-[#2F4376] hover:text-[#2F4376] text-white transition-colors duration-200"
                 >
-                  Consult Our Experts
+                  Talk to Our Experts
                 </button>
               </div>
             </div>

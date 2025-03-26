@@ -1,11 +1,9 @@
 import { useState } from "react";
 import ServicesTitleSection from "./servicePages/ServicesTitleSection";
-
 import ResumeSamplesPage from "./ResumeSamplesSection";
 import HeroSectionExample from "./HeroSectionMain";
 import CareerServicesSection from "./CareerServicesSection";
 import { ProcessSectionExample } from "./ProcessSection";
-
 import { TestimonialSectionExample } from "./TestimonialSection";
 import Footer from "./Footer";
 import { footerData } from "../../data/footerData";
@@ -16,7 +14,7 @@ interface FAQItemProps {
   id: string;
   number: string;
   question: string;
-  answer: string;
+  answer: React.ReactNode;
   isOpen: boolean;
   toggleFAQ: (id: string) => void;
 }
@@ -78,7 +76,7 @@ interface FAQAccordionProps {
     id: string;
     number: string;
     question: string;
-    answer: string;
+    answer: React.ReactNode;
   }[];
   defaultOpen?: string;
 }
@@ -94,7 +92,7 @@ export const FAQAccordion: React.FC<FAQAccordionProps> = ({
   };
 
   return (
-    <div className="w-full bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+    <div className="w-full bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
       {faqs.map((faq) => (
         <FAQItem
           key={faq.id}
@@ -115,72 +113,89 @@ export default function FAQSection() {
     {
       id: "01",
       number: "01",
-      question: "What Do You Need to Get Started?",
+      question: "How do I get started with USA Resume Writers?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu purus feugiat, facilisis nisi id, varius justo. Suspendisse potenti. Donec vestibulum purus eget tortor consectetur, nec ultrices tellus dignissim. Nulla facilisi. Etiam efficitur justo id risus faucibus finibus.",
+        "Getting started is simple. The package selection process leads to asking whether customers already have a resume or requesting detailed career information to create the document. The information provided enables us to understand your background, career objectives, and professional strengths. Our certified resume writer receives your project assignment, after which they create a tailored resume suitable for job applications.",
     },
     {
       id: "02",
       number: "02",
-      question: "How Are You Different Than A Career Coach?",
+      question: "How is a USA Resume Writers different from a career coaches?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum, magna vel semper commodo, metus nisl consequat metus, in ultrices mi augue id diam. Aenean et vulputate turpis. Mauris et lectus sed sapien posuere lacinia. Vivamus venenatis libero vel lectus tincidunt maximus.",
+        "Your service differs from that of career coaches because we deliver completed writing tasks alongside professional career advice. The company commits to creating professional career documents which comprise complete resumes together with cover letters LinkedIn profiles and additional career materials that produce swift results for clients. Through our mix of career know-how and ATS-friendly document construction we provide professional document development services that boost applicant visibility in the job market.",
     },
     {
       id: "03",
       number: "03",
-      question: "What Is Your Turnaround Time?",
+      question: "How long does the process take from start to finish?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget quam in nisi facilisis facilisis. Cras dapibus risus accumsan, commodo quam quis, semper nulla. Nam id felis libero. Integer ultrices ac dolor non ultricies. Nullam et vulputate orci, ut congue elit.",
+        "The turnaround duration for the first draft typically spans between 3 to 5 business days once we obtain all essential information from customers. We provide express document development services through priority and urgent options for clients who need fast delivery. The final delivery process extends over specific periods determined by both project complexity and needed revisions.",
     },
     {
       id: "04",
       number: "04",
-      question: "Do You Offer ATS-Friendly Resume Formats?",
+      question: "Will I be able to communicate with my assigned writer?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non ante ullamcorper, tempus enim sit amet, ullamcorper nulla. Nulla facilisi. In tincidunt, dolor eget faucibus tempus, tellus erat vestibulum odio, in bibendum dui libero eget metus. Donec congue felis nec purus imperdiet, vel euismod libero pharetra.",
+        "Yes. A certified resume writer will join your project after you place your order and will initiate direct contact with you. Users can communicate through the client portal or email system to discuss their experience preferences along with their goals during the entire process.",
     },
     {
       id: "05",
       number: "05",
-      question: "Can You Help With LinkedIn Profiles Too?",
+      question: "Are there any hidden or recurring charges?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor mi vel nisl suscipit, in interdum eros elementum. Nunc sed mauris aliquet, feugiat sem quis, condimentum ipsum. Maecenas vestibulum, magna id imperdiet congue, justo dolor commodo quam, a condimentum sem justo quis turpis.",
+        "No, never. Our service costs appear straightforward and easy to understand. Your fee for this selected service remains a one-time purchase, while it excludes both recurring payments and hidden fees. Our service includes a dedicated number of free revisions, which allows you to achieve full satisfaction without additional costs.",
     },
     {
       id: "06",
       number: "06",
-      question: "What Industries Do You Specialize In?",
+      question: "What industries or roles do you specialize in?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nibh vestibulum, commodo nisi a, tempor magna. Nullam vel vulputate risus. Vivamus semper, magna nec lacinia vestibulum, neque turpis maximus quam, eget rhoncus leo justo eu risus. Aliquam erat volutpat. Etiam feugiat libero metus.",
+        "The professional resume writing service of USA Resume Writers serves all more than 200 different industries. The writers at USA Resume Writers specialize in adapting your resume content to align with professional expectations from tech, healthcare, finance, marketing, education, government, and creative job markets.",
     },
     {
       id: "07",
       number: "07",
-      question: "Do You Offer Any Guarantees?",
+      question:
+        "What if I’m not satisfied with the final version of my resume?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales purus in diam vehicula varius. Duis imperdiet magna ut purus imperdiet efficitur. Sed at augue pretium, volutpat lorem nec, commodo justo. In fermentum blandit urna, at consequat eros imperdiet vel. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
+        "Your satisfaction is our priority. Under our terms, your resume is subjected to an unlimited number of revisions during the set period of time, while our service is protected by a money-back guarantee if you continue to be dissatisfied. Through our services we aim to establish a confident and ready candidate who can efficiently submit their resumes for applications.",
     },
     {
       id: "08",
       number: "08",
-      question: "How Many Revisions Are Included?",
+      question: "What guarantees do you offer on quality and results?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac justo erat. Duis id posuere massa. Vivamus vel varius neque. Nullam quis sagittis nibh. Donec eget augue vitae libero efficitur facilisis. Morbi hendrerit odio eros, non facilisis tellus tristique sed. Donec tincidunt risus eget ultrices consequat.",
+        "Our company delivers fully written documents that utilize target keywords while following application tracking system standards. Real professional resume writers crafting new resumes use their expertise in current hiring procedures to provide premium quality documents. The resume optimization entails multiple checks on plagiarism together with grammatical accuracy and optimal formatting.",
     },
     {
       id: "09",
       number: "09",
-      question: "What Payment Methods Do You Accept?",
+      question: "Do you offer visual resumes or infographic-style designs?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu dignissim nunc. Cras ut diam purus. Nulla facilisi. Phasellus pellentesque, sem sed tempus sollicitudin, sapien purus tempus nisi, a imperdiet justo enim nec sapien. Nulla malesuada felis nisi, at mollis massa feugiat vel.",
+        "Yes, we do. Our service provides infographic-style layouts together with modern resume styles for creative purposes that enhance the visuals of design work and marketing and media environments. We establish these designs in collaboration with our designers to maintain design attractiveness while ensuring readability remains seamless.",
     },
     {
       id: "10",
       number: "10",
-      question: "Can I See Some Sample Resumes?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis justo felis. Nulla facilisi. Suspendisse potenti. Nullam eget convallis dui, vel finibus sapien. Maecenas lobortis magna ut magna tempus, nec elementum quam ornare. Vivamus porta diam mi, eget volutpat enim efficitur at.",
+      question: "What does the complete resume writing process look like?",
+      answer: (
+        <>
+          <p className="mb-2">The process includes four key steps:</p>
+          <ul className="list-disc ml-6 mb-2">
+            <li>Submit your career information or previous resume.</li>
+            <li>A certified writer creates your first draft.</li>
+            <li>You review the draft and request revisions if needed.</li>
+            <li>
+              Once approved, we deliver the final files in multiple formats so
+              you’re ready to apply immediately.
+            </li>
+          </ul>
+          <p>
+            We keep the process simple, collaborative, and centered around your
+            success.
+          </p>
+        </>
+      ),
     },
   ];
 
@@ -188,7 +203,6 @@ export default function FAQSection() {
     <div className="bg-white">
       <ServicesTitleSection title="FAQS" backgroundImage={titleBanner} />
       <FAQAccordion faqs={faqData} defaultOpen="01" />
-
       <ResumeSamplesPage />
       <HeroSectionExample />
       <CareerServicesSection />
