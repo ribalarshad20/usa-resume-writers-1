@@ -27,6 +27,7 @@ import ResumeSamplePage from "./components/atoms/ResumeSamplePage";
 function App() {
   return (
     <>
+      <SpeedInsights />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout />}>
@@ -90,7 +91,6 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-      <SpeedInsights />
     </>
   );
 }
