@@ -133,7 +133,7 @@ const Footer: React.FC<FooterProps> = ({
                     className="text-gray-300 hover:text-white transition duration-300 text-sm flex items-center"
                   >
                     <svg
-                      className="h-3 w-3 mr-2 text--[#C11A2F]"
+                      className="h-3 w-3 mr-2 text-[#C11A2F]"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >

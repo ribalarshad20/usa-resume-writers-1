@@ -21,6 +21,7 @@ import ContactSection from "./components/atoms/ContactSection";
 import TermsOfUseSection from "./components/atoms/TermsOfUseSection";
 import PrivacyPolicySection from "./components/atoms/PrivacyPolicySection";
 import ProcessPage from "./components/atoms/ProcessPage";
+import ResumeSamplePage from "./components/atoms/ResumeSamplePage";
 
 function App() {
   return (
@@ -83,6 +84,7 @@ function App() {
           <Route path="/term-of-use/" element={<TermsOfUseSection />} />
           <Route path="/privacy-policy/" element={<PrivacyPolicySection />} />
           <Route path="/process/" element={<ProcessPage />} />
+          <Route path="/resume-sample/" element={<ResumeSamplePage />} />
         </Route>
       </Routes>
     </BrowserRouter>

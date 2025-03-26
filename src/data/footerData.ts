@@ -25,7 +25,7 @@ export const footerData = {
   companyLinks: [
     { title: "Web Based Resume", link: "/services/web-based-resume/" },
     { title: "How We Work", link: "/process/" },
-    { title: "Resume Samples", link: "/resume-samples" },
+    { title: "Resume Samples", link: "/resume-sample/" },
     { title: "Pricing Plan", link: "/pricing-plan" },
     { title: "FAQs", link: "/faqs/" },
     { title: "Contact", link: "/contact-us/" },
