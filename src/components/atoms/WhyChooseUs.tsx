@@ -82,7 +82,7 @@ const WhyChooseUs: React.FC<ResumeWritersSectionProps> = () => {
             </div>
 
             <div className="mt-6 md:mt-0 md:max-w-lg lg:max-w-xl">
-              <p className="text-sm md:text-base text-gray-700">
+              <p className="text-sm md:text-base text-gray-700 text-justify">
                 Our resume writing services are tailored to highlight your
                 strengths and achievements. With our professional resume
                 services, you’ll make a strong impression. Trusted by thousands,

@@ -132,7 +132,7 @@ const ResumeSamplesSection: React.FC<ResumeSamplesSectionProps> = ({
                     </h3>
                     {selectedCategory === category.id &&
                       category.description && (
-                        <p className="text-gray-600 text-sm sm:text-base animate-fadeIn">
+                        <p className="text-gray-600 text-sm sm:text-base animate-fadeIn text-justify">
                           {category.description}
                         </p>
                       )}

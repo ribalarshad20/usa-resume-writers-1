@@ -1,3 +1,5 @@
+import React from "react";
+
 interface SectionProps {
   title: string;
   children: React.ReactNode;
@@ -14,255 +16,233 @@ const Section: React.FC<SectionProps> = ({ title, children }) => {
 
 const PrivacyPolicy: React.FC = () => {
   return (
-    <div className="w-full max-w-7xl mx-auto p-4 mt-8 md:p-6 bg-white rounded">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">Privacy Policy</h1>
+    <div className="w-full max-w-7xl mx-auto p-4 mt-8 md:p-6 bg-white rounded text-justify">
+      {/* Header */}
+      <h1 className="text-4xl font-bold text-gray-800 mb-6">Privacy Policy</h1>
 
-      <div className="space-y-6">
-        <p className="text-gray-700 font-medium">Terms Of Use</p>
+      {/* Intro */}
+      <p className="text-gray-700 mb-6">
+        Welcome to USA Resume Writers’ Privacy Policy. This policy outlines how
+        we collect, use, and safeguard your personal information when you
+        interact with our website and services.
+      </p>
+      <p className="text-gray-700 mb-6">
+        By using our website, you agree to the collection and use of information
+        in accordance with this Privacy Policy. If you do not agree, please
+        refrain from using our services.
+      </p>
+      <p className="text-gray-700 mb-6">
+        Note: This policy applies only to the USA Resume Writers’ website and
+        not to any third-party sites linked through our platform.
+      </p>
 
+      <Section title="About USA Resume Writers">
         <p className="text-gray-700">
-          Welcome to our Privacy Policy, where we outline how we handle your
-          personal data and what it means for you.
-        </p>
-
-        <p className="text-gray-700">
-          This notice applies to our website and the services mentioned on our
-          website. By using our services, you consent to us collecting and
-          processing your personal information. If you disagree with our
-          practices, please refrain from using our website.
-        </p>
-
-        <p className="text-gray-700">
-          Please note that this Privacy Policy only applies to our website and
-          not to third-party sites linked to our platform. We respect your
-          rights and comply with applicable laws regarding data protection. Any
-          changes to this notice will be updated here, so please check back
-          periodically for updates.
-        </p>
-      </div>
-
-      <Section title="About Us">
-        <p className="text-gray-700">
-          We provide various services to help you stand out and showcase your
-          strengths. Our team of professional resume writers offers resume
-          writing, editing, CV services, LinkedIn profile creation, cover letter
-          writing, and more.
+          USA Resume Writers provides career-focused services, including
+          professional resume writing, editing, CV creation, cover letter
+          writing, and LinkedIn profile optimization to help individuals
+          showcase their skills and reach their career goals.
         </p>
       </Section>
 
-      <Section title="What Personal Data Do We Collect?">
-        <p className="text-gray-700">
-          Personal data includes details about you that can help someone know
-          who you are.
+      <Section title="What Personal Data We Collect">
+        <p className="text-gray-700 mb-4">
+          Personal data refers to any information that can be used to identify
+          you. While some data is necessary for providing our services, you
+          choose what information to share with us.
         </p>
-
-        <p className="text-gray-700 mt-4">
-          Although we will protect your data well, submitting sensitive data
-          like racial or ethnic origin, nationality, citizenship, social origin,
-          language, health condition, age, religion, marital status, and trade
-          union membership is your choice.
+        <p className="text-gray-700 mb-4">
+          Information We May Collect Includes:
         </p>
-
-        <p className="text-gray-700 mt-4">
-          We might gather and handle these types of info:
-        </p>
-
-        <div className="mt-4">
-          <p className="text-gray-700 font-medium">Users Of Our Website:</p>
-          <div className="pl-5 mt-2">
-            <p className="text-gray-700">
-              We use Google Analytics to keep an eye on how people use our
-              website. It collects info like where you are, what device you're
-              using, and what browser you use. But don't worry, this info
-              doesn't tell us who you are personally. Google Analytics also
-              records your computer's IP address, but we don't see it. We see
-              Google as a separate company that handles data for us.
-            </p>
-            <p className="text-gray-700 mt-3">
-              Sometimes, we use technology to see how people behave on our site.
-              This might involve something called a 'cookie' that gets saved on
-              your browser. You can find out more about how we use cookies in
-              Section 4.
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-4">
-          <p className="text-gray-700 font-medium">Contact Us Form:</p>
-          <div className="pl-5 mt-2">
-            <p className="text-gray-700">
-              We gather personal info like names, emails, and phone numbers
-              through our website's contact form. This helps us respond to your
-              questions and fulfill your needs.
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-4">
-          <p className="text-gray-700 font-medium">Clients Of Our Website:</p>
-          <div className="pl-5 mt-2">
-            <p className="text-gray-700">
-              We collect personal info from our clients (both writers and
-              customers) to help with their questions about our service.
-            </p>
-            <p className="text-gray-700 mt-3">
-              Here's the kind of info we collect:
-            </p>
-            <ul className="mt-3 space-y-2">
-              <li className="text-gray-700">
-                <span className="font-medium">Contact details: </span>
-                Your real name, social media links (like Google or LinkedIn),
-                address, phone number, and email.
-              </li>
-              <li className="text-gray-700">
-                <span className="font-medium">
-                  Education and work history:{" "}
-                </span>
-                Info about your schooling and job experience.
-              </li>
-              <li className="text-gray-700">
-                <span className="font-medium">Other details: </span>
-                Anything else you choose to share, like a photo or salary
-                expectations.
-              </li>
-            </ul>
-            <p className="text-gray-700 mt-3">
-              Sometimes, we might need your consent to use your info. If we do,
-              we'll let you know clearly.
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-4">
-          <p className="text-gray-700 font-medium">Live Chat:</p>
-          <div className="pl-5 mt-2">
-            <p className="text-gray-700">
-              We have a live chat on our website run by a third-party service
-              provider. You can see their policy here:{" "}
-              <a
-                href="https://www.zendesk.com/company/agreements-and-terms/privacy-notice/"
-                className="text-blue-600 hover:underline"
-              >
-                https://www.zendesk.com/company/agreements-and-terms/privacy-notice/
-              </a>
-            </p>
-            <p className="text-gray-700 mt-3">
-              When you use our live chat, we automatically gather these details:
-              your IP address, browser type, and operating system. We'll also
-              ask for your name, phone number, email, and any other info you
-              share so we can follow up on your inquiry.
-            </p>
-            <p className="text-gray-700 mt-3">
-              We get a transcript of your chat via email and keep it on our
-              email provider's servers.
-            </p>
-          </div>
-        </div>
-      </Section>
-
-      <Section title="How Do We Use Cookies?">
-        <p className="text-gray-700">
-          Cookies are tiny text files stored on your device for various
-          purposes. There are two main types: persistent cookies and session
-          cookies.
-        </p>
-
-        <p className="text-gray-700 mt-4">
-          Persistent cookies stay on your device for a while and help us track
-          and target your interests. Session cookies, on the other hand, make it
-          easier for you to navigate our website and don't stick around as long.
-        </p>
-
-        <p className="text-gray-700 mt-4">
-          Cookies can also be either "first party" or "third party". First-party
-          cookies come directly from the website you're visiting and help with
-          things like analytics and language settings. Third-party cookies come
-          from other domains and are used for things like tracking and
-          advertising.
-        </p>
-
-        <p className="text-gray-700 mt-4">
-          You can choose to refuse browser cookies, but this might limit your
-          access to parts of the website. If you want to delete stored cookies,
-          you can do so manually. But remember, this won't stop more cookies
-          from being placed on your device unless you adjust your browser
-          settings.
-        </p>
-
-        <p className="text-gray-700 mt-4">
-          Our cookies are used for the following purposes:
-        </p>
-
-        <ul className="mt-3 space-y-2">
-          <li className="text-gray-700">
-            <span className="font-medium">Essential/Technical: </span>
-            These cookies are vital for our website to work as you expect. They
-            help us recognize when you're logged in and remember your actions
-            during your visit to keep the site secure.
+        <ul className="list-disc pl-6 space-y-2 text-gray-700">
+          <li>
+            <span className="font-medium">Contact details:</span> Name, email
+            address, phone number, mailing address, and social media links
+            (e.g., LinkedIn or Google).
           </li>
-          <li className="text-gray-700">
-            <span className="font-medium">Analytical/Performance: </span>
-            These cookies help us understand how people use our website. They
-            track which pages are popular and where our visitors come from.
+          <li>
+            <span className="font-medium">Career-related data:</span> Work
+            history, education, certifications, skills, and professional
+            achievements.
           </li>
-          <li className="text-gray-700">
-            <span className="font-medium">Functionality: </span>
-            These cookies remember your preferences and choices, making your
-            experience on our site smoother.
+          <li>
+            <span className="font-medium">Optional details:</span> Photo, salary
+            expectations, or any additional information shared during
+            consultations.
           </li>
-          <li className="text-gray-700">
-            <span className="font-medium">Third-Party Advertising: </span>
-            These cookies track your activities across different websites to
-            provide you with targeted ads. Our third-party service providers,
-            like Google and Facebook, may also use these cookies for advertising
-            purposes. They have their own privacy policies.
+          <li>
+            <span className="font-medium">Sensitive data:</span> You may choose
+            to submit information like nationality, ethnicity, religion, health
+            condition, or marital status; however, it is not required for our
+            services.
           </li>
         </ul>
       </Section>
 
-      <Section title="Marketing:">
-        <p className="text-gray-700">
-          We don't share your personal info with advertisers but might share
-          anonymous visitor data for marketing purposes.
+      <Section title="Visitors to Our Website">
+        <p className="text-gray-700 mb-4">
+          We use analytics tools such as Google Analytics to track website
+          activity. This includes:
         </p>
-
+        <ul className="list-disc pl-6 space-y-2 text-gray-700">
+          <li>Browser type, device, and location (non-identifiable)</li>
+          <li>Time spent on pages, click patterns, and navigation behavior</li>
+        </ul>
         <p className="text-gray-700 mt-4">
-          We might send you promotional emails, but only if you've agreed. You
-          can opt-out anytime by following the instructions in the email or
+          While Google Analytics logs IP addresses, we do not access or store
+          personally identifiable information through it. Cookies and similar
+          tracking tools may be used to monitor site interaction. For details,
+          see the “Cookies” section below.
+        </p>
+      </Section>
+
+      <Section title="Contact Forms">
+        <p className="text-gray-700 mb-4">
+          When you use our contact forms, we collect basic details such as:
+        </p>
+        <ul className="list-disc pl-6 space-y-2 text-gray-700">
+          <li>Your full name</li>
+          <li>Email address</li>
+          <li>Phone number</li>
+          <li>Any message or additional information you provide</li>
+        </ul>
+        <p className="text-gray-700 mt-4">
+          This allows us to follow up with your inquiry and provide better
+          support.
+        </p>
+      </Section>
+
+      <Section title="Clients of USA Resume Writers">
+        <p className="text-gray-700">
+          If you purchase our services, we may collect additional personal and
+          professional data necessary for completing your project. This helps us
+          deliver custom-tailored documents and ensures an efficient process.
+        </p>
+      </Section>
+
+      <Section title="Live Chat Services">
+        <p className="text-gray-700 mb-4">
+          Our live chat is powered by a trusted third-party provider. When you
+          use this feature, we may collect:
+        </p>
+        <ul className="list-disc pl-6 space-y-2 text-gray-700">
+          <li>Your name and contact information</li>
+          <li>IP address, device type, browser, and operating system</li>
+          <li>
+            Transcripts of the chat, which are securely stored on our email
+            server
+          </li>
+        </ul>
+        <p className="text-gray-700 mt-4">
+          This data is used only to respond to your inquiry or follow-up as
+          needed.
+        </p>
+      </Section>
+
+      <Section title="How We Use Cookies">
+        <p className="text-gray-700 mb-4">
+          Cookies are small files placed on your device to improve your
+          experience on our site. We use:
+        </p>
+        <ol className="list-decimal pl-6 space-y-2 text-gray-700">
+          <li>
+            <span className="font-medium">Essential Cookies:</span> These are
+            required for core functionality—like remembering your login status
+            or ensuring site security.
+          </li>
+          <li>
+            <span className="font-medium">Analytical Cookies:</span> Help us
+            understand user behavior and improve our website’s performance by
+            tracking page visits and navigation patterns.
+          </li>
+          <li>
+            <span className="font-medium">Functional Cookies:</span> Allow the
+            site to remember your preferences (e.g., language or layout
+            choices).
+          </li>
+          <li>
+            <span className="font-medium">Third-Party Cookies:</span> Used by
+            external services such as Google Ads or Facebook for analytics and
+            advertising. These platforms have their own privacy policies.
+          </li>
+        </ol>
+        <p className="text-gray-700 mt-4">
+          You may choose to disable cookies via your browser settings, but this
+          may limit site functionality.
+        </p>
+      </Section>
+
+      <Section title="Marketing Communications">
+        <p className="text-gray-700 mb-4">
+          We do not sell your personal data. However, we may use non-personally
+          identifiable information for marketing purposes.
+        </p>
+        <p className="text-gray-700 mb-4">
+          You may receive promotional emails only if you’ve opted in. You can
+          unsubscribe anytime using the link provided in the email or by
           contacting us.
         </p>
+        <p className="text-gray-700">
+          We may still send important transactional emails related to your
+          account or services, even if you opt out of promotional content.
+        </p>
+      </Section>
 
+      <Section title="Data Security">
+        <p className="text-gray-700 mb-4">
+          Your privacy is a priority. USA Resume Writers implements technical
+          and organizational safeguards, including:
+        </p>
+        <ul className="list-disc pl-6 space-y-2 text-gray-700">
+          <li>Data encryption</li>
+          <li>Secure user accounts</li>
+          <li>Access Restrictions</li>
+          <li>Staff training</li>
+          <li>Routine system checks and software updates</li>
+        </ul>
         <p className="text-gray-700 mt-4">
-          Even if you opt out of promotional emails, we may still send you
-          important emails about your account or the services you've asked for.
+          These steps help protect your information from unauthorized access,
+          loss, or misuse.
         </p>
       </Section>
 
-      <Section title="Security:">
+      <Section title="Children’s Privacy">
         <p className="text-gray-700">
-          We take the security of your personal information seriously and
-          implement appropriate technical and organizational measures to
-          safeguard it. These measures are designed to match the level of risk
-          associated with processing your personal data. Our security protocols
-          include encryption, access controls, regular security assessments, and
-          staff training on data protection best practices. If you're interested
-          in learning more about how we protect your information, feel free to
-          get in touch with us.
+          Our services are not intended for individuals under the age of 18. We
+          do not knowingly collect personal information from children. If we
+          discover that such information has been submitted, we will take steps
+          to delete it promptly.
         </p>
       </Section>
 
-      <Section title="Contact Us:">
+      <Section title="Policy Updates">
         <p className="text-gray-700">
-          Your privacy matters to us. If you have any questions about how we
-          handle your personal info, feel free to reach out to us at{" "}
-          <a
-            href="mailto:info@resumewritersusa.com"
-            className="text-blue-600 hover:underline"
-          >
-            info@resumewritersusa.com
-          </a>
-          .
+          We may revise this Privacy Policy occasionally. Any changes will be
+          posted on this page. We encourage you to review the policy
+          periodically to stay informed.
         </p>
+      </Section>
+
+      <Section title="Contact Information">
+        <p className="text-gray-700 mb-4">
+          If you have any questions or concerns regarding our Privacy Policy or
+          the handling of your data, please contact us:
+        </p>
+        <ul className="list-disc pl-6 space-y-2 text-gray-700">
+          <li>
+            <span className="font-medium">Email:</span>{" "}
+            <a
+              href="mailto:contact@usaresumewriters.com"
+              className="text-blue-600 hover:underline"
+            >
+              contact@usaresumewriters.com
+            </a>
+          </li>
+          <li>
+            <span className="font-medium">Address:</span> 7901 4th St N # 21629,
+            St. Petersburg, FL 33702
+          </li>
+        </ul>
       </Section>
     </div>
   );

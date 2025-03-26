@@ -79,7 +79,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
 
             {/* Testimonial Card */}
             <div className="bg-white p-6 rounded-lg">
-              <p className="text-gray-700 text-lg italic mb-6 leading-relaxed">
+              <p className="text-gray-700 text-lg italic mb-6 leading-relaxed text-justify">
                 {activeTestimonial.content}
               </p>
               <div>

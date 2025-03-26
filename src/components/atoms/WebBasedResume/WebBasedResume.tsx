@@ -26,7 +26,7 @@ const WebBasedResume: React.FC = () => {
         imageSrc={resumeCoverImage}
         onButtonClick={() => console.log("Button clicked")}
       />
-      <p className="relative max-w-7xl mx-auto p-7">
+      <p className="relative max-w-7xl mx-auto p-4 text-justify">
         {" "}
         At USA Resume Writers, our certified Professional resume writers
         collaborate with design experts to craft dynamic, mobile-friendly

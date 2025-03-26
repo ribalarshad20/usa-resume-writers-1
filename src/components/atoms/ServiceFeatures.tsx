@@ -43,7 +43,7 @@ const Feature: React.FC<FeatureProps> = ({
       ></div>
 
       {/* Description */}
-      <p className="text-base leading-relaxed">{description}</p>
+      <p className="text-base leading-relaxed ">{description}</p>
     </div>
   );
 };

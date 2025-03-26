@@ -55,7 +55,9 @@ const ServiceFeatures: React.FC<ResumeServiceComponentProps> = ({
               <h2 className="text-4xl font-bold text-[#C11A2F]">{title2}</h2>
             </div>
           </div>
-          <p className="text-gray-700 leading-relaxed mb-6">{description}</p>
+          <p className="text-gray-700 leading-relaxed mb-6 text-justify">
+            {description}
+          </p>
           <button
             type="button"
             onClick={handleButtonClick}

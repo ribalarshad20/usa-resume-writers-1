@@ -173,7 +173,6 @@ const NavBar: React.FC<NavBarProps> = () => {
                 onMouseLeave={handleDropdownLeave}
               >
                 <a
-                  href="/services/video-resume/"
                   className={`text-black font-semibold transition-colors duration-200 py-3 px-4 pb-12 rounded-xl ${
                     activeDropdown === "visume"
                       ? "bg-[#1F2937] text-white"
@@ -191,7 +190,6 @@ const NavBar: React.FC<NavBarProps> = () => {
                 onMouseLeave={handleDropdownLeave}
               >
                 <a
-                  href="/services/thank-you-letter/"
                   className={`text-black font-semibold transition-colors duration-200 py-3 px-4 pb-12 rounded-xl ${
                     activeDropdown === "otherServices"
                       ? "bg-[#1F2937] text-white"
@@ -310,12 +308,7 @@ const NavBar: React.FC<NavBarProps> = () => {
 
               {/* Visume */}
               <li className="border-b border-gray-600 pb-3">
-                <a
-                  href="/services/video-resume/"
-                  className="font-semibold hover:text-gray-100"
-                >
-                  Visume
-                </a>
+                <a className="font-semibold hover:text-gray-100">Visume</a>
                 <ul className="pl-4 mt-2 space-y-1 text-gray-300 text-sm">
                   <li>
                     <a
@@ -338,10 +331,7 @@ const NavBar: React.FC<NavBarProps> = () => {
 
               {/* Other Services */}
               <li className="border-b border-gray-600 pb-3">
-                <a
-                  href="/services/thank-you-letter/"
-                  className="font-semibold hover:text-gray-100"
-                >
+                <a className="font-semibold hover:text-gray-100">
                   Other Services
                 </a>
                 <ul className="pl-4 mt-2 space-y-1 text-gray-300 text-sm">

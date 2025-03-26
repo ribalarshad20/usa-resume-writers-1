@@ -40,7 +40,7 @@ const CareerSolutionsSection: React.FC<CareerSolutionsSectionProps> = ({
                 {subtitle}
               </h2>
               <div className="w-16 h-1 bg-blue-700 mb-4"></div>
-              <p className="text-base md:text-lg text-gray-700 mb-6">
+              <p className="text-base md:text-lg text-gray-700 mb-6 text-justify">
                 {description}
               </p>
               <div className="flex flex-wrap items-center mb-6 gap-6">

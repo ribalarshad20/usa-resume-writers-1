@@ -54,10 +54,10 @@ const ATSResumeSection: React.FC<ATSResumeSectionProps> = ({
                 <h2 className="text-xl md:text-3xl font-bold mt-2 mb-2">
                   Optimized for <span className="text-[#C11A2F]">ATS</span>
                 </h2>
-                <div className="h-[3px] w-24 mt-4 bg-[#C11A2F]"></div>
+                <div className="h-[2px] w-24 mt-4 bg-[#C11A2F]"></div>
               </div>
 
-              <p className="text-sm md:text-base text-gray-700">
+              <p className="text-sm md:text-base text-gray-700 text-justify">
                 {paragraphText}
               </p>
 
