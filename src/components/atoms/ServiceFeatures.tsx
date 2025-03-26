@@ -1,4 +1,4 @@
-import { Monitor, Clock, RefreshCw, ShieldCheck } from "lucide-react";
+import { Clock, RefreshCw, ShieldCheck, Target } from "lucide-react";
 
 // Single Feature card component
 interface FeatureProps {
@@ -78,7 +78,7 @@ const ServiceFeatures: React.FC<ServiceFeaturesProps> = ({ features }) => {
 const FeatureServices: React.FC = () => {
   const features = [
     {
-      icon: <Monitor size={32} />,
+      icon: <Target size={32} />,
       title: "Smart Keyword Targeting",
       description:
         "Boost your resume’s visibility with strategic keywords and SEO practices tailored to your dream role.",

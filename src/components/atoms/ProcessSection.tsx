@@ -1,4 +1,10 @@
-import { Users, Lightbulb, BarChart3, Target, LucideProps } from "lucide-react";
+import {
+  Lightbulb,
+  Target,
+  LucideProps,
+  SquarePen,
+  RefreshCw,
+} from "lucide-react";
 
 // Background image import
 import bgImage from "../../assets/bg-process.jpg";
@@ -92,7 +98,7 @@ export const ProcessSectionExample: React.FC = () => {
   const processSteps = [
     {
       id: 1,
-      icon: <Users />,
+      icon: <RefreshCw />,
       title: "Step-by-Step Process",
       description: "How our experts’ craft Job-Winning Resumes with Precision",
     },
@@ -105,7 +111,7 @@ export const ProcessSectionExample: React.FC = () => {
     },
     {
       id: 3,
-      icon: <BarChart3 />,
+      icon: <SquarePen />,
       title: "Receive First Draft",
       description:
         "Our professional resume writer prepares your first draft, which is crafted to align with industry standards and your career direction.",

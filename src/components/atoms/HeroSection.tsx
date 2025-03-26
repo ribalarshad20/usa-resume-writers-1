@@ -65,7 +65,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
   return (
     <>
-      <div className="relative w-full overflow-hidden min-h-screen md:min-h-[700px]">
+      <div className="relative w-full overflow-hidden min-h-[80vh] md:min-h-[600px]">
         {/* Custom style for slide in/out animation */}
         <style>{`
           @keyframes slideInOut {
@@ -105,7 +105,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         ))}
 
         {/* Content Overlay */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-24 pb-8 sm:pb-12">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-24 pb-8 sm:pb-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="text-white">
               <h1 className="text-3xl sm:text-5xl font-bold mb-4 leading-tight mt-8">
