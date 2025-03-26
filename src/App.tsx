@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import MainLayout from "./components/organasim/MainLayout";
 import HomePage from "./components/organasim/HomePage";
 import ResumeWritingSection from "./components/atoms/servicePages/ResumeWritingSection";
@@ -25,69 +26,72 @@ import ResumeSamplePage from "./components/atoms/ResumeSamplePage";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MainLayout />}>
-          <Route index element={<HomePage />} />
-          <Route path="/services" element={<MainServicesPage />} />
-          <Route
-            path="/services/resume-writing/"
-            element={<ResumeWritingSection />}
-          />
-          <Route
-            path="/services/cover-letters/"
-            element={<CoverWritingSection />}
-          />
-          <Route
-            path="/services/linkedIn-profile/"
-            element={<LinkedInProfileSection />}
-          />
-          <Route
-            path="/services/career-switch/"
-            element={<CareerSwitchSection />}
-          />
-          <Route
-            path="/services/entry-level/"
-            element={<EntryLevelResumeSection />}
-          />
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="/services" element={<MainServicesPage />} />
+            <Route
+              path="/services/resume-writing/"
+              element={<ResumeWritingSection />}
+            />
+            <Route
+              path="/services/cover-letters/"
+              element={<CoverWritingSection />}
+            />
+            <Route
+              path="/services/linkedIn-profile/"
+              element={<LinkedInProfileSection />}
+            />
+            <Route
+              path="/services/career-switch/"
+              element={<CareerSwitchSection />}
+            />
+            <Route
+              path="/services/entry-level/"
+              element={<EntryLevelResumeSection />}
+            />
 
-          <Route
-            path="/services/thank-you-letter/"
-            element={<ThankYouLetter />}
-          />
-          <Route
-            path="/services/follow-up-letter/"
-            element={<FollowUpLetter />}
-          />
+            <Route
+              path="/services/thank-you-letter/"
+              element={<ThankYouLetter />}
+            />
+            <Route
+              path="/services/follow-up-letter/"
+              element={<FollowUpLetter />}
+            />
 
-          <Route
-            path="/services/recommendation-letter/"
-            element={<RecommendationLetter />}
-          />
+            <Route
+              path="/services/recommendation-letter/"
+              element={<RecommendationLetter />}
+            />
 
-          <Route path="/services/job-posting/" element={<JobPosting />} />
+            <Route path="/services/job-posting/" element={<JobPosting />} />
 
-          <Route
-            path="/services/web-based-resume/"
-            element={<WebBasedResume />}
-          />
-          <Route path="/services/video-resume/" element={<VideoResume />} />
+            <Route
+              path="/services/web-based-resume/"
+              element={<WebBasedResume />}
+            />
+            <Route path="/services/video-resume/" element={<VideoResume />} />
 
-          <Route
-            path="/services/interactive-resume/"
-            element={<InteractiveResume />}
-          />
-          <Route path="/pricing/" element={<PricingPage />} />
+            <Route
+              path="/services/interactive-resume/"
+              element={<InteractiveResume />}
+            />
+            <Route path="/pricing/" element={<PricingPage />} />
 
-          <Route path="/faqs/" element={<FAQSection />} />
-          <Route path="/contact-us/" element={<ContactSection />} />
-          <Route path="/term-of-use/" element={<TermsOfUseSection />} />
-          <Route path="/privacy-policy/" element={<PrivacyPolicySection />} />
-          <Route path="/process/" element={<ProcessPage />} />
-          <Route path="/resume-sample/" element={<ResumeSamplePage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+            <Route path="/faqs/" element={<FAQSection />} />
+            <Route path="/contact-us/" element={<ContactSection />} />
+            <Route path="/term-of-use/" element={<TermsOfUseSection />} />
+            <Route path="/privacy-policy/" element={<PrivacyPolicySection />} />
+            <Route path="/process/" element={<ProcessPage />} />
+            <Route path="/resume-sample/" element={<ResumeSamplePage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+      <SpeedInsights />
+    </>
   );
 }
 
