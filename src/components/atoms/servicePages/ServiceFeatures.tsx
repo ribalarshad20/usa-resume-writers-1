@@ -38,7 +38,7 @@ const ServiceFeatures: React.FC<ResumeServiceComponentProps> = ({
 
   return (
     <>
-      <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center pt-30">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center pt-30 pb-16">
         <div className="md:w-1/2 flex justify-center">
           <img
             src={imageSrc}

@@ -37,8 +37,8 @@ const TawkChat = forwardRef<TawkChatRef, TawkChatProps>((_, ref) => {
   return (
     <div className="w-full h-full">
       <TawkMessengerReact
-        propertyId="67e1a453130bda19108f7ab7"
-        widgetId="1in4mjpvg"
+        propertyId="67e4309111ddc719064a3139"
+        widgetId="1in9lretl"
         ref={tawkMessengerRef}
         onLoad={onLoad}
       />
