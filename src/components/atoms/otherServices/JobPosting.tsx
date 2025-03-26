@@ -9,18 +9,21 @@ import titleBanner from "../../../assets/banner-faq.jpeg";
 import ServicesTitleSection from "../servicePages/ServicesTitleSection";
 import RecruitmentSectionExample from "./RecruitmentSection";
 import CTABanner from "../CTABanner";
+import MoneyBackGuarantee from "../MoneyBackGuarantee";
 
 const JobPosting: React.FC = () => {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center">
+    <div className="w-full bg-white">
       <ServicesTitleSection title="Job Posting" backgroundImage={titleBanner} />
       <RecruitmentSectionExample />
       <ResumeSamplesPage />
+
       <HeroSectionExample />
       <CareerServicesSection />
       <ProcessSectionExample />
       <CTABanner />
       <TestimonialSectionExample />
+      <MoneyBackGuarantee />
       <Footer {...footerData} />
     </div>
   );

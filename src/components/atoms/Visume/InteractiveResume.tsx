@@ -10,6 +10,7 @@ import ServicesTitleSection from "../servicePages/ServicesTitleSection";
 import ServiceFeatures from "../servicePages/ServiceFeatures";
 import { VisumeWorkSamples } from "./VisumeWorkSamples";
 import CTABanner from "../CTABanner";
+import MoneyBackGuarantee from "../MoneyBackGuarantee";
 
 const InteractiveResume: React.FC = () => {
   return (
@@ -39,6 +40,7 @@ const InteractiveResume: React.FC = () => {
       <ProcessSectionExample />
       <CTABanner />
       <TestimonialSectionExample />
+      <MoneyBackGuarantee />
       <Footer {...footerData} />
     </div>
   );

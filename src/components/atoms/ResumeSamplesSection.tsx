@@ -2,7 +2,7 @@ import { useState } from "react";
 import bgSample from "../../assets/bg-sample.jpeg";
 import ResumeForm, { FormData } from "./ResumeForm";
 
-//Images resume samples
+// Images resume samples
 import artResumeSample01 from "../../assets/resume/Art & Design Resume/01.jpeg";
 import artResumeSample02 from "../../assets/resume/Art & Design Resume/02.jpeg";
 import artResumeSample03 from "../../assets/resume/Art & Design Resume/03.jpeg";
@@ -53,6 +53,10 @@ const ResumeSamplesSection: React.FC<ResumeSamplesSectionProps> = ({
   const [showResumeForm, setShowResumeForm] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>(
     categories?.[0]?.id ?? ""
+  );
+  // New state to track the selected resume sample for the popup
+  const [selectedSample, setSelectedSample] = useState<ResumeSample | null>(
+    null
   );
 
   // Handler for form submission (example: log the form data and close the modal)
@@ -178,7 +182,7 @@ const ResumeSamplesSection: React.FC<ResumeSamplesSectionProps> = ({
                         {selectedCategoryData.samples.map((sample) => (
                           <div
                             key={sample.id}
-                            className="col-span-1 bg-white rounded-md shadow-lg overflow-hidden transform transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-xl opacity-0 animate-staggeredFadeIn"
+                            className="cursor-pointer col-span-1 bg-white rounded-md shadow-lg overflow-hidden transform transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-xl opacity-0 animate-staggeredFadeIn"
                             style={{
                               animationDelay: `${
                                 selectedCategoryData.samples.findIndex(
@@ -186,6 +190,7 @@ const ResumeSamplesSection: React.FC<ResumeSamplesSectionProps> = ({
                                 ) * 100
                               }ms`,
                             }}
+                            onClick={() => setSelectedSample(sample)}
                           >
                             <div className="aspect-w-3 aspect-h-4 w-full">
                               <img
@@ -206,13 +211,38 @@ const ResumeSamplesSection: React.FC<ResumeSamplesSectionProps> = ({
           </div>
         </div>
       </section>
+
+      {/* Resume Form Modal */}
       {showResumeForm && (
-        <div className="fixed inset-0  bg-opacity-30 backdrop-brightness-30 flex justify-center items-center z-50">
+        <div className="fixed inset-0 bg-opacity-30 backdrop-brightness-30 flex justify-center items-center z-50">
           <div className="bg-white rounded-lg overflow-hidden max-w-4xl w-full mx-4">
             <ResumeForm
               onSubmit={handleFormSubmit}
               onClose={() => setShowResumeForm(false)}
             />
+          </div>
+        </div>
+      )}
+
+      {/* Popup Modal for Selected Resume Sample */}
+      {selectedSample && (
+        <div
+          className="fixed inset-0 bg-opacity-50 flex justify-center items-center z-50 animate-fadeIn"
+          onClick={() => setSelectedSample(null)}
+        >
+          <div className="relative" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={selectedSample.image}
+              alt={selectedSample.title}
+              className="max-w-full max-h-screen rounded-md shadow-lg animate-scaleUp"
+            />
+            <button
+              className="absolute top-2 right-2 text-white bg-gray-800 rounded-full p-2 hover:bg-gray-700"
+              onClick={() => setSelectedSample(null)}
+              aria-label="Close image popup"
+            >
+              X
+            </button>
           </div>
         </div>
       )}
@@ -222,7 +252,6 @@ const ResumeSamplesSection: React.FC<ResumeSamplesSectionProps> = ({
 
 // Sample data with unique image paths for each resume category
 const getResumeCategories = (): ResumeCategory[] => {
-  // In a real application, you would import all 15 unique images
   return [
     {
       id: "art-design",
@@ -421,7 +450,7 @@ const getResumeCategories = (): ResumeCategory[] => {
   ];
 };
 
-// Add a simple fade-in animation for Tailwind
+// Add custom animations for Tailwind including the new scaleUp animation
 const customStyles = `
   @keyframes fadeIn {
     from { 
@@ -445,6 +474,17 @@ const customStyles = `
     }
   }
   
+  @keyframes scaleUp {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
   .animate-fadeIn {
     animation: fadeIn 0.5s ease-out forwards;
   }
@@ -452,6 +492,10 @@ const customStyles = `
   .animate-staggeredFadeIn {
     animation: staggeredFadeIn 0.5s ease-out forwards;
     opacity: 0;
+  }
+  
+  .animate-scaleUp {
+    animation: scaleUp 0.3s ease-out forwards;
   }
 `;
 

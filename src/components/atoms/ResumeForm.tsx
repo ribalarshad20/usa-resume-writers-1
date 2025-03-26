@@ -121,7 +121,7 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
       </div>
 
       {/* Right side - Form */}
-      <div className="w-full md:w-3/5 bg-white p-4 md:p-8 relative">
+      <div className="w-full md:w-3/5 bg-white p-6 md:p-8 relative">
         {/* Close button */}
         <button
           onClick={onClose}
@@ -131,7 +131,7 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
         </button>
 
         {/* Heading */}
-        <div className="mb-6">
+        <div className="mb-8">
           <h1 className="text-3xl md:text-4xl font-bold mb-2">
             Get A <span className="text-[#C11A2F]">Resume</span> that
           </h1>
@@ -141,7 +141,7 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-8">
           <div>
             <input
               type="text"
@@ -205,7 +205,7 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
             />
           </div>
 
-          <div className="flex items-start space-x-2">
+          {/* <div className="flex items-start space-x-2">
             <input
               type="checkbox"
               name="marketingConsent"
@@ -218,9 +218,9 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
               I agree with Policy and provide my consent to receive B2B
               marketing communications from
             </label>
-          </div>
+          </div> */}
 
-          <div className="flex items-start space-x-2">
+          {/* <div className="flex items-start space-x-2">
             <input
               type="checkbox"
               name="textMessages"
@@ -233,7 +233,7 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
               Message and data rates may apply. Reply STOP to opt-out, Text Help
               for help. 4 messages/month.
             </label>
-          </div>
+          </div> */}
 
           <div className="flex items-start space-x-2">
             <input

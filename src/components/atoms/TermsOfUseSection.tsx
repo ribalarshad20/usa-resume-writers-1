@@ -10,6 +10,7 @@ import { footerData } from "../../data/footerData";
 import titleBanner from "../../assets/banner-process.jpeg";
 import TermsOfUse from "./TermsOfUse";
 import CTABanner from "./CTABanner";
+import MoneyBackGuarantee from "./MoneyBackGuarantee";
 
 const TermsOfUseSection: React.FC = () => {
   return (
@@ -25,6 +26,7 @@ const TermsOfUseSection: React.FC = () => {
       <ProcessSectionExample />
       <CTABanner />
       <TestimonialSectionExample />
+      <MoneyBackGuarantee />
       <Footer {...footerData} />
     </div>
   );

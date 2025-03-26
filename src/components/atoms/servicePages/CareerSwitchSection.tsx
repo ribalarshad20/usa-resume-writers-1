@@ -10,10 +10,11 @@ import ServicesTitleSection from "./ServicesTitleSection";
 import ServiceFeatures from "./ServiceFeatures";
 import titleBanner from "../../../assets/banner-faq.jpeg";
 import CTABanner from "../CTABanner";
+import MoneyBackGuarantee from "../MoneyBackGuarantee";
 
 const CareerSwitchSection: React.FC = () => {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center">
+    <div className="w-full bg-white">
       <ServicesTitleSection
         title="LinkedIn Profile Writing"
         backgroundImage={titleBanner}
@@ -31,6 +32,7 @@ const CareerSwitchSection: React.FC = () => {
       <ProcessSectionExample />
       <CTABanner />
       <TestimonialSectionExample />
+      <MoneyBackGuarantee />
       <Footer {...footerData} />
     </div>
   );

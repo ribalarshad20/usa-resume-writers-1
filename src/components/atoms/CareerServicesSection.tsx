@@ -2,6 +2,7 @@ import { MoveRight } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 import ResumeForm, { FormData } from "./ResumeForm";
 import TawkChat, { TawkChatRef } from "./TawkChat";
+
 // Define types for the service item
 interface ServiceItem {
   title: string;
@@ -37,13 +38,8 @@ const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
       setIsMobile(window.innerWidth < 640);
     };
 
-    // Initial check
     checkIsMobile();
-
-    // Add resize listener
     window.addEventListener("resize", checkIsMobile);
-
-    // Cleanup
     return () => window.removeEventListener("resize", checkIsMobile);
   }, []);
 
@@ -63,38 +59,28 @@ const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
     }
   }, []);
 
-  // Check if we need to reset scroll position to create infinite loop effect
+  // Check if we need to reset scroll position for infinite loop effect
   const checkScroll = () => {
     if (!sliderRef.current || isTransitioning) return;
-
     const singleSetWidth = sliderRef.current.scrollWidth / 3;
     const currentPosition = sliderRef.current.scrollLeft;
 
-    // If scrolled too far right
     if (currentPosition >= singleSetWidth * 2) {
       setIsTransitioning(true);
-      // Disable smooth scrolling temporarily
       sliderRef.current.style.scrollBehavior = "auto";
-      // Reset to middle set
       sliderRef.current.scrollLeft = currentPosition - singleSetWidth;
       setScrollLeft(currentPosition - singleSetWidth);
-      // Re-enable smooth scrolling
       setTimeout(() => {
         if (sliderRef.current) {
           sliderRef.current.style.scrollBehavior = "smooth";
           setIsTransitioning(false);
         }
       }, 50);
-    }
-    // If scrolled too far left
-    else if (currentPosition < singleSetWidth / 2) {
+    } else if (currentPosition < singleSetWidth / 2) {
       setIsTransitioning(true);
-      // Disable smooth scrolling temporarily
       sliderRef.current.style.scrollBehavior = "auto";
-      // Reset to middle set
       sliderRef.current.scrollLeft = currentPosition + singleSetWidth;
       setScrollLeft(currentPosition + singleSetWidth);
-      // Re-enable smooth scrolling
       setTimeout(() => {
         if (sliderRef.current) {
           sliderRef.current.style.scrollBehavior = "smooth";
@@ -144,18 +130,32 @@ const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
     sliderRef.current.scrollLeft = scrollLeft - walk;
   };
 
-  // Handle scroll events to check for infinite loop conditions
   const handleScroll = () => {
     if (!isDragging) {
       checkScroll();
     }
   };
 
-  // Clean up event listeners on unmount
+  // Arrow button handlers to scroll slider
+  const handleArrowLeft = () => {
+    if (!sliderRef.current || isTransitioning) return;
+    const scrollAmount = sliderRef.current.clientWidth;
+    sliderRef.current.scrollLeft -= scrollAmount;
+    setScrollLeft(sliderRef.current.scrollLeft - scrollAmount);
+    checkScroll();
+  };
+
+  const handleArrowRight = () => {
+    if (!sliderRef.current || isTransitioning) return;
+    const scrollAmount = sliderRef.current.clientWidth;
+    sliderRef.current.scrollLeft += scrollAmount;
+    setScrollLeft(sliderRef.current.scrollLeft + scrollAmount);
+    checkScroll();
+  };
+
   useEffect(() => {
     document.addEventListener("mouseup", handleMouseUp);
     document.addEventListener("touchend", handleMouseUp);
-
     return () => {
       document.removeEventListener("mouseup", handleMouseUp);
       document.removeEventListener("touchend", handleMouseUp);
@@ -169,7 +169,6 @@ const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
           <p className="text-gray-800 font-medium mb-2 text-sm sm:text-base">
             Our Professional Services
           </p>
-
           <div className="flex flex-col md:flex-row md:items-center justify-between">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-0 md:w-2/3 lg:w-3/5">
               <span className="text-gray-800">One Window </span>
@@ -177,13 +176,9 @@ const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
               <br />
               <span className="text-gray-800">Solutions To Get Dream Job</span>
             </h1>
-
             <div className="flex flex-col xs:flex-row sm:flex-row gap-3 md:gap-4 w-full md:w-auto">
               <button
-                onClick={() => {
-                  // On click, call the maximize method on TawkChat
-                  tawkChatRef.current?.maximize();
-                }}
+                onClick={() => tawkChatRef.current?.maximize()}
                 className="w-full xs:w-auto px-4 py-2 sm:px-6 sm:py-3 font-semibold bg-[#2F4376] border border-transparent hover:bg-transparent hover:border-[#2F4376] hover:text-[#2F4376] text-white transition-colors duration-200 text-sm sm:text-base whitespace-nowrap"
               >
                 Consult our Experts
@@ -198,10 +193,12 @@ const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
           </div>
         </div>
 
-        <div className="relative overflow-hidden">
+        {/* Slider and Arrow Controls Container */}
+        <div className="flex flex-col items-center">
+          {/* Slider */}
           <div
             ref={sliderRef}
-            className="flex overflow-x-auto pb-6 scrollbar-hide cursor-grab"
+            className="flex overflow-x-auto pb-6 scrollbar-hide cursor-grab w-full"
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
@@ -242,39 +239,58 @@ const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
               </div>
             ))}
           </div>
+
+          {/* Arrow Controls */}
+          <div className="flex items-center gap-4">
+            <button
+              onClick={handleArrowLeft}
+              className="p-2 bg-[#2F4376] rounded-full shadow-md"
+            >
+              <MoveRight
+                size={24}
+                className="rotate-180 text-white cursor-pointer"
+              />
+            </button>
+            <button
+              onClick={handleArrowRight}
+              className="p-2 bg-[#2F4376] rounded-full shadow-md"
+            >
+              <MoveRight size={24} className="text-white cursor-pointer" />
+            </button>
+          </div>
         </div>
 
         <style>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
+          .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+          }
 
-        /* Support for very small screens */
-        @media (max-width: 360px) {
-          .xs\\:min-w-\\[280px\\] {
-            min-width: 220px;
+          /* Support for very small screens */
+          @media (max-width: 360px) {
+            .xs\\:min-w-\\[280px\\] {
+              min-width: 220px;
+            }
+            .xs\\:flex-row {
+              flex-direction: column;
+            }
+            .xs\\:w-auto {
+              width: 100%;
+            }
           }
-          .xs\\:flex-row {
-            flex-direction: column;
-          }
-          .xs\\:w-auto {
-            width: 100%;
-          }
-        }
 
-        /* Extra small screen breakpoint */
-        @media (min-width: 361px) and (max-width: 639px) {
-          .xs\\:flex-row {
-            flex-direction: row;
+          /* Extra small screen breakpoint */
+          @media (min-width: 361px) and (max-width: 639px) {
+            .xs\\:flex-row {
+              flex-direction: row;
+            }
+            .xs\\:w-auto {
+              width: auto;
+            }
           }
-          .xs\\:w-auto {
-            width: auto;
-          }
-        }
-      `}</style>
+        `}</style>
       </div>
       {showResumeForm && (
-        <div className="fixed inset-0  bg-opacity-30 backdrop-brightness-30 flex justify-center items-center z-50">
+        <div className="fixed inset-0 bg-opacity-30 backdrop-brightness-30 flex justify-center items-center z-50">
           <div className="bg-white rounded-lg overflow-hidden max-w-4xl w-full mx-4">
             <ResumeForm
               onSubmit={handleFormSubmit}
@@ -316,14 +332,12 @@ const CareerServicesSection: React.FC = () => {
         "Let a professional resume writer polish your LinkedIn profile to reflect your skills and goals and make recruiters take notice fast.",
       link: "/services/linkedIn-profile/",
     },
-
     {
       title: "Cover Letter Writing Service",
       description:
         "Let a professional resume writer craft a compelling cover letter that complements your resume and captures employer interest from the start.",
       link: "/services/cover-letters/",
     },
-
     {
       title: "Follow Up Letter Writing Service",
       description:

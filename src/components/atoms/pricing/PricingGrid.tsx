@@ -227,6 +227,7 @@ const PricingGrid: React.FC = () => {
             features={corporateBundleFeatures}
             ctaText="Order Now"
             phoneNumber="+1 (855) 846-0134"
+            popularLabel="BEST VALUE"
             onCtaClick={handleOrderClick}
           />
 
@@ -237,7 +238,6 @@ const PricingGrid: React.FC = () => {
             price={479}
             originalPrice={650}
             features={executiveBundleFeatures}
-            popularLabel="BEST VALUE"
             ctaText="Order Now"
             phoneNumber="+1 (855) 846-0134"
             onCtaClick={handleOrderClick}

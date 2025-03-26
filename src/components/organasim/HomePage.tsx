@@ -16,6 +16,7 @@ import { TestimonialSectionExample } from "../atoms/TestimonialSection";
 import Footer from "../atoms/Footer";
 import ResumeSamplesPage from "../atoms/ResumeSamplesSection";
 import { footerData } from "../../data/footerData";
+import MoneyBackGuarantee from "../atoms/MoneyBackGuarantee";
 
 const logos = [
   { src: zip, alt: "ZipRecruiter" },
@@ -25,7 +26,7 @@ const logos = [
 
 const HomePage: React.FC = () => {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center pt-20 relative">
+    <div className="w-full bg-white">
       <HeroSection />
       <FeatureServices />
       <WhyChooseUs />
@@ -44,7 +45,7 @@ const HomePage: React.FC = () => {
       <ProcessSectionExample />
       <CTABanner />
       <TestimonialSectionExample />
-
+      <MoneyBackGuarantee />
       <Footer {...footerData} />
     </div>
   );

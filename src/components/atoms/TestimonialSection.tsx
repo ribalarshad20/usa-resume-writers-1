@@ -118,7 +118,7 @@ export const TestimonialSectionExample: React.FC = () => {
   const testimonialData: Testimonial[] = [
     {
       id: 1,
-      name: "Amanda Raymond",
+      name: "J. Carter",
       position: "Marketing Specialist",
       content:
         "I can’t believe the difference a professional resume can make. USA Resume Writers completely reworked my old resume, and within days I started hearing back from companies. I finally feel like my experience is being seen the right way.",
@@ -126,7 +126,7 @@ export const TestimonialSectionExample: React.FC = () => {
     },
     {
       id: 2,
-      name: "James Leroy",
+      name: "A. Mitchell",
       position: "Project Manager (Former Educator)",
       content:
         "I was nervous about switching careers, but the team made the whole process easy. They really understood how to translate my past work into something relevant to a new field. I’ve already landed two interviews!.",
@@ -134,7 +134,7 @@ export const TestimonialSectionExample: React.FC = () => {
     },
     {
       id: 3,
-      name: "Sofia M.",
+      name: "Christopher R.",
       position: "Business Analyst",
       content:
         "I had no idea where to start with my resume and LinkedIn profile. USA Resume Writers not only cleaned it all up—they made me feel confident again. It feels like I’m finally presenting my best self.",

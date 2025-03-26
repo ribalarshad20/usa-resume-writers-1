@@ -9,6 +9,7 @@ import { footerData } from "../../data/footerData";
 import titleBanner from "../../assets/banner-process.jpeg";
 import PrivacyPolicy from "./PrivacyPolicy";
 import CTABanner from "./CTABanner";
+import MoneyBackGuarantee from "./MoneyBackGuarantee";
 
 const PrivacyPolicySection: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const PrivacyPolicySection: React.FC = () => {
       <ProcessSectionExample />
       <CTABanner />
       <TestimonialSectionExample />
+      <MoneyBackGuarantee />
       <Footer {...footerData} />
     </div>
   );

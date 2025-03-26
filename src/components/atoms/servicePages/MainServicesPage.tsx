@@ -22,6 +22,7 @@ import service08Image from "../../../assets/serviceImages/service-8.jpg";
 import service09Image from "../../../assets/serviceImages/service-9.jpg";
 import service10Image from "../../../assets/serviceImages/service-10.jpg";
 import service11Image from "../../../assets/serviceImages/service-11.jpg";
+import MoneyBackGuarantee from "../MoneyBackGuarantee";
 
 const MainServicesPage: React.FC = () => {
   const navigate = useNavigate();
@@ -122,7 +123,7 @@ const MainServicesPage: React.FC = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center">
+    <div className="w-full bg-white">
       <ServicesTitleSection title="Services" backgroundImage={titleBanner} />
 
       {services.map((service) => (
@@ -143,6 +144,7 @@ const MainServicesPage: React.FC = () => {
       <ProcessSectionExample />
       <CTABanner />
       <TestimonialSectionExample />
+      <MoneyBackGuarantee />
       <Footer {...footerData} />
     </div>
   );

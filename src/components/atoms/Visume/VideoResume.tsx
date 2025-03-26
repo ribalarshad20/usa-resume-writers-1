@@ -10,6 +10,7 @@ import ServicesTitleSection from "../servicePages/ServicesTitleSection";
 import ServiceFeatures from "../servicePages/ServiceFeatures";
 import { VideoSamplesGridComponent } from "./VideoSamples";
 import CTABanner from "../CTABanner";
+import MoneyBackGuarantee from "../MoneyBackGuarantee";
 
 const VideoResume: React.FC = () => {
   return (
@@ -39,6 +40,7 @@ const VideoResume: React.FC = () => {
       <ProcessSectionExample />
       <CTABanner />
       <TestimonialSectionExample />
+      <MoneyBackGuarantee />
       <Footer {...footerData} />
     </div>
   );

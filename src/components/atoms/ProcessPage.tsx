@@ -9,6 +9,7 @@ import { footerData } from "../../data/footerData";
 import titleBanner from "../../assets/banner-process.jpeg";
 import CTABanner from "./CTABanner";
 import ResumeProcessSteps from "./ResumeProcessSteps";
+import MoneyBackGuarantee from "./MoneyBackGuarantee";
 
 const ProcessPage: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ const ProcessPage: React.FC = () => {
       <ProcessSectionExample />
       <CTABanner />
       <TestimonialSectionExample />
+      <MoneyBackGuarantee />
       <Footer {...footerData} />
     </div>
   );

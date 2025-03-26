@@ -11,6 +11,7 @@ import ServicesTitleSection from "../servicePages/ServicesTitleSection";
 import ServiceFeatures from "../servicePages/ServiceFeatures";
 import WorkSamplesSection from "./WorkSamplesSection";
 import CTABanner from "../CTABanner";
+import MoneyBackGuarantee from "../MoneyBackGuarantee";
 
 const WebBasedResume: React.FC = () => {
   return (
@@ -41,6 +42,7 @@ const WebBasedResume: React.FC = () => {
       <ProcessSectionExample />
       <CTABanner />
       <TestimonialSectionExample />
+      <MoneyBackGuarantee />
       <Footer {...footerData} />
     </div>
   );

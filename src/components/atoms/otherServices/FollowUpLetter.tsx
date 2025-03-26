@@ -10,10 +10,11 @@ import titleBanner from "../../../assets/banner-faq.jpeg";
 import ServicesTitleSection from "../servicePages/ServicesTitleSection";
 import ServiceFeatures from "../servicePages/ServiceFeatures";
 import CTABanner from "../CTABanner";
+import MoneyBackGuarantee from "../MoneyBackGuarantee";
 
 const FollowUpLetter: React.FC = () => {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center">
+    <div className="w-full bg-white">
       <ServicesTitleSection
         title="Follow Up Letter"
         backgroundImage={titleBanner}
@@ -31,6 +32,7 @@ const FollowUpLetter: React.FC = () => {
       <ProcessSectionExample />
       <CTABanner />
       <TestimonialSectionExample />
+      <MoneyBackGuarantee />
       <Footer {...footerData} />
     </div>
   );
