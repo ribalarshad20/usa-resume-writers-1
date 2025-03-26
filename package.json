@@ -18,6 +18,7 @@
     "@emailjs/browser": "^4.4.1",
     "@tailwindcss/vite": "^4.0.14",
     "@tawk.to/tawk-messenger-react": "^2.0.2",
+    "@vercel/speed-insights": "^1.2.0",
     "country-list-with-dial-code-and-flag": "^5.1.0",
     "lucide-react": "^0.483.0",
     "react": "^19.0.0",
