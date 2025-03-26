@@ -88,63 +88,80 @@ const hoverStyles = `
   }
 `;
 
-const WorkSamples: React.FC<WorkSamplesProps> = ({
-  portfolioSamples,
-  onPreviewClick = () => {},
-}) => {
+const WorkSamples: React.FC<WorkSamplesProps> = ({ portfolioSamples }) => {
+  const [showResumeForm, setShowResumeForm] = useState(false);
+
+  const handleFormSubmit = (formData: FormData) => {
+    console.log("Form submitted:", formData);
+    setShowResumeForm(false);
+  };
+
   return (
-    <section className="w-full py-8 px-4 bg-gradient-to-br from-white to-gray-50">
-      {/* Add the styles to the document */}
-      <style dangerouslySetInnerHTML={{ __html: hoverStyles }} />
+    <>
+      <section className="w-full py-8 px-4 bg-gradient-to-br from-white to-gray-50">
+        {/* Add the styles to the document */}
+        <style dangerouslySetInnerHTML={{ __html: hoverStyles }} />
 
-      <div className="max-w-6xl mx-auto">
-        {/* Heading Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#C11A2F] mb-4">
-            Work Samples
-          </h2>
-          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#2F4376] mb-8">
-            Web Based Portfolios
-          </h3>
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-            Our certified developers effortlessly build a job-worthy portfolio
-            that gets you hired faster and fits all the HR standards.
-          </p>
-        </div>
+        <div className="max-w-6xl mx-auto">
+          {/* Heading Section */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#C11A2F] mb-4">
+              Work Samples
+            </h2>
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#2F4376] mb-8">
+              Web Based Portfolios
+            </h3>
+            <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+              Our certified developers effortlessly build a job-worthy portfolio
+              that gets you hired faster and fits all the HR standards.
+            </p>
+          </div>
 
-        {/* Portfolio Cards Grid - narrower spacing */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {portfolioSamples.map((sample, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl shadow-md overflow-hidden transition-all duration-300 portfolio-card"
-              style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)" }}
-            >
-              <div className="w-full h-64 md:h-80 relative">
-                <img
-                  src={sample.imageUrl}
-                  alt={sample.alt || `Portfolio sample ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
+          {/* Portfolio Cards Grid - narrower spacing */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {portfolioSamples.map((sample, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-md overflow-hidden transition-all duration-300 portfolio-card"
+                style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)" }}
+              >
+                <div className="w-full h-64 md:h-80 relative">
+                  <img
+                    src={sample.imageUrl}
+                    alt={sample.alt || `Portfolio sample ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
 
-                {/* Custom hover overlay with diagonal animation */}
-                <div className="overlay-animation"></div>
+                  {/* Custom hover overlay with diagonal animation */}
+                  <div className="overlay-animation"></div>
 
-                {/* Preview button - will show on hover */}
-                <div className="preview-button-container">
-                  <button
-                    onClick={() => onPreviewClick(index)}
-                    className="preview-button w-40"
-                  >
-                    Preview
-                  </button>
+                  {/* Preview button - will show on hover */}
+                  <div className="preview-button-container">
+                    <button
+                      onClick={() => setShowResumeForm(true)}
+                      className="preview-button w-52"
+                    >
+                      Consult Our Experts
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {showResumeForm && (
+        <div className="fixed inset-0 bg-opacity-30 backdrop-brightness-30 flex justify-center items-center z-50">
+          <div className="bg-white rounded-lg overflow-hidden max-w-4xl w-full mx-4">
+            <ResumeForm
+              onSubmit={handleFormSubmit}
+              onClose={() => setShowResumeForm(false)}
+            />
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
