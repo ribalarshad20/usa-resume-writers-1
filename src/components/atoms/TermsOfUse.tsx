@@ -216,13 +216,16 @@ const TermsOfUse: React.FC = () => {
             </a>
           </li>
           <li>
-            Business Address: 7901 4th St N #21629, St. Petersburg, FL 33702
+            Business Address: 7901 4th St N #21629, St. Petersburg, FL 33702,
+            United States
           </li>
         </ul>
         <p className="text-[#676767] mt-3">
           Note: Fraudulent activity, including the use of stolen payment
           methods, is prohibited and will be reported to authorities.
         </p>
+
+        <p className="mt-3 text-sm"> Powered by: MartechSol LLC</p>
       </Section>
     </div>
   );

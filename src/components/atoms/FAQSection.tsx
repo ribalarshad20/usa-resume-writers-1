@@ -113,14 +113,14 @@ export default function FAQSection() {
     {
       id: "01",
       number: "01",
-      question: "How do I get started with USA Resume Writer?",
+      question: "How do I get started with USA Resume Writers?",
       answer:
         "Getting started is simple. The package selection process leads to asking whether customers already have a resume or requesting detailed career information to create the document. The information provided enables us to understand your background, career objectives, and professional strengths. Our certified resume writer receives your project assignment, after which they create a tailored resume suitable for job applications.",
     },
     {
       id: "02",
       number: "02",
-      question: "How is a USA Resume Writer different from a career coaches?",
+      question: "How is a USA Resume Writers different from a career coaches?",
       answer:
         "Your service differs from that of career coaches because we deliver completed writing tasks alongside professional career advice. The company commits to creating professional career documents which comprise complete resumes together with cover letters LinkedIn profiles and additional career materials that produce swift results for clients. Through our mix of career know-how and ATS-friendly document construction we provide professional document development services that boost applicant visibility in the job market.",
     },
@@ -150,7 +150,7 @@ export default function FAQSection() {
       number: "06",
       question: "What industries or roles do you specialize in?",
       answer:
-        "The professional resume writing service of USA Resume Writer serves all more than 200 different industries. The writers at USA Resume Writer specialize in adapting your resume content to align with professional expectations from tech, healthcare, finance, marketing, education, government, and creative job markets.",
+        "The professional resume writing service of USA Resume Writers serves all more than 200 different industries. The writers at USA Resume Writers specialize in adapting your resume content to align with professional expectations from tech, healthcare, finance, marketing, education, government, and creative job markets.",
     },
     {
       id: "07",

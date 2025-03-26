@@ -243,6 +243,8 @@ const PrivacyPolicy: React.FC = () => {
             St. Petersburg, FL 33702
           </li>
         </ul>
+
+        <p className="mt-3 text-sm"> Powered by: MartechSol LLC</p>
       </Section>
     </div>
   );

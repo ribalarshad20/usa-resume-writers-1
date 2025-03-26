@@ -1,15 +1,16 @@
 export const footerData = {
-  companyName: "Resume Writers USA",
+  companyName: "USA Resume Writers",
   address: {
-    street: "2251 Barry Ave",
-    city: "Los Angeles",
-    state: "CA",
-    zip: "90064",
-    country: "USA",
+    street: "7901 4th St N #21629",
+    city: "St. Petersburg",
+    state: "FL",
+    zip: "33702",
+    country: "United States",
   },
+
   contact: {
     email: "info@resumewritersusa.com",
-    phone: "+1 (855) 846-0134",
+    phone: "+1 727-761-4082",
   },
   services: [
     { title: "Resume Writing", link: "/services/resume-writing/" },
