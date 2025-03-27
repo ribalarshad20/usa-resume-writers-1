@@ -15,23 +15,23 @@ interface ServicesProps {
 }
 
 const ServicesSection: React.FC<ServicesProps> = ({
-  mainTitle = "Lorem ipsum dolor",
-  subtitle = "Lorem ipsum dolor",
+  mainTitle = "Customized Web-Based Resumes & Cover Letters",
+  subtitle = "We design interactive, ATS-friendly web resumes that highlight your strengths and help you stand out.",
   services = [
     {
-      title: "Design & Development",
+      title: "Career Coaching & Interview Prep",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabi sed metus id et viverra augue.",
+        "Our coaching optimizes your digital job search and prepares you for online interviews.",
     },
     {
-      title: "Management & Marketing",
+      title: "Industry-Specific Web Resumes",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabi sed metus id et viverra augue.",
+        "We create web-based resumes tailored to your industry, ensuring they align with employer expectations.",
     },
     {
-      title: "Strategy & Research",
+      title: "Job Search Strategy & Digital Support",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabi sed metus id et viverra augue.",
+        "We guide you through a targeted online job search, focusing on the best digital opportunities.",
     },
   ],
   buttonText = "Start Your Project",

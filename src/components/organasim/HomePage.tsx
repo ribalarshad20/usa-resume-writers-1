@@ -12,7 +12,6 @@ import indeed from "../../assets/indeed03.png";
 import { ProcessSectionExample } from "../atoms/ProcessSection";
 import CTABanner from "../atoms/CTABanner";
 import { TestimonialSectionExample } from "../atoms/TestimonialSection";
-
 import Footer from "../atoms/Footer";
 import ResumeSamplesPage from "../atoms/ResumeSamplesSection";
 import { footerData } from "../../data/footerData";
