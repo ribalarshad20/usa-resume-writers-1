@@ -81,7 +81,7 @@ const ResumeSamplesSection: React.FC<ResumeSamplesSectionProps> = ({
   return (
     <>
       <section
-        className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-6 ${className}`}
+        className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-16 ${className}`}
         aria-labelledby="resume-samples-title"
       >
         <div className="max-w-7xl mx-auto">
