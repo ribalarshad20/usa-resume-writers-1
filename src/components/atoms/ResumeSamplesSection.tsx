@@ -3,25 +3,25 @@ import bgSample from "../../assets/bg-sample.jpeg";
 import ResumeForm, { FormData } from "./ResumeForm";
 
 // Images resume samples
-import artResumeSample01 from "../../assets/resume/Art & Design Resume/01.jpeg";
-import artResumeSample02 from "../../assets/resume/Art & Design Resume/02.jpeg";
-import artResumeSample03 from "../../assets/resume/Art & Design Resume/03.jpeg";
+import artResumeSample01 from "../../assets/resumeSamples/1 Art & Design Resume.png";
+import artResumeSample02 from "../../assets/resumeSamples/2 Art & Design Resume.png";
+import artResumeSample03 from "../../assets/resumeSamples/3 Art & Design Resume.png";
 
-import corporateResumeSample01 from "../../assets/resume/Corporate & Business/01.jpeg";
-import corporateResumeSample02 from "../../assets/resume/Corporate & Business/02.jpeg";
-import corporateResumeSample03 from "../../assets/resume/Corporate & Business/03.jpeg";
+import corporateResumeSample01 from "../../assets/resumeSamples/1 Corporate_Business.png";
+import corporateResumeSample02 from "../../assets/resumeSamples/2 Corporate_Business.png";
+import corporateResumeSample03 from "../../assets/resumeSamples/3 Corporate_Business.png";
 
-import educationResumeSample01 from "../../assets/resume/Education Resume/01.jpeg";
-import educationResumeSample02 from "../../assets/resume/Education Resume/02.jpeg";
-import educationResumeSample03 from "../../assets/resume/Education Resume/03.jpeg";
+import educationResumeSample01 from "../../assets/resumeSamples/1 Education Resume.png";
+import educationResumeSample02 from "../../assets/resumeSamples/2 Education Resume.png";
+import educationResumeSample03 from "../../assets/resumeSamples/3 Education Resume.png";
 
-import realStateResumeSample01 from "../../assets/resume/Real Estate Resume/01.jpeg";
-import realStateResumeSample02 from "../../assets/resume/Real Estate Resume/02.jpeg";
-import realStateResumeSample03 from "../../assets/resume/Real Estate Resume/03.jpeg";
+import realStateResumeSample01 from "../../assets/resumeSamples/1 Real Estate Resume.png";
+import realStateResumeSample02 from "../../assets/resumeSamples/2 Real Estate Resume.png";
+import realStateResumeSample03 from "../../assets/resumeSamples/3 Real Estate Resume.png";
 
-import iTRresumeSample01 from "../../assets/resume/IT Management/01.jpeg";
-import iTRresumeSample02 from "../../assets/resume/IT Management/02.jpeg";
-import iTRresumeSample03 from "../../assets/resume/IT Management/03.jpeg";
+import iTRresumeSample01 from "../../assets/resumeSamples/1 IT Management.png";
+import iTRresumeSample02 from "../../assets/resumeSamples/2 IT Management.png";
+import iTRresumeSample03 from "../../assets/resumeSamples/3 IT Management.png";
 import ImagePopup from "./ImagePopup";
 
 interface ResumeCategory {

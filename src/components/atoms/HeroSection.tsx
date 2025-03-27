@@ -179,8 +179,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
       )}
 
-      {/* Show Zendesk Chat Component */}
-      {/* ZenDesk Chat Component */}
       {showZendeskChat && (
         <ZenDeskChatComponent onClose={handleZendeskChatClose} />
       )}
