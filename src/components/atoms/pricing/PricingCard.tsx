@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { MessageCircle, Phone } from "lucide-react";
+import ZenDeskChatComponent from "../ZenDeskChat";
 
 // Define type for feature items
 interface PricingFeature {
@@ -32,6 +33,16 @@ const PricingCard: React.FC<PricingCardProps> = ({
   phoneNumber,
   onCtaClick,
 }) => {
+  const [showZendeskChat, setShowZendeskChat] = useState(false);
+
+  const handleConsultExperts = () => {
+    setShowZendeskChat(true);
+  };
+
+  const handleZendeskChatClose = () => {
+    setShowZendeskChat(false);
+  };
+
   return (
     <>
       <div className="font-avant relative w-full max-w-sm mx-auto bg-white rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
@@ -114,7 +125,10 @@ const PricingCard: React.FC<PricingCardProps> = ({
         {/* Contact Info */}
         <div className="px-4 sm:px-6 pb-4 flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4">
           {/* Live Chat */}
-          <div className="flex items-center cursor-pointer">
+          <div
+            onClick={handleConsultExperts}
+            className="flex items-center cursor-pointer"
+          >
             <MessageCircle className="h-5 w-5 mr-1 flex-shrink-0" />
             <span className="text-xs sm:text-sm">Live Chat</span>
           </div>
@@ -126,6 +140,10 @@ const PricingCard: React.FC<PricingCardProps> = ({
           </div>
         </div>
       </div>
+
+      {showZendeskChat && (
+        <ZenDeskChatComponent onClose={handleZendeskChatClose} />
+      )}
     </>
   );
 };
