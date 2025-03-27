@@ -9,7 +9,7 @@ export const footerData = {
   },
 
   contact: {
-    email: "info@resumewritersusa.com",
+    email: "contact@usaresumewriters.com",
     phone: "+1 727-761-4082",
   },
   services: [
