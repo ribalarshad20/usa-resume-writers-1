@@ -22,6 +22,7 @@ import realStateResumeSample03 from "../../assets/resume/Real Estate Resume/03.j
 import iTRresumeSample01 from "../../assets/resume/IT Management/01.jpeg";
 import iTRresumeSample02 from "../../assets/resume/IT Management/02.jpeg";
 import iTRresumeSample03 from "../../assets/resume/IT Management/03.jpeg";
+import ImagePopup from "./ImagePopup";
 
 interface ResumeCategory {
   id: string;
@@ -226,25 +227,10 @@ const ResumeSamplesSection: React.FC<ResumeSamplesSectionProps> = ({
 
       {/* Popup Modal for Selected Resume Sample */}
       {selectedSample && (
-        <div
-          className="fixed inset-0 bg-opacity-50 flex justify-center items-center z-50 animate-fadeIn"
-          onClick={() => setSelectedSample(null)}
-        >
-          <div className="relative" onClick={(e) => e.stopPropagation()}>
-            <img
-              src={selectedSample.image}
-              alt={selectedSample.title}
-              className="max-w-full max-h-screen rounded-md shadow-lg animate-scaleUp"
-            />
-            <button
-              className="absolute top-2 right-2 text-white bg-gray-800 rounded-full p-2 hover:bg-gray-700"
-              onClick={() => setSelectedSample(null)}
-              aria-label="Close image popup"
-            >
-              X
-            </button>
-          </div>
-        </div>
+        <ImagePopup
+          selectedSample={selectedSample}
+          onClose={() => setSelectedSample(null)}
+        />
       )}
     </>
   );
