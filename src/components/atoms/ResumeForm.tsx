@@ -1,35 +1,52 @@
 import React, { useState } from "react";
-import emailjs from "@emailjs/browser";
 import popUpImage from "../../assets/popup-element.png";
 import { X } from "lucide-react";
 import CountryList, { Country } from "country-list-with-dial-code-and-flag";
-import Select from "react-select"; // Importing react-select
+import Select from "react-select";
+
+interface PricingDetails {
+  serviceName: string;
+  price: number;
+  originalPrice: number;
+}
 
 export interface FormData {
   fullName: string;
   email: string;
   country: string;
   phoneNumber: string;
-  marketingConsent: boolean;
-  textMessages: boolean;
+
   termsAgreed: boolean;
+  serviceName?: string;
+  servicePrice?: number;
 }
 
 interface ResumeFormProps {
-  onSubmit: (formData: FormData) => void;
+  onSubmit?: (formData: FormData) => void;
   onClose?: () => void;
+  initialPricingDetails?: PricingDetails;
 }
 
-const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
+const ResumeForm: React.FC<ResumeFormProps> = ({
+  onSubmit,
+  onClose,
+  initialPricingDetails,
+}) => {
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
     email: "",
     country: "UNITED STATES",
     phoneNumber: "",
-    marketingConsent: false,
-    textMessages: false,
     termsAgreed: false,
+    serviceName: initialPricingDetails?.serviceName,
+    servicePrice: initialPricingDetails?.price,
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    success: boolean;
+    message: string;
+  } | null>(null);
 
   const [selectedCountry, setSelectedCountry] = useState(
     CountryList.findOneByCountryCode("US") as Country
@@ -68,39 +85,59 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
 
-    // Trigger your original onSubmit function
-    onSubmit(formData);
-
-    const emailData = {
-      from_name: formData.fullName,
-      from_email: formData.email,
-      to_name: "Amjad Ali",
-      to_email: "amjad.ali@martechsol.com",
-      country: formData.country,
-      phone_number: formData.phoneNumber,
-      marketing_consent: formData.marketingConsent ? "Yes" : "No",
-      text_messages: formData.textMessages ? "Yes" : "No",
-      message: `Full Name: ${formData.fullName}
-      Email: ${formData.email}
-      Country: ${formData.country}
-      Phone Number: ${formData.phoneNumber}
-      Marketing Consent: ${formData.marketingConsent ? "Yes" : "No"}
-      Text Messages: ${formData.textMessages ? "Yes" : "No"}
-      Terms Agreed: ${formData.termsAgreed ? "Yes" : "No"}
-      `,
-    };
+    // Call optional onSubmit prop if provided
+    if (onSubmit) {
+      onSubmit(formData);
+    }
 
     try {
-      const result = await emailjs.send(
-        "service_cxhuka6",
-        "template_igiiah9",
-        emailData,
-        "YNny0-3qgWWt29BlW"
+      const response = await fetch(
+        "https://crm-martechsol-server-fc6bbfa0ab6c.herokuapp.com/api/email/send-resume-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
       );
-      console.log("Email sent successfully:", result.text);
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          success: true,
+          message: "Resume request submitted successfully!",
+        });
+
+        // Reset form after successful submission
+        setFormData({
+          fullName: "",
+          email: "",
+          country: "UNITED STATES",
+          phoneNumber: "",
+
+          termsAgreed: false,
+          serviceName: initialPricingDetails?.serviceName,
+          servicePrice: initialPricingDetails?.price,
+        });
+      } else {
+        setSubmitStatus({
+          success: false,
+          message: result.message || "Failed to submit resume request",
+        });
+      }
     } catch (error) {
-      console.error("Failed to send email:", error);
+      setSubmitStatus({
+        success: false,
+        message: "An error occurred. Please try again.",
+      });
+      console.error("Error submitting resume request:", error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -123,14 +160,16 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
       {/* Right side - Form */}
       <div className="w-full md:w-3/5 bg-white p-6 md:p-8 relative">
         {/* Close button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 bg-[#C11A2F] text-white rounded-full w-10 h-10 flex items-center justify-center"
-        >
-          <X />
-        </button>
+        {onClose && (
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 bg-[#C11A2F] text-white rounded-full w-10 h-10 flex items-center justify-center"
+          >
+            <X />
+          </button>
+        )}
 
-        {/* Heading */}
+        {/* Heading with optional service information */}
         <div className="mb-8">
           <h1 className="text-3xl md:text-4xl font-bold mb-2">
             Get A <span className="text-[#C11A2F]">Resume</span> that
@@ -138,7 +177,29 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
           <h2 className="text-3xl md:text-4xl font-bold">
             Aces All HR Standards.
           </h2>
+          {initialPricingDetails && (
+            <p className="mt-4 text-gray-600">
+              Service: {initialPricingDetails.serviceName} - Price: $
+              {initialPricingDetails.price}
+              <span className="line-through ml-2 text-gray-400">
+                ${initialPricingDetails.originalPrice}
+              </span>
+            </p>
+          )}
         </div>
+
+        {/* Submit Status Message */}
+        {submitStatus && (
+          <div
+            className={`mb-4 p-3 rounded ${
+              submitStatus.success
+                ? "bg-green-100 text-green-800"
+                : "bg-red-100 text-red-800"
+            }`}
+          >
+            {submitStatus.message}
+          </div>
+        )}
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-8">
@@ -205,36 +266,6 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
             />
           </div>
 
-          {/* <div className="flex items-start space-x-2">
-            <input
-              type="checkbox"
-              name="marketingConsent"
-              id="marketingConsent"
-              checked={formData.marketingConsent}
-              onChange={handleChange}
-              className="mt-1"
-            />
-            <label htmlFor="marketingConsent" className="text-sm">
-              I agree with Policy and provide my consent to receive B2B
-              marketing communications from
-            </label>
-          </div> */}
-
-          {/* <div className="flex items-start space-x-2">
-            <input
-              type="checkbox"
-              name="textMessages"
-              id="textMessages"
-              checked={formData.textMessages}
-              onChange={handleChange}
-              className="mt-1"
-            />
-            <label htmlFor="textMessages" className="text-sm">
-              Message and data rates may apply. Reply STOP to opt-out, Text Help
-              for help. 4 messages/month.
-            </label>
-          </div> */}
-
           <div className="flex items-start space-x-2">
             <input
               type="checkbox"
@@ -253,9 +284,14 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ onSubmit, onClose }) => {
           <div>
             <button
               type="submit"
-              className="w-full bg-[#2F4376] text-white py-2 rounded font-medium transition-colors"
+              disabled={isSubmitting}
+              className={`w-full text-white py-2 rounded font-medium transition-colors ${
+                isSubmitting
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-[#2F4376] hover:bg-opacity-90"
+              }`}
             >
-              Submit
+              {isSubmitting ? "Submitting..." : "Submit"}
             </button>
           </div>
         </form>

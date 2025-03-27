@@ -1,4 +1,6 @@
+import React, { useState } from "react";
 import PricingCard from "./PricingCard";
+import ResumeForm from "../ResumeForm";
 
 // Define types for the feature items
 interface PricingFeature {
@@ -6,7 +8,13 @@ interface PricingFeature {
   text: string;
 }
 
-// Define the grid component that will hold all pricing cards
+// Interface for pricing card details to pass to form
+interface PricingDetails {
+  serviceName: string;
+  price: number;
+  originalPrice: number;
+}
+
 const PricingGrid: React.FC = () => {
   // First row of pricing cards
   const entryLevelFeatures: PricingFeature[] = [
@@ -166,9 +174,19 @@ const PricingGrid: React.FC = () => {
     },
   ];
 
-  const handleOrderClick = () => {
-    // Handle order click action
-    console.log("Order button clicked");
+  const [showResumeForm, setShowResumeForm] = useState(false);
+  const [selectedPricingDetails, setSelectedPricingDetails] = useState<
+    PricingDetails | undefined
+  >(undefined);
+
+  const handleOrderClick = (details: PricingDetails) => {
+    setSelectedPricingDetails(details);
+    setShowResumeForm(true);
+  };
+
+  const handleFormClose = () => {
+    setShowResumeForm(false);
+    setSelectedPricingDetails(undefined);
   };
 
   return (
@@ -188,7 +206,13 @@ const PricingGrid: React.FC = () => {
             features={entryLevelFeatures}
             ctaText="Order Now"
             phoneNumber="+1 (855) 846-0134"
-            onCtaClick={handleOrderClick}
+            onCtaClick={() =>
+              handleOrderClick({
+                serviceName: "Entry Level Resume",
+                price: 119,
+                originalPrice: 170,
+              })
+            }
           />
 
           <PricingCard
@@ -201,7 +225,13 @@ const PricingGrid: React.FC = () => {
             popularLabel="MOST POPULAR"
             ctaText="Order Now"
             phoneNumber="+1 (855) 846-0134"
-            onCtaClick={handleOrderClick}
+            onCtaClick={() =>
+              handleOrderClick({
+                serviceName: "Professional Level Resume",
+                price: 150,
+                originalPrice: 220,
+              })
+            }
           />
 
           <PricingCard
@@ -213,7 +243,13 @@ const PricingGrid: React.FC = () => {
             features={professionalBundleFeatures}
             ctaText="Order Now"
             phoneNumber="+1 (855) 846-0134"
-            onCtaClick={handleOrderClick}
+            onCtaClick={() =>
+              handleOrderClick({
+                serviceName: "Professional Level Bundle",
+                price: 219,
+                originalPrice: 320,
+              })
+            }
           />
         </div>
 
@@ -228,7 +264,13 @@ const PricingGrid: React.FC = () => {
             ctaText="Order Now"
             phoneNumber="+1 (855) 846-0134"
             popularLabel="BEST VALUE"
-            onCtaClick={handleOrderClick}
+            onCtaClick={() =>
+              handleOrderClick({
+                serviceName: "Corporate Level Bundle",
+                price: 389,
+                originalPrice: 520,
+              })
+            }
           />
 
           <PricingCard
@@ -240,7 +282,13 @@ const PricingGrid: React.FC = () => {
             features={executiveBundleFeatures}
             ctaText="Order Now"
             phoneNumber="+1 (855) 846-0134"
-            onCtaClick={handleOrderClick}
+            onCtaClick={() =>
+              handleOrderClick({
+                serviceName: "Executive Level Bundle",
+                price: 499,
+                originalPrice: 670,
+              })
+            }
           />
 
           <PricingCard
@@ -252,7 +300,13 @@ const PricingGrid: React.FC = () => {
             features={webPortfolioFeatures}
             ctaText="Order Now"
             phoneNumber="+1 (855) 846-0134"
-            onCtaClick={handleOrderClick}
+            onCtaClick={() =>
+              handleOrderClick({
+                serviceName: "Web Based Portfolio",
+                price: 369,
+                originalPrice: 720,
+              })
+            }
           />
         </div>
 
@@ -266,7 +320,13 @@ const PricingGrid: React.FC = () => {
             features={linkedinFeatures}
             ctaText="Order Now"
             phoneNumber="+1 (855) 846-0134"
-            onCtaClick={handleOrderClick}
+            onCtaClick={() =>
+              handleOrderClick({
+                serviceName: "LinkedIn Profiles",
+                price: 219,
+                originalPrice: 370,
+              })
+            }
           />
 
           <PricingCard
@@ -278,7 +338,13 @@ const PricingGrid: React.FC = () => {
             features={coverLetterFeatures}
             ctaText="Order Now"
             phoneNumber="+1 (855) 846-0134"
-            onCtaClick={handleOrderClick}
+            onCtaClick={() =>
+              handleOrderClick({
+                serviceName: "Cover Letter",
+                price: 110,
+                originalPrice: 220,
+              })
+            }
           />
 
           <PricingCard
@@ -290,9 +356,27 @@ const PricingGrid: React.FC = () => {
             features={jobPostingsFeatures}
             ctaText="Order Now"
             phoneNumber="+1 (855) 846-0134"
-            onCtaClick={handleOrderClick}
+            onCtaClick={() =>
+              handleOrderClick({
+                serviceName: "Job Postings",
+                price: 169,
+                originalPrice: 270,
+              })
+            }
           />
         </div>
+
+        {/* Render ResumeForm conditionally */}
+        {showResumeForm && (
+          <div className="fixed inset-0 bg-opacity-30 backdrop-brightness-30 flex justify-center items-center z-50">
+            <div className="bg-white rounded-lg overflow-hidden max-w-4xl w-full mx-4">
+              <ResumeForm
+                onClose={handleFormClose}
+                initialPricingDetails={selectedPricingDetails}
+              />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
