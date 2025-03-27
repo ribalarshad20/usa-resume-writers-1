@@ -3,6 +3,7 @@ import popUpImage from "../../assets/popup-element.png";
 import { X } from "lucide-react";
 import CountryList, { Country } from "country-list-with-dial-code-and-flag";
 import Select from "react-select";
+import { useNavigate } from "react-router-dom";
 
 interface PricingDetails {
   serviceName: string;
@@ -32,6 +33,8 @@ const ResumeForm: React.FC<ResumeFormProps> = ({
   onClose,
   initialPricingDetails,
 }) => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
     email: "",
@@ -108,6 +111,7 @@ const ResumeForm: React.FC<ResumeFormProps> = ({
       const result = await response.json();
 
       if (response.ok) {
+        navigate("/thankyou");
         setSubmitStatus({
           success: true,
           message: "Resume request submitted successfully!",

@@ -1,0 +1,44 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { FaThumbsUp } from "react-icons/fa";
+
+const ThankYouComponent: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleBackToHome = () => {
+    navigate("/"); // Redirects to the main homepage
+  };
+
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen bg-white p-4">
+      <div className="text-center">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">Thank You</h1>
+        <h2 className="text-xl md:text-2xl mb-6">For Choosing Us!</h2>
+
+        <div className="text-gray-600 mb-8">
+          <p className="mb-2">
+            Thanks! We Have Received Your Request. Expect A Quick Reply.
+          </p>
+          <p>
+            Should You Have Any Questions Or Queries, Please Feel Free To
+            Contact Our Experts
+          </p>
+        </div>
+
+        <button
+          onClick={handleBackToHome}
+          className="px-6 py-3 font-semibold bg-[#C11A2F] border border-transparent hover:bg-transparent hover:border-red-600 hover:text-black text-white transition-colors duration-200"
+        >
+          Back to Home page
+        </button>
+
+        {/* Thumbs Up Icon */}
+        <div className="flex justify-center text-[#2F4376] mt-10">
+          <FaThumbsUp size={70} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ThankYouComponent;
