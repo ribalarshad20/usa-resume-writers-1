@@ -148,7 +148,7 @@ const ResumeSamplesSection: React.FC<ResumeSamplesSectionProps> = ({
               {/* CTA Button */}
               <div className="mt-8 sm:mt-10">
                 <button
-                  className="ml-4 px-6 py-3 font-semibold bg-[#2F4376] border border-transparent hover:bg-transparent hover:border-[#2F4376] hover:text-[#2F4376] text-white transition-colors duration-200"
+                  className="px-6 py-3 font-semibold bg-[#2F4376] border border-transparent hover:bg-transparent hover:border-[#2F4376] hover:text-[#2F4376] text-white transition-colors duration-200"
                   aria-label="Request for more resume samples"
                   onClick={() => setShowResumeForm(true)}
                 >
