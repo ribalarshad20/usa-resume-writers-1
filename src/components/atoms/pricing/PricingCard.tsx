@@ -1,6 +1,5 @@
-import React, { useRef } from "react";
+import React from "react";
 import { MessageCircle, Phone } from "lucide-react";
-import TawkChat, { TawkChatRef } from "../TawkChat";
 
 // Define type for feature items
 interface PricingFeature {
@@ -33,7 +32,6 @@ const PricingCard: React.FC<PricingCardProps> = ({
   phoneNumber,
   onCtaClick,
 }) => {
-  const tawkChatRef = useRef<TawkChatRef>(null);
   return (
     <>
       <div className="font-avant relative w-full max-w-sm mx-auto bg-white rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
@@ -116,13 +114,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
         {/* Contact Info */}
         <div className="px-4 sm:px-6 pb-4 flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4">
           {/* Live Chat */}
-          <div
-            onClick={() => {
-              // On click, call the maximize method on TawkChat
-              tawkChatRef.current?.maximize();
-            }}
-            className="flex items-center cursor-pointer"
-          >
+          <div className="flex items-center cursor-pointer">
             <MessageCircle className="h-5 w-5 mr-1 flex-shrink-0" />
             <span className="text-xs sm:text-sm">Live Chat</span>
           </div>
@@ -133,10 +125,6 @@ const PricingCard: React.FC<PricingCardProps> = ({
             <span className="text-xs sm:text-sm">{phoneNumber}</span>
           </div>
         </div>
-      </div>
-
-      <div className="fixed bottom-4 right-4 z-50">
-        <TawkChat ref={tawkChatRef} />
       </div>
     </>
   );

@@ -1,7 +1,6 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import bgImage from "../../assets/bg-cta.jpg";
 import ResumeForm, { FormData } from "./ResumeForm";
-import TawkChat, { TawkChatRef } from "./TawkChat";
 
 interface HeroSectionProps {
   title: string;
@@ -19,7 +18,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   subtitle,
 }) => {
   const [showResumeForm, setShowResumeForm] = useState(false);
-  const tawkChatRef = useRef<TawkChatRef>(null);
 
   const handleFormSubmit = (formData: FormData) => {
     console.log("Form submitted:", formData);
@@ -45,12 +43,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             <span>{subtitle}</span>
           </h1>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={() => {
-                tawkChatRef.current?.maximize();
-              }}
-              className="w-52 px-6 py-3 font-semibold bg-white text-[#2F4376] border border-transparent hover:bg-transparent hover:text-white hover:border-white transition-colors duration-200"
-            >
+            <button className="w-52 px-6 py-3 font-semibold bg-white text-[#2F4376] border border-transparent hover:bg-transparent hover:text-white hover:border-white transition-colors duration-200">
               Consult Our Experts
             </button>
             <button
@@ -73,10 +66,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
         </div>
       )}
-
-      <div className="fixed bottom-4 right-4 z-50">
-        <TawkChat ref={tawkChatRef} />
-      </div>
     </>
   );
 };

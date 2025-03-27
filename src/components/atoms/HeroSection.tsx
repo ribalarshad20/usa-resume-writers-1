@@ -1,11 +1,10 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import bannerImage1 from "../../assets/NewUpdatedImages/banner2.jpg";
 import bannerImage2 from "../../assets/NewUpdatedImages/banner5.jpg";
 import bannerImage3 from "../../assets/NewUpdatedImages/banner1.jpg";
 import trusted_logos from "../../assets/logos-trusted-partners.svg";
 import { CircleCheckBig } from "lucide-react";
 import ResumeForm, { FormData } from "./ResumeForm";
-import TawkChat, { TawkChatRef } from "./TawkChat";
 
 interface HeroSectionProps {
   heading?: string;
@@ -37,9 +36,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
   // State to control the visibility of the ResumeForm modal
   const [showResumeForm, setShowResumeForm] = useState(false);
-
-  // Create a ref for the TawkChat component
-  const tawkChatRef = useRef<TawkChatRef>(null);
 
   // Cycle through banner images every 3 seconds
   useEffect(() => {
@@ -153,13 +149,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 >
                   Get Started
                 </button>
-                <button
-                  className="w-full sm:w-52 px-6 py-3 font-semibold bg-white text-[#2F4376] border border-transparent hover:bg-transparent hover:text-white  hover:border-white transition-colors duration-200"
-                  onClick={() => {
-                    // On click, call the maximize method on TawkChat
-                    tawkChatRef.current?.maximize();
-                  }}
-                >
+                <button className="w-full sm:w-52 px-6 py-3 font-semibold bg-white text-[#2F4376] border border-transparent hover:bg-transparent hover:text-white  hover:border-white transition-colors duration-200">
                   Consult Our Experts
                 </button>
               </div>
@@ -188,11 +178,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
         </div>
       )}
-
-      {/* Render TawkChat component with fixed positioning */}
-      <div className="fixed bottom-4 right-4 z-50">
-        <TawkChat ref={tawkChatRef} />
-      </div>
     </>
   );
 };

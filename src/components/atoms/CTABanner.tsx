@@ -1,6 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import ResumeForm, { FormData } from "./ResumeForm";
-import TawkChat, { TawkChatRef } from "./TawkChat";
 
 interface DotProps {
   id: number;
@@ -13,7 +12,6 @@ interface DotProps {
 }
 
 const CTABanner: React.FC = () => {
-  const tawkChatRef = useRef<TawkChatRef>(null);
   const [dots, setDots] = useState<DotProps[]>([]);
   const [showResumeForm, setShowResumeForm] = useState(false);
 
@@ -71,11 +69,6 @@ const CTABanner: React.FC = () => {
     return () => cancelAnimationFrame(animationFrame);
   }, [dots]);
 
-  // Event Handlers
-  const handleConsultExperts = () => {
-    tawkChatRef.current?.maximize();
-  };
-
   const handleGetStarted = () => {
     setShowResumeForm(true);
   };
@@ -121,7 +114,6 @@ const CTABanner: React.FC = () => {
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
             <button
-              onClick={handleConsultExperts}
               className="group relative w-full xs:w-auto sm:w-auto md:w-52 px-4 py-3 text-sm font-semibold 
                          bg-white text-[#2F4376] hover:bg-gray-100 
                          cursor-pointer transition-all duration-300 
@@ -155,11 +147,6 @@ const CTABanner: React.FC = () => {
           </div>
         </div>
       )}
-
-      {/* Tawk Chat */}
-      <div className="fixed bottom-4 right-4 z-50">
-        <TawkChat ref={tawkChatRef} />
-      </div>
     </>
   );
 };
