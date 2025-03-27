@@ -29,19 +29,18 @@ declare global {
 }
 
 interface ZenDeskChatProps {
-  subdomain?: string;
-  channelKey?: string;
+  onClose?: () => void;
 }
 
-const ZenDeskChatComponent: React.FC<ZenDeskChatProps> = ({
-  channelKey = "a7ac27e9-a042-494e-8a94-aa0b21408185",
-}) => {
-  const [isLoaded, setIsLoaded] = useState(false);
+const ZenDeskChatComponent: React.FC<ZenDeskChatProps> = ({ onClose }) => {
+  const [, setIsLoaded] = useState(false);
+  const channelKey = "a7ac27e9-a042-494e-8a94-aa0b21408185";
 
   useEffect(() => {
     // Check if script is already loaded
     if (document.getElementById("ze-snippet")) {
       setIsLoaded(true);
+      window.zE?.("messenger", "open");
       return;
     }
 
@@ -89,6 +88,7 @@ const ZenDeskChatComponent: React.FC<ZenDeskChatProps> = ({
 
             window.zE("messenger:on", "close", () => {
               console.log("Zendesk messenger widget closed");
+              onClose?.(); // Call onClose prop when chat is closed
             });
           } else {
             console.error("ZenDesk widget (zE) not found");
@@ -116,28 +116,10 @@ const ZenDeskChatComponent: React.FC<ZenDeskChatProps> = ({
         console.error("Error during ZenDesk chat cleanup:", error);
       }
     };
-  }, [channelKey]);
+  }, [channelKey, onClose]);
 
-  useEffect(() => {
-    // Additional attempt to open widget if loaded
-    if (isLoaded) {
-      try {
-        window.zE?.("messenger", "open");
-      } catch (error) {
-        console.error("Error opening ZenDesk messenger:", error);
-      }
-    }
-  }, [isLoaded]);
-
-  return (
-    <div
-      id="zendesk-chat-container"
-      className="fixed bottom-4 right-4 z-50"
-      aria-label="Customer Support Chat"
-    >
-      {/* ZenDesk widget will be inserted here */}
-    </div>
-  );
+  // Return null since the ZenDesk widget is loaded globally
+  return null;
 };
 
 export default ZenDeskChatComponent;

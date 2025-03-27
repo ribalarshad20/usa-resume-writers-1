@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ResumeForm, { FormData } from "./ResumeForm";
+import ZenDeskChatComponent from "./ZenDeskChat";
 
 interface DotProps {
   id: number;
@@ -14,6 +15,16 @@ interface DotProps {
 const CTABanner: React.FC = () => {
   const [dots, setDots] = useState<DotProps[]>([]);
   const [showResumeForm, setShowResumeForm] = useState(false);
+
+  const [showZendeskChat, setShowZendeskChat] = useState(false);
+
+  const handleConsultExperts = () => {
+    setShowZendeskChat(true);
+  };
+
+  const handleZendeskChatClose = () => {
+    setShowZendeskChat(false);
+  };
 
   // Configuration constants
   const CONFIG = {
@@ -114,6 +125,7 @@ const CTABanner: React.FC = () => {
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
             <button
+              onClick={handleConsultExperts}
               className="group relative w-full xs:w-auto sm:w-auto md:w-52 px-4 py-3 text-sm font-semibold 
                          bg-white text-[#2F4376] hover:bg-gray-100 
                          cursor-pointer transition-all duration-300 
@@ -146,6 +158,10 @@ const CTABanner: React.FC = () => {
             />
           </div>
         </div>
+      )}
+
+      {showZendeskChat && (
+        <ZenDeskChatComponent onClose={handleZendeskChatClose} />
       )}
     </>
   );

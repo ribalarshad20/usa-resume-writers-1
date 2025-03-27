@@ -1,4 +1,6 @@
+import { useState } from "react";
 import resumeImage from "../../assets/optmz-img-01.png";
+import ZenDeskChatComponent from "./ZenDeskChat";
 
 interface ATSResumeSectionProps {
   consultButtonText?: string;
@@ -16,6 +18,16 @@ const ATSResumeSection: React.FC<ATSResumeSectionProps> = ({
   subTitle = "ATS-Ready Professional Resumes",
   paragraphText = "Many candidates get filtered out due to poorly formatted resumes. Our professional resume writers create custom resumes that work perfectly with Applicant Tracking Systems—designed, written, and recruiter-approved to get noticed by both software and hiring managers.",
 }) => {
+  const [showZendeskChat, setShowZendeskChat] = useState(false);
+
+  const handleConsultExperts = () => {
+    setShowZendeskChat(true);
+  };
+
+  const handleZendeskChatClose = () => {
+    setShowZendeskChat(false);
+  };
+
   return (
     <>
       <div className="w-full bg-gray-50 py-8 md:py-8">
@@ -59,7 +71,10 @@ const ATSResumeSection: React.FC<ATSResumeSectionProps> = ({
               </p>
 
               <div>
-                <button className="px-6 py-3 font-semibold bg-[#2F4376] border border-transparent hover:bg-transparent hover:border-[#2F4376] hover:text-[#2F4376] text-white transition-colors duration-200">
+                <button
+                  onClick={handleConsultExperts}
+                  className="cursor-pointer px-6 py-3 font-semibold bg-[#2F4376] border border-transparent hover:bg-transparent hover:border-[#2F4376] hover:text-[#2F4376] text-white transition-colors duration-200"
+                >
                   Talk to Our Experts
                 </button>
               </div>
@@ -75,6 +90,10 @@ const ATSResumeSection: React.FC<ATSResumeSectionProps> = ({
           </div>
         </div>
       </div>
+
+      {showZendeskChat && (
+        <ZenDeskChatComponent onClose={handleZendeskChatClose} />
+      )}
     </>
   );
 };

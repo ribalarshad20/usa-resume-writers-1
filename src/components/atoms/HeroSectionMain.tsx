@@ -1,6 +1,7 @@
 import { useState } from "react";
 import bgImage from "../../assets/bg-cta.jpg";
 import ResumeForm, { FormData } from "./ResumeForm";
+import ZenDeskChatComponent from "./ZenDeskChat";
 
 interface HeroSectionProps {
   title: string;
@@ -19,11 +20,20 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 }) => {
   const [showResumeForm, setShowResumeForm] = useState(false);
 
+  const [showZendeskChat, setShowZendeskChat] = useState(false);
+
   const handleFormSubmit = (formData: FormData) => {
     console.log("Form submitted:", formData);
     setShowResumeForm(false);
   };
 
+  const handleConsultExperts = () => {
+    setShowZendeskChat(true);
+  };
+
+  const handleZendeskChatClose = () => {
+    setShowZendeskChat(false);
+  };
   return (
     <>
       <div
@@ -43,11 +53,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             <span>{subtitle}</span>
           </h1>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="w-52 px-6 py-3 font-semibold bg-white text-[#2F4376] border border-transparent hover:bg-transparent hover:text-white hover:border-white transition-colors duration-200">
+            <button
+              onClick={handleConsultExperts}
+              className="cursor-pointer w-52 px-6 py-3 font-semibold bg-white text-[#2F4376] border border-transparent hover:bg-transparent hover:text-white hover:border-white transition-colors duration-200"
+            >
               Consult Our Experts
             </button>
             <button
-              className="w-full sm:w-52 px-6 py-3 font-semibold bg-[#C11A2F] border border-transparent hover:text-white hover:bg-transparent hover:border-red-600 text-white transition-colors duration-200"
+              className="cursor-pointer w-full sm:w-52 px-6 py-3 font-semibold bg-[#C11A2F] border border-transparent hover:text-white hover:bg-transparent hover:border-red-600 text-white transition-colors duration-200"
               onClick={() => setShowResumeForm(true)}
             >
               Get Started Now!
@@ -65,6 +78,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             />
           </div>
         </div>
+      )}
+
+      {showZendeskChat && (
+        <ZenDeskChatComponent onClose={handleZendeskChatClose} />
       )}
     </>
   );

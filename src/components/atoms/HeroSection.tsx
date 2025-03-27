@@ -35,12 +35,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   ];
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
 
-  // State to control the visibility of the ResumeForm modal
   const [showResumeForm, setShowResumeForm] = useState(false);
-
   const [showZendeskChat, setShowZendeskChat] = useState(false);
 
-  // Cycle through banner images every 3 seconds
   useEffect(() => {
     const imageInterval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -48,7 +45,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     return () => clearInterval(imageInterval);
   }, [images.length]);
 
-  // Cycle through titles for animated text every 3 seconds
   useEffect(() => {
     const titleInterval = setInterval(() => {
       setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titles.length);
@@ -56,7 +52,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     return () => clearInterval(titleInterval);
   }, [titles.length]);
 
-  // Handler for form submission (logs the data and closes the modal)
   const handleFormSubmit = (formData: FormData) => {
     console.log("Form submitted:", formData);
     setShowResumeForm(false);
@@ -66,10 +61,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     setShowZendeskChat(true);
   };
 
+  const handleZendeskChatClose = () => {
+    setShowZendeskChat(false);
+  };
+
   return (
     <>
       <div className="relative w-full overflow-hidden min-h-[80vh] md:min-h-[600px]">
-        {/* Custom style for slide in/out animation */}
         <style>{`
           @keyframes slideInOut {
             0% {
@@ -94,7 +92,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           }
         `}</style>
 
-        {/* Slideshow Images */}
         {images.map((image, index) => (
           <img
             key={index}
@@ -107,7 +104,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           />
         ))}
 
-        {/* Content Overlay */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-24 pb-8 sm:pb-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="text-white">
@@ -118,7 +114,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                     className="block animate-slideInOut"
                   >
                     {titles[currentTitleIndex]}
-                    {/* Underline */}
                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white"></span>
                   </span>
                 </span>
@@ -126,7 +121,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 <span className="inline-block">Writing Services</span>
               </h1>
 
-              {/* Subheading */}
               <div className="py-3 px-1 mb-10 -mx-1">
                 <p className="text-xl sm:text-2xl text-white font-semibold">
                   Get noticed faster with a resume designed
@@ -136,7 +130,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 </p>
               </div>
 
-              {/* Features List */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-3 mb-10">
                 {features.map((feature, index) => (
                   <div key={index} className="flex items-center gap-2">
@@ -148,7 +141,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 ))}
               </div>
 
-              {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
                   className="cursor-pointer w-full sm:w-52 px-6 py-3 font-semibold bg-[#C11A2F] border border-transparent hover:text-white hover:bg-transparent hover:border-white text-white transition-colors duration-200"
@@ -164,7 +156,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 </button>
               </div>
 
-              {/* Trusted Logos */}
               <div className="mt-12 flex flex-wrap items-center gap-6">
                 <img
                   src={trusted_logos}
@@ -177,7 +168,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
       </div>
 
-      {/* Modal for ResumeForm */}
       {showResumeForm && (
         <div className="fixed inset-0 bg-opacity-30 backdrop-brightness-30 flex justify-center items-center z-50">
           <div className="bg-white rounded-lg overflow-hidden max-w-4xl w-full mx-4">
@@ -189,7 +179,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
       )}
 
-      {showZendeskChat && <ZenDeskChatComponent />}
+      {/* Show Zendesk Chat Component */}
+      {/* ZenDesk Chat Component */}
+      {showZendeskChat && (
+        <ZenDeskChatComponent onClose={handleZendeskChatClose} />
+      )}
     </>
   );
 };

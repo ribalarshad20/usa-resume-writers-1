@@ -49,7 +49,7 @@ const MoneyBackGuarantee: React.FC<MoneyBackGuaranteeProps> = () => {
       </div>
 
       {showResumeForm && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center z-50 p-4">
+        <div className="fixed inset-0 bg-opacity-30 backdrop-brightness-30 flex justify-center items-center z-50">
           <div className="bg-white rounded-lg overflow-hidden w-full max-w-4xl mx-auto max-h-[90vh] overflow-y-auto">
             <ResumeForm
               onSubmit={handleFormSubmit}

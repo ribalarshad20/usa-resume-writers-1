@@ -1,6 +1,7 @@
 import { MoveRight } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 import ResumeForm, { FormData } from "./ResumeForm";
+import ZenDeskChatComponent from "./ZenDeskChat";
 
 // Define types for the service item
 interface ServiceItem {
@@ -21,6 +22,15 @@ const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
     setShowResumeForm(false);
   };
 
+  const [showZendeskChat, setShowZendeskChat] = useState(false);
+
+  const handleConsultExperts = () => {
+    setShowZendeskChat(true);
+  };
+
+  const handleZendeskChatClose = () => {
+    setShowZendeskChat(false);
+  };
   const sliderRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -176,11 +186,14 @@ const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
               <span className="text-gray-800">Solutions To Get Dream Job</span>
             </h1>
             <div className="flex flex-col xs:flex-row sm:flex-row gap-3 md:gap-4 w-full md:w-auto">
-              <button className="w-full xs:w-auto px-4 py-2 sm:px-6 sm:py-3 font-semibold bg-[#2F4376] border border-transparent hover:bg-transparent hover:border-[#2F4376] hover:text-[#2F4376] text-white transition-colors duration-200 text-sm sm:text-base whitespace-nowrap">
+              <button
+                onClick={handleConsultExperts}
+                className="cursor-pointer w-full xs:w-auto px-4 py-2 sm:px-6 sm:py-3 font-semibold bg-[#2F4376] border border-transparent hover:bg-transparent hover:border-[#2F4376] hover:text-[#2F4376] text-white transition-colors duration-200 text-sm sm:text-base whitespace-nowrap"
+              >
                 Consult our Experts
               </button>
               <button
-                className="w-full xs:w-auto px-4 py-2 sm:px-6 sm:py-3 font-semibold bg-[#C11A2F] border border-transparent hover:text-black hover:bg-transparent hover:border-red-600 text-white transition-colors duration-200 text-sm sm:text-base"
+                className="cursor-pointer w-full xs:w-auto px-4 py-2 sm:px-6 sm:py-3 font-semibold bg-[#C11A2F] border border-transparent hover:text-black hover:bg-transparent hover:border-red-600 text-white transition-colors duration-200 text-sm sm:text-base"
                 onClick={() => setShowResumeForm(true)}
               >
                 Get Started Now!
@@ -294,6 +307,10 @@ const CareerServices: React.FC<CareerServicesProps> = ({ services }) => {
             />
           </div>
         </div>
+      )}
+
+      {showZendeskChat && (
+        <ZenDeskChatComponent onClose={handleZendeskChatClose} />
       )}
     </>
   );
