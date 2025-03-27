@@ -1,6 +1,5 @@
-import { useRef } from "react";
 import resumeImage from "../../assets/optmz-img-01.png";
-import TawkChat, { TawkChatRef } from "./TawkChat";
+
 interface ATSResumeSectionProps {
   consultButtonText?: string;
   headerText?: string;
@@ -17,8 +16,6 @@ const ATSResumeSection: React.FC<ATSResumeSectionProps> = ({
   subTitle = "ATS-Ready Professional Resumes",
   paragraphText = "Many candidates get filtered out due to poorly formatted resumes. Our professional resume writers create custom resumes that work perfectly with Applicant Tracking Systems—designed, written, and recruiter-approved to get noticed by both software and hiring managers.",
 }) => {
-  const tawkChatRef = useRef<TawkChatRef>(null);
-
   return (
     <>
       <div className="w-full bg-gray-50 py-8 md:py-8">
@@ -62,13 +59,7 @@ const ATSResumeSection: React.FC<ATSResumeSectionProps> = ({
               </p>
 
               <div>
-                <button
-                  onClick={() => {
-                    // On click, call the maximize method on TawkChat
-                    tawkChatRef.current?.maximize();
-                  }}
-                  className="px-6 py-3 font-semibold bg-[#2F4376] border border-transparent hover:bg-transparent hover:border-[#2F4376] hover:text-[#2F4376] text-white transition-colors duration-200"
-                >
+                <button className="px-6 py-3 font-semibold bg-[#2F4376] border border-transparent hover:bg-transparent hover:border-[#2F4376] hover:text-[#2F4376] text-white transition-colors duration-200">
                   Talk to Our Experts
                 </button>
               </div>
@@ -83,10 +74,6 @@ const ATSResumeSection: React.FC<ATSResumeSectionProps> = ({
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="fixed bottom-4 right-4 z-50">
-        <TawkChat ref={tawkChatRef} />
       </div>
     </>
   );
