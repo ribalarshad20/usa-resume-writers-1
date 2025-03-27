@@ -5,6 +5,7 @@ import bannerImage3 from "../../assets/NewUpdatedImages/banner1.jpg";
 import trusted_logos from "../../assets/logos-trusted-partners.svg";
 import { CircleCheckBig } from "lucide-react";
 import ResumeForm, { FormData } from "./ResumeForm";
+import ZenDeskChatComponent from "./ZenDeskChat";
 
 interface HeroSectionProps {
   heading?: string;
@@ -37,6 +38,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   // State to control the visibility of the ResumeForm modal
   const [showResumeForm, setShowResumeForm] = useState(false);
 
+  const [showZendeskChat, setShowZendeskChat] = useState(false);
+
   // Cycle through banner images every 3 seconds
   useEffect(() => {
     const imageInterval = setInterval(() => {
@@ -57,6 +60,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   const handleFormSubmit = (formData: FormData) => {
     console.log("Form submitted:", formData);
     setShowResumeForm(false);
+  };
+
+  const handleConsultExperts = () => {
+    setShowZendeskChat(true);
   };
 
   return (
@@ -144,12 +151,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
-                  className="w-full sm:w-52 px-6 py-3 font-semibold bg-[#C11A2F] border border-transparent hover:text-white hover:bg-transparent hover:border-white text-white transition-colors duration-200"
+                  className="cursor-pointer w-full sm:w-52 px-6 py-3 font-semibold bg-[#C11A2F] border border-transparent hover:text-white hover:bg-transparent hover:border-white text-white transition-colors duration-200"
                   onClick={() => setShowResumeForm(true)}
                 >
                   Get Started
                 </button>
-                <button className="w-full sm:w-52 px-6 py-3 font-semibold bg-white text-[#2F4376] border border-transparent hover:bg-transparent hover:text-white  hover:border-white transition-colors duration-200">
+                <button
+                  onClick={handleConsultExperts}
+                  className="cursor-pointer w-full sm:w-52 px-6 py-3 font-semibold bg-white text-[#2F4376] border border-transparent hover:bg-transparent hover:text-white  hover:border-white transition-colors duration-200"
+                >
                   Consult Our Experts
                 </button>
               </div>
@@ -178,6 +188,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
         </div>
       )}
+
+      {showZendeskChat && <ZenDeskChatComponent />}
     </>
   );
 };

@@ -1,8 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 declare global {
   interface Window {
-    zE?: (command: string, action: string) => void;
+    zE?: (
+      command: "messenger" | "messenger:on" | "messenger:set",
+      action: string,
+      ...args: (
+        | string
+        | number
+        | (() => void)
+        | { id: string; value: string | number | boolean }[]
+        | undefined
+      )[]
+    ) => void;
     zESettings?: {
       webWidget: {
         color: {
@@ -24,17 +34,22 @@ interface ZenDeskChatProps {
 }
 
 const ZenDeskChatComponent: React.FC<ZenDeskChatProps> = ({
-  channelKey = "cIq00n2OPTydNfzCMWlQfzb2ri6N8Eq5Sbmj2Trk",
+  channelKey = "a7ac27e9-a042-494e-8a94-aa0b21408185",
 }) => {
-  useEffect(() => {
-    // Prevent multiple script loads
-    if (document.getElementById("ze-snippet")) return;
+  const [isLoaded, setIsLoaded] = useState(false);
 
-    // Configure ZenDesk settings before script load
+  useEffect(() => {
+    // Check if script is already loaded
+    if (document.getElementById("ze-snippet")) {
+      setIsLoaded(true);
+      return;
+    }
+
+    // Zendesk widget settings
     window.zESettings = {
       webWidget: {
         color: {
-          theme: "#007bff", // Customizable theme color
+          theme: "#007bff",
           launcher: "#007bff",
           launcherText: "#FFFFFF",
         },
@@ -44,42 +59,75 @@ const ZenDeskChatComponent: React.FC<ZenDeskChatProps> = ({
       },
     };
 
-    // Create and configure script
+    // Create and load Zendesk script
     const script = document.createElement("script");
     script.id = "ze-snippet";
     script.src = `https://static.zdassets.com/ekr/snippet.js?key=${channelKey}`;
     script.async = true;
 
-    // Add error handling
     script.onerror = () => {
       console.error("ZenDesk chat script failed to load");
+      setIsLoaded(false);
     };
 
-    // Append script to document
     document.head.appendChild(script);
 
-    // Initialize widget after script loads
     script.onload = () => {
-      try {
-        // Attempt to trigger widget initialization
-        window.zE?.("webWidget", "show");
-      } catch (error) {
-        console.error("Error initializing ZenDesk widget:", error);
-      }
+      // Multiple attempts to ensure initialization
+      const initializeZendesk = () => {
+        try {
+          if (window.zE) {
+            setIsLoaded(true);
+
+            // Open the messenger widget
+            window.zE("messenger", "open");
+
+            // Optional: Add event listeners
+            window.zE("messenger:on", "open", () => {
+              console.log("Zendesk messenger widget opened");
+            });
+
+            window.zE("messenger:on", "close", () => {
+              console.log("Zendesk messenger widget closed");
+            });
+          } else {
+            console.error("ZenDesk widget (zE) not found");
+          }
+        } catch (error) {
+          console.error("Error initializing ZenDesk widget:", error);
+        }
+      };
+
+      // Try initialization immediately and with a slight delay
+      initializeZendesk();
+      setTimeout(initializeZendesk, 1000);
     };
 
     // Cleanup function
     return () => {
-      // Remove script and reset global variables
       try {
-        document.head.removeChild(script);
-        delete window.zE;
-        delete window.zESettings;
+        // Reset the widget before removing
+        window.zE?.("messenger", "resetWidget", () => {
+          document.head.removeChild(script);
+          delete window.zE;
+          delete window.zESettings;
+        });
       } catch (error) {
         console.error("Error during ZenDesk chat cleanup:", error);
       }
     };
   }, [channelKey]);
+
+  useEffect(() => {
+    // Additional attempt to open widget if loaded
+    if (isLoaded) {
+      try {
+        window.zE?.("messenger", "open");
+      } catch (error) {
+        console.error("Error opening ZenDesk messenger:", error);
+      }
+    }
+  }, [isLoaded]);
 
   return (
     <div
