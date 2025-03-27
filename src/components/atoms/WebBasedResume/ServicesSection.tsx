@@ -16,22 +16,22 @@ interface ServicesProps {
 
 const ServicesSection: React.FC<ServicesProps> = ({
   mainTitle = "Customized Web-Based Resumes & Cover Letters",
-  subtitle = "We design interactive, ATS-friendly web resumes that highlight your strengths and help you stand out.",
+  subtitle = "We create ATS-friendly, interactive web resumes that highlight your strengths and help you stand out.",
   services = [
     {
-      title: "Career Coaching & Interview Prep",
+      title: "LinkedIn Profile Optimization",
       description:
-        "Our coaching optimizes your digital job search and prepares you for online interviews.",
+        "We help optimize your LinkedIn profile to improve your job prospects and connect with employers.",
     },
     {
       title: "Industry-Specific Web Resumes",
       description:
-        "We create web-based resumes tailored to your industry, ensuring they align with employer expectations.",
+        "Tailored web resumes that meet industry trends and employer expectations for your specific field.",
     },
     {
       title: "Job Search Strategy & Digital Support",
       description:
-        "We guide you through a targeted online job search, focusing on the best digital opportunities.",
+        "We guide your digital job search, focusing on the best opportunities and strategies.",
     },
   ],
   buttonText = "Start Your Project",
