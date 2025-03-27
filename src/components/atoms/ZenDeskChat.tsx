@@ -23,7 +23,7 @@ interface ZenDeskChatProps {
   channelKey?: string;
 }
 
-const ZenDeskChat: React.FC<ZenDeskChatProps> = ({
+const ZenDeskChatComponent: React.FC<ZenDeskChatProps> = ({
   channelKey = "cIq00n2OPTydNfzCMWlQfzb2ri6N8Eq5Sbmj2Trk",
 }) => {
   useEffect(() => {
@@ -92,4 +92,4 @@ const ZenDeskChat: React.FC<ZenDeskChatProps> = ({
   );
 };
 
-export default ZenDeskChat;
+export default ZenDeskChatComponent;
