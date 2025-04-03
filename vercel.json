@@ -1,5 +1,8 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
+  "rewrites": [
+    { "source": "/lp4/:path*", "destination": "https://lp4-amjadali070s-projects.vercel.app//lp4/:path*" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
   "buildCommand": "npm run build-vercel",
   "devCommand": "npm run dev",
   "outputDirectory": "dist"
