@@ -2,11 +2,20 @@
   "rewrites": [
     { "source": "/lp4/:path*", "destination": "https://lp4.vercel.app/:path*" },
     { "source": "/lp4", "destination": "https://lp4.vercel.app/" },
+    { "source": "/lp5/:path*", "destination": "https://lp5.vercel.app/:path*" },
+    { "source": "/lp5", "destination": "https://lp5.vercel.app/" },
     { "source": "/(.*)", "destination": "/" }
   ],
   "headers": [
     {
       "source": "/lp4/:path*",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "no-cache" }
+      ]
+    },
+    {
+      "source": "/lp5/:path*",
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Cache-Control", "value": "no-cache" }
