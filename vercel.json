@@ -1,8 +1,17 @@
 {
   "rewrites": [
-    { "source": "/lp4/:path*", "destination": "https://lp4-amjadali070s-projects.vercel.app/:path*" },
-    { "source": "/lp4", "destination": "https://lp4-amjadali070s-projects.vercel.app/" },
+    { "source": "/lp4/:path*", "destination": "https://lp4.vercel.app/:path*" },
+    { "source": "/lp4", "destination": "https://lp4.vercel.app/" },
     { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/lp4/:path*",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "no-cache" }
+      ]
+    }
   ],
   "buildCommand": "npm run build-vercel",
   "devCommand": "npm run dev",
