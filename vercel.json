@@ -1,6 +1,7 @@
 {
   "rewrites": [
-    { "source": "/lp4/:path*", "destination": "https://lp4-amjadali070s-projects.vercel.app/lp4/:path*" },
+    { "source": "/lp4/:path*", "destination": "https://lp4-amjadali070s-projects.vercel.app/:path*" },
+    { "source": "/lp4", "destination": "https://lp4-amjadali070s-projects.vercel.app/" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "buildCommand": "npm run build-vercel",
