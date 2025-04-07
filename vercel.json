@@ -16,7 +16,10 @@
       "source": "/lp5",
       "destination": "https://darkgray-mandrill-220934.hostingersite.com/lp5/"
     },
-    { "source": "/(.*)", "destination": "/" }
+    {
+      "source": "/((?!lp4|lp5).*)",
+      "destination": "/"
+    }
   ],
   "headers": [
     {
