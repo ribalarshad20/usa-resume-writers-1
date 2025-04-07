@@ -1,9 +1,21 @@
 {
   "rewrites": [
-    { "source": "/lp4/:path*", "destination": "https://lp4.vercel.app/:path*" },
-    { "source": "/lp4", "destination": "https://lp4.vercel.app/" },
-    { "source": "/lp5/:path*", "destination": "https://lp5.vercel.app/:path*" },
-    { "source": "/lp5", "destination": "https://lp5.vercel.app/" },
+    {
+      "source": "/lp4/:path*",
+      "destination": "https://darkgray-mandrill-220934.hostingersite.com/lp4/:path*"
+    },
+    {
+      "source": "/lp4",
+      "destination": "https://darkgray-mandrill-220934.hostingersite.com/lp4/"
+    },
+    {
+      "source": "/lp5/:path*",
+      "destination": "https://darkgray-mandrill-220934.hostingersite.com/lp5/:path*"
+    },
+    {
+      "source": "/lp5",
+      "destination": "https://darkgray-mandrill-220934.hostingersite.com/lp5/"
+    },
     { "source": "/(.*)", "destination": "/" }
   ],
   "headers": [
