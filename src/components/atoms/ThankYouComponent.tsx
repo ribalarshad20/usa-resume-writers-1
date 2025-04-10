@@ -25,9 +25,17 @@ const ThankYouComponent: React.FC = () => {
     `;
     document.head.appendChild(script2);
 
+    // Event snippet for conversion tracking
+    const script3 = document.createElement("script");
+    script3.innerHTML = `
+      gtag('event', 'conversion', {'send_to': 'AW-11546297911/3vXwCLvd97YaELeM2oEr'});
+    `;
+    document.head.appendChild(script3);
+
     return () => {
       document.head.removeChild(script1);
       document.head.removeChild(script2);
+      document.head.removeChild(script3);
     };
   }, []);
 
