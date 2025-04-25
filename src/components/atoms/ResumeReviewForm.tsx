@@ -92,7 +92,7 @@ const ResumeReviewForm: React.FC<ResumeReviewFormProps> = ({
 
     try {
       const response = await fetch(
-        "https://crm-martechsol-server-fc6bbfa0ab6c.herokuapp.com/api/email/send-resume-email",
+        "https://crm-martechsol-backend.vercel.app/api/email/send-resume-email",
         {
           method: "POST",
           headers: {

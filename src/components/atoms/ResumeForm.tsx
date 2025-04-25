@@ -20,6 +20,7 @@ export interface FormData {
   termsAgreed: boolean;
   serviceName?: string;
   servicePrice?: number;
+  pageURL?: string;
 }
 
 interface ResumeFormProps {
@@ -43,6 +44,7 @@ const ResumeForm: React.FC<ResumeFormProps> = ({
     termsAgreed: false,
     serviceName: initialPricingDetails?.serviceName,
     servicePrice: initialPricingDetails?.price,
+    pageURL: window.location.href,
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -98,7 +100,7 @@ const ResumeForm: React.FC<ResumeFormProps> = ({
 
     try {
       const response = await fetch(
-        "https://crm-martechsol-server-fc6bbfa0ab6c.herokuapp.com/api/email/send-resume-email",
+        "https://crm-martechsol-backend.vercel.app/api/email/send-resume-email",
         {
           method: "POST",
           headers: {
@@ -127,6 +129,7 @@ const ResumeForm: React.FC<ResumeFormProps> = ({
           termsAgreed: false,
           serviceName: initialPricingDetails?.serviceName,
           servicePrice: initialPricingDetails?.price,
+          pageURL: window.location.href,
         });
       } else {
         setSubmitStatus({
